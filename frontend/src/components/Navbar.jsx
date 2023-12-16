@@ -48,7 +48,7 @@ export default Navbar*/
 
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import logoImage from '../../src/assets/bike1.jpg'
+import logoImage from '../../src/assets/bike2.png'
 
 const Navbar = () => {
   return (
