@@ -3,6 +3,7 @@ import ChatCircleText from "../components/ChatCircleText";
 import EnvelopeSimple from "../components/EnvelopSimple";
 import WeightRegular from "../components/WeightRegular";
 import WeightRegularWrapper from "../components/WeightRegularWrapper";
+import "./Home.css"
 
 
 
