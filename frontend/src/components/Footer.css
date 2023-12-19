@@ -1,0 +1,44 @@
+/* Footer.css */
+
+.footer-clean {
+    background-color: #000000; /* Black background color */
+    color: #ffffff; /* White text color */
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.footer-clean hr {
+    border-top: 1px solid #ffffff; /* White border color for hr */
+}
+
+.footer-clean h3 {
+    color: #ffffff; /* White text color for h3 */
+}
+
+.footer-clean ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-clean ul li {
+    padding-bottom: 10px;
+}
+
+.footer-clean a {
+    color: #ffffff; /* White text color for links */
+    text-decoration: none;
+}
+
+.footer-clean a:hover {
+    text-decoration: underline;
+}
+
+.footer-clean .social i {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.footer-clean .copyright {
+    margin-top: 15px;
+    color: #ffffff; /* White text color for copyright */
+}
