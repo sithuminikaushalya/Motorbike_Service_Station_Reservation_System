@@ -14,112 +14,14 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
 const Home = () => {
+    const handleLocateNowClick = () => {
+       
+        console.log('Locate Now button clicked!');
+      };
     return (
         <div className="home-website">
             <div className="div">
-                <footer className="footer">
-                    <div className="overlap">
-                        <div className="group">
-                            <div className="text-wrapper">Company</div>
-                            <div className="text-wrapper-2">Resources</div>
-                            <div className="overlap-group">
-                                <div className="text-wrapper-3">Contact us</div>
-                                <p className="p">© Developed by BikePulse Group IT 2023.</p>
-                                <div className="group-2">
-                                    <div className="text-wrapper-4">Business Address</div>
-                                    <p className="element-bike-lane">
-                                        123 Bike Lane,
-                                        <br />
-                                        Cityville, State 56789,
-                                        <br />
-                                        Sri Lanka
-                                    </p>
-                                    <div className="group-3">
-                                        <p className="element">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +94 11 556 8080
-                                            <br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +94 11 528 9612
-                                            <br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bikepulse@gmail.com
-                                        </p>
-                                        <WeightRegularWrapper weight="regular" />
-                                    </div>
-                                </div>
-                                <div className="group-4">
-                                    <div className="overlap-group-2">
-                                        <div className="group-5">
-                                            <div className="text-wrapper-5">Corporative Office</div>
-                                            <p className="bikepulse">
-                                                BikePulse Headquarters,
-                                                <br />
-                                                456 Gear Street,
-                                                <br />
-                                                Metropolis, State 67890,
-                                                <br />
-                                                Sri Lanka
-                                            </p>
-                                            <p className="element-2">
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+94 11 677 8080
-                                                <br />
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +94 11 598 9612
-                                                <br />
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; head@gmail.com
-                                            </p>
-                                        </div>
-                                        <div className="group-6">
-                                            <ChatCircleText className="phosphor-icons" />
-                                            <EnvelopeSimple className="envelope-simple" color="white" />
-                                            <div className="group-7" />
-                                        </div>
-                                    </div>
-                                    <div className="group-8">
-                                        <ChatCircleText className="chat-circle-text" />
-                                        <EnvelopeSimple className="envelope-simple-instance" color="white" />
-                                        <div className="group-9" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="home-shops">
-                                Home
-                                <br />
-                                Shops
-                                <br />
-                                Promotions
-                                <br />
-                                Contact Us
-                                <br />
-                                About Us
-                            </div>
-                            <p className="auto-repair-near-me">
-                                Auto Repair near me
-                                <br />
-                                Top Cities
-                                <br />
-                                All Cities
-                                <br />
-                                Shop Instructions
-                            </p>
-                            <div className="overlap-2">
-                                <img className="logo" alt="Logo" src={logo} />
-                                <p className="text-wrapper-6">
-                                    BikePulse is a dynamic software development team with a global presence through offices in Canada and
-                                    the UAE. Since 2012, we have been at the forefront of delivering cutting-edge web and mobile
-                                    solutions, providing customized software to clients worldwide. Our commitment to innovation and
-                                    quality positions BikePulse Techware Lab as a trusted partner, seamlessly merging technology with the
-                                    excitement of biking.
-                                </p>
-                            </div>
-                            <div className="div-wrapper">
-                                <div className="text-wrapper-7">Follow Us</div>
-                            </div>
-                        </div>
-                        <div className="social-media">
-                            <i className="bi bi-facebook" title="Icon circle facebook" />
-                            <i className="bi bi-instagram" title="Icon circle" />
-                            <i className="bi bi-youtube" title="Icon circle youtube" />
-                        </div>
-                    </div>
-                </footer>
+                
                 <div className="overlap-3">
                     <div className="mission">
                         <div className="text-wrapper-8">Our Mission</div>
@@ -183,8 +85,8 @@ const Home = () => {
                                                 Repair &amp; Maintenance
                                             </p>
                                             <div>
-                                            <i className="bi bi-check2-circle check-perspective" aria-hidden="true"/>
-                                            <i className="bi bi-check2-circle-perspective" aria-hidden="true"/>
+                                                <i className="bi bi-check2-circle check-perspective" aria-hidden="true" />
+                                                <i className="bi bi-check2-circle-perspective" aria-hidden="true" />
                                             </div>
                                         </div>
                                     </div>
@@ -192,12 +94,12 @@ const Home = () => {
                                 <div className="div-2">
                                     <div className="overlap-group-wrapper">
                                         <div className="overlap-group-5">
-                                            <div className="text-wrapper-13">Locate Now</div>
+                                            <button className="text-wrapper-13">Locate Now</button>
                                         </div>
                                     </div>
                                     <div className="overlap-wrapper">
                                         <div className="overlap-6">
-                                            <div className="text-wrapper-13">Make a Reservation</div>
+                                            <button className="text-wrapper-13">Make a Reservation</button>
                                         </div>
                                     </div>
                                 </div>
@@ -211,10 +113,10 @@ const Home = () => {
                                         <br />
                                     </span>
                                     <span className="text-wrapper-15">&nbsp;&nbsp;&nbsp;&nbsp; </span>
-                                    <span className="text-wrapper-16">
+                                    <a  href="your_destination_url" className="text-wrapper-16">
                                         Get directions
                                         <br />
-                                    </span>
+                                    </a>
                                 </p>
                                 <i
                                     className="bi bi-geo location-perspective"
@@ -248,7 +150,7 @@ const Home = () => {
                                             <div>
                                                 <i
                                                     className="bi bi-check2-circle check-perspective-4"
-                                                    alt="Check perspective"/>
+                                                    alt="Check perspective" />
                                                 <i
                                                     className="bi bi-check2-circle check-perspective-4"
                                                     alt="Check perspective"
@@ -261,12 +163,12 @@ const Home = () => {
                                 <div className="div-2">
                                     <div className="overlap-group-wrapper">
                                         <div className="overlap-group-5">
-                                            <div className="text-wrapper-13">Locate Now</div>
+                                            <button className="text-wrapper-13" onClick={handleLocateNowClick}>Locate Now</button>
                                         </div>
                                     </div>
                                     <div className="overlap-wrapper">
                                         <div className="overlap-6">
-                                            <div className="text-wrapper-13">Make a Reservation</div>
+                                            <button className="text-wrapper-13" onClick={handleLocateNowClick}>Make a Reservation</button>
                                         </div>
                                     </div>
                                 </div>
@@ -283,10 +185,10 @@ const Home = () => {
                                         <br />
                                         &nbsp;&nbsp;&nbsp;&nbsp;{" "}
                                     </span>
-                                    <span className="text-wrapper-16">
+                                    <a href="your_destination_url" className="text-wrapper-16">
                                         Get directions
                                         <br />
-                                    </span>
+                                    </a>
                                 </p>
                             </div>
                             <div className="text-wrapper-18">Asphalt Motors</div>
@@ -315,36 +217,38 @@ const Home = () => {
                                             </p>
                                         </div>
                                         <div>
-                                        
-                                        <i
-                                            className="bi bi-check2-circle check-perspective-6"
-                                            alt="Check perspective"/>
-                                           
-                                        
-                                        <i
-                                            className="bi bi-check2-circle check-perspective-5"
-                                            alt="Check perspective"
-                                           
-                                        />
+
+                                            <i
+                                                className="bi bi-check2-circle check-perspective-6"
+                                                alt="Check perspective" />
+
+
+                                            <i
+                                                className="bi bi-check2-circle check-perspective-5"
+                                                alt="Check perspective"
+
+                                            />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="div-2">
                                     <div className="overlap-group-wrapper">
                                         <div className="overlap-group-5">
-                                            <div className="text-wrapper-13">Locate Now</div>
+                                            <button className="text-wrapper-13" onClick={handleLocateNowClick}>
+                                                Locate Now
+                                            </button>
                                         </div>
                                     </div>
                                     <div className="overlap-wrapper">
                                         <div className="overlap-6">
-                                            <div className="text-wrapper-13">Make a Reservation</div>
+                                            <button className="text-wrapper-13 " onClick={handleLocateNowClick}>Make a Reservation</button>
                                         </div>
                                     </div>
                                 </div>
                                 <i
                                     className="bi bi-geo location-perspective"
                                     alt="Location perspective"
-                                    
+
                                 />
                                 <p className="div-3">
                                     <span className="text-wrapper-14">
@@ -356,10 +260,10 @@ const Home = () => {
                                         <br />
                                         &nbsp;&nbsp;&nbsp;&nbsp;{" "}
                                     </span>
-                                    <span className="text-wrapper-16">
+                                    <a href="your_destination_url" className="text-wrapper-16">
                                         Get directions
                                         <br />
-                                    </span>
+                                    </a>
                                 </p>
                             </div>
                             <div className="text-wrapper-19">Volecare</div>
@@ -367,12 +271,19 @@ const Home = () => {
                     </div>
                     <div className="text-wrapper-20">1000+ Service Stations</div>
                     <div className="search-bar">
+
                         <div className="overlap-8">
+                            <button className="bi bi-search search-btn"></button>
                             <div className="rectangle" />
-                            <img className="union" alt="Union" src="union.svg" />
-                            <p className="text-wrapper-21">Search by city, District or Zip code</p>
+
+                            <input
+                                type="text"
+                                className="text-wrapper-21"
+                                placeholder="Search by city, District or Zip code"
+                            />
                         </div>
                     </div>
+
                 </div>
                 <div className="promotions">
                     <p className="we-re-resetting-bike">We&#39;re resetting bike care standards.</p>
@@ -397,30 +308,11 @@ const Home = () => {
                     <div className="text-wrapper-25">Customers</div>
                     <div className="text-wrapper-26">Services</div>
                 </div>
-                <div className="nav-bar">
-                    <div className="profile-icon-wrapper">
-                        <WeightRegular className="profile-icon" color="#03045E" />
-                    </div>
-                    <div className="login-button">
-                        <div className="overlap-group-9">
-                            <div className="rectangle-2" />
-                            <div className="text-wrapper-27">LOG IN</div>
-                        </div>
-                    </div>
-                    <div className="nav-bar-details">
-                        <div className="text-wrapper-28">Home</div>
-                        <div className="text-wrapper-29">About us</div>
-                        <p className="shops-2">
-                            <span className="text-wrapper-30">&nbsp;</span>
-                            <span className="text-wrapper-31">Shops</span>
-                        </p>
-                    </div>
-                    <img className="logo-2" alt="Logo" src="image.png" />
-                </div>
+                
                 <img className="below-the-nav-bar" alt="Below the nav bar" src="below-the-nav-bar.png" />
                 <div className="frame">
                     <div className="vector-wrapper">
-                        <i className=" bi bi-card-checklist img-2" alt="Vector"  />
+                        <i className=" bi bi-card-checklist img-2" alt="Vector" />
                     </div>
                     <div className="reserve-wrapper">
                         <i className="bi bi-pencil-square img-2" alt="Reserve" />
@@ -432,7 +324,7 @@ const Home = () => {
                         <i className="bi bi-hourglass-split payment-history" alt="Payment history" />
                     </div>
                     <div className="earth-planet-wrapper">
-                        <i className=" bi bi-globe-americas img-2" alt="Earth planet"  />
+                        <i className=" bi bi-globe-americas img-2" alt="Earth planet" />
                     </div>
                     <div className="text-wrapper-32">Island Reach</div>
                     <div className="text-wrapper-33">Real Time Update</div>

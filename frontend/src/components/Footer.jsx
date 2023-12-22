@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import {Link} from 'react-router-dom';
 import './Footer.css';
 
@@ -87,4 +87,144 @@ const Footer =() =>{
 }
 
 
-export default Footer
+export default Footer*/
+import React from "react";
+import {Link} from 'react-router-dom';
+import 'font-awesome/css/font-awesome.min.css';
+import ChatCircleText from "../components/ChatCircleText";
+import EnvelopeSimple from "../components/EnvelopSimple";
+import WeightRegular from "../components/WeightRegular";
+import WeightRegularWrapper from "../components/WeightRegularWrapper";
+import logo from "../assets/Logo.png"
+import "./Footer.css"
+
+const Footer =() =>{
+    return (
+        <div className="footer">
+          <div className="overlap">
+            <div className="group">
+              <div className="text-wrapper">Company</div>
+              <div className="div">Resources</div>
+              <div className="overlap-group">
+                <div className="text-wrapper-2">Contact us</div>
+                <p className="p">© Developed by BikePulse Group IT 2023.</p>
+                <div className="group-2">
+                  <div className="text-wrapper-3">Business Address</div>
+                  <p className="element-bike-lane">
+                    123 Bike Lane,
+                    <br />
+                    Cityville, State 56789,
+                    <br />
+                    Sri Lanka
+                  </p>
+                  <div className="group-3">
+                    <p className="element">
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +94 11 556 8080
+                      <br />
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +94 11 528 9612
+                      <br />
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bikepulse@gmail.com
+                    </p>
+                    <WeightRegularWrapper weight="regular" />
+                  </div>
+                </div>
+                <div className="group-4">
+                  <div className="overlap-group-2">
+                    <div className="group-5">
+                      <div className="text-wrapper-4">Corporative Office</div>
+                      <p className="bikepulse">
+                        BikePulse Headquarters,
+                        <br />
+                        456 Gear Street,
+                        <br />
+                        Metropolis, State 67890,
+                        <br />
+                        Sri Lanka
+                      </p>
+                      <p className="element-2">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+94 11 677 8080
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +94 11 598 9612
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; head@gmail.com
+                      </p>
+                    </div>
+                    <div className="group-6">
+                      <ChatCircleText className="phosphor-icons" />
+                      <EnvelopeSimple className="envelope-simple" color="white" />
+                      <div className="group-7" />
+                    </div>
+                  </div>
+                  <div className="group-8">
+                    <ChatCircleText className="chat-circle-text" />
+                    <EnvelopeSimple className="envelope-simple-instance" color="white" />
+                    <div className="group-9" />
+                  </div>
+                </div>
+              </div>
+              <div className="home-shops">
+              <ul>
+                <li>
+                    <Link>Home</Link>
+                </li>
+              </ul>
+                <li>
+                    <Link>Shops</Link>
+                </li>
+                <li>
+                    <Link>Promotions</Link>
+                </li>
+                <li>
+                    <Link>Contact Us</Link>
+                </li>
+                <li>
+                    <Link>
+                        About Us
+                    </Link>
+                </li>
+              </div>
+              <p className="auto-repair-near-me">
+              <ul>
+              <li>
+              <Link> Auto Repair near me</Link>
+
+              </li>
+              <li>
+                <Link> Top Cities</Link>
+              </li>
+              <li>
+                <Link>
+                All Cities
+                </Link>
+              </li>
+              <li>
+                <Link>  Shop Instructions</Link>
+              </li>
+               
+              </ul>
+              </p>
+              <div className="overlap-2">
+                <img className="logo" alt="Logo" src={logo}
+                 />
+                <p className="text-wrapper-5">
+                  BikePulse is a dynamic software development team with a global presence through offices in Canada and the
+                  UAE. Since 2012, we have been at the forefront of delivering cutting-edge web and mobile solutions,
+                  providing customized software to clients worldwide. Our commitment to innovation and quality positions
+                  BikePulse Techware Lab as a trusted partner, seamlessly merging technology with the excitement of biking.
+                </p>
+              </div>
+              <div className="div-wrapper">
+                <div className="text-wrapper-6">Follow Us</div>
+              </div>
+            </div>
+            <div className="social-media">
+              <i className="bi bi-facebook" alt="Icon circle facebook"  />
+              <i className="bi bi-instagram" alt="Icon circle" src="icon-circle-instagram.svg" />
+              <i className="bi bi-youtube" alt="Icon circle youtube" src="icon-circle-youtube.svg" />
+            </div>
+          </div>
+        </div>
+      );
+}
+
+export default Footer;
