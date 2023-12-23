@@ -1,3 +1,3 @@
-# This is the template website for motorbike service station website
+# This is a platform for motorbike service station website
 
 readme written
