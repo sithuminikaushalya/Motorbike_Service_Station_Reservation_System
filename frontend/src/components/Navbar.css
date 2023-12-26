@@ -1,3 +1,110 @@
+/* frontend\src\components\Navbar.css */
 
+.navbar-container {
+  background-color: #bfe9ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 0 20px; 
+}
 
+.brand-text {
+  /* Define your standardized brand text styles here */
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: center;
+}
+
+.brand-text-gradient {
+  /* Add gradient styles here */
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(180deg, rgb(3, 4, 94) 0%, rgb(0, 119, 182) 100%);
+  background-clip: text;
+  color: transparent;
+}
+.profile-icon {
+  height: 50px !important;
+  width: 50px !important;
+}
+
+.login-button {
+  height: 38px;
+  width: 137px;
+}
+
+.button-group {
+  border-radius: 30px;
+  height: 38px;
+  position: relative;
+  width: 135px;
+}
+
+.rectangle {
+  background-color: #03045e;
+  border-radius: 30px;
+  height: 38px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 135px;
+}
+
+.text {
+  color: #ffffff;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 35px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 4px;
+  white-space: nowrap;
+  width: 65px;
+  
+}
+
+.navbar-details {
+  display: flex;
+}
+
+.nav-link {
+  color: #03045e;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin: 0 15px; 
+}
+
+.nav-link span {
+  color: #03045e;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.navbar-container img {
+  height: 69px;
+  width: 234px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  outline: none;
+  cursor: pointer;
+  
+}
 
