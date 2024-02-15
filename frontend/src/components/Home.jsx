@@ -1,340 +1,210 @@
 import React from "react";
-import 'font-awesome/css/font-awesome.min.css';
-import ChatCircleText from "../components/ChatCircleText";
-import EnvelopeSimple from "../components/EnvelopSimple";
-import WeightRegular from "../components/WeightRegular";
-import WeightRegularWrapper from "../components/WeightRegularWrapper";
-import "./Home.css"
-import logo from "../assets/Logo.png"
-import mission from "../assets/Mission.png"
-import vision from "../assets/Vision.png"
-import srilanka from "../assets/SriLanka.png"
+import bike5 from "../assets/bike5.jpg"
+import reservenow from "../assets/reserve_now.png"
+import registershop from "../assets/register_shop.png"
 import bike3 from "../assets/bike3.png"
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import bike6 from "../assets/bike6.jpg"
+import srilanka from "../assets/SriLanka.png"
+import tickmark from "../assets/tickmark.png";
+import location from "../assets/location.png";
+import { Carousel } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import './home.css';
+import CircularProgressBar from './CircularProgressBar';
 
 
-const Home = () => {
-    const handleLocateNowClick = () => {
-       
-        console.log('Locate Now button clicked!');
-      };
-    return (
-        <div className="home-website">
-            <div className="div">
-                
-                <div className="overlap-3">
-                    <div className="mission">
-                        <div className="text-wrapper-8">Our Mission</div>
-                        <p className="empowering-journeys">
-                            <span className="span">
-                                Empowering Journeys, Connecting Riders.
-                                <br />
-                            </span>
-                            <span className="text-wrapper-9">
-                                <br />
-                                Through innovative technology and a commitment to excellence, we aim to create a community where riders
-                                feel confident and inspired to explore their passion for two-wheel adventures
-                            </span>
-                        </p>
-                        <div className="mission-image">
-                            <div className="overlap-group-3">
-                                <img className="hand" alt="Hand" src="hand-2.png" />
-                                <img className="removal" alt="Removal" src={mission} />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="vision">
-                        <div className="text-wrapper-10">Our Vision</div>
-                        <p className="revolutionizing">
-                            <span className="span">
-                                Revolutionizing Riding Experiences, One Reservation at a Time.
-                                <br />
-                            </span>
-                            <span className="text-wrapper-9">
-                                <br />
-                                We envision a future where every motorbike owner experiences the thrill of the road without any concerns
-                                about maintenance or service.
-                            </span>
-                        </p>
-                        <img className="img" alt="Removal" src={vision} />
-                    </div>
-                </div>
-                <div className="shops">
-                    <img className="sri-laka-pins" alt="Sri laka pins" src={srilanka} />
-                    <div className="vroom-ville">
-                        <div className="overlap-4">
-                            <div className="overlap-5">
-                                <div className="open-details">
-                                    <div className="overlap-group-4">
-                                        <p className="opens-daily-AM">
-                                            <span className="text-wrapper-11">
-                                                Opens daily 8.00 AM - 5.00 PM
-                                                <br />
-                                                <br />
-                                            </span>
-                                            <span className="text-wrapper-12">
-                                                <br />
-                                            </span>
-                                        </p>
-                                        <div className="group-10">
-                                            <p className="full-services">
-                                                Full Services
-                                                <br />
-                                                Company Services
-                                                <br />
-                                                Repair &amp; Maintenance
-                                            </p>
-                                            <div>
-                                                <i className="bi bi-check2-circle check-perspective" aria-hidden="true" />
-                                                <i className="bi bi-check2-circle-perspective" aria-hidden="true" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="div-2">
-                                    <div className="overlap-group-wrapper">
-                                        <div className="overlap-group-5">
-                                            <button className="text-wrapper-13">Locate Now</button>
-                                        </div>
-                                    </div>
-                                    <div className="overlap-wrapper">
-                                        <div className="overlap-6">
-                                            <button className="text-wrapper-13">Make a Reservation</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p className="div-3">
-                                    <span className="text-wrapper-14">
-                                        No 24 Main Street,
-                                        <br />
-                                        Piyagama
-                                        <br />
-                                        +94 26 555 4623
-                                        <br />
-                                    </span>
-                                    <span className="text-wrapper-15">&nbsp;&nbsp;&nbsp;&nbsp; </span>
-                                    <a  href="your_destination_url" className="text-wrapper-16">
-                                        Get directions
-                                        <br />
-                                    </a>
-                                </p>
-                                <i
-                                    className="bi bi-geo location-perspective"
-                                    alt="Location perspective"></i>
+function Home() {
+  const [animate, setAnimate] = useState(false);
 
-                            </div>
-                            <div className="text-wrapper-17">VroomVille</div>
-                        </div>
-                    </div>
-                    <div className="asphalt-motors">
-                        <div className="overlap-4">
-                            <div className="overlap-7">
-                                <div className="open-details-2">
-                                    <div className="overlap-group-6">
-                                        <p className="opens-daily-AM">
-                                            <span className="text-wrapper-11">
-                                                Opens daily 8.30 AM - 7.00 PM
-                                                <br />
-                                                <br />
-                                            </span>
-                                            <span className="text-wrapper-12">
-                                                <br />
-                                            </span>
-                                        </p>
-                                        <div className="group-11">
-                                            <p className="company-services">
-                                                Company services only
-                                                <br />
-                                                No Repair Services
-                                            </p>
-                                            <div>
-                                                <i
-                                                    className="bi bi-check2-circle check-perspective-4"
-                                                    alt="Check perspective" />
-                                                <i
-                                                    className="bi bi-check2-circle check-perspective-4"
-                                                    alt="Check perspective"
-                                                />
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="div-2">
-                                    <div className="overlap-group-wrapper">
-                                        <div className="overlap-group-5">
-                                            <button className="text-wrapper-13" onClick={handleLocateNowClick}>Locate Now</button>
-                                        </div>
-                                    </div>
-                                    <div className="overlap-wrapper">
-                                        <div className="overlap-6">
-                                            <button className="text-wrapper-13" onClick={handleLocateNowClick}>Make a Reservation</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <i
-                                    className="bi bi-geo location-perspective"
-                                    alt="Location perspective"></i>
-                                <p className="div-3">
-                                    <span className="text-wrapper-14">
-                                        Homagama villa Street,
-                                        <br />
-                                        Ambalangode-06
-                                        <br />
-                                        +94 11 455 4665
-                                        <br />
-                                        &nbsp;&nbsp;&nbsp;&nbsp;{" "}
-                                    </span>
-                                    <a href="your_destination_url" className="text-wrapper-16">
-                                        Get directions
-                                        <br />
-                                    </a>
-                                </p>
-                            </div>
-                            <div className="text-wrapper-18">Asphalt Motors</div>
-                        </div>
-                    </div>
-                    <div className="velocare">
-                        <div className="overlap-4">
-                            <div className="overlap-7">
-                                <div className="open-details-3">
-                                    <div className="overlap-group-6">
-                                        <div className="overlap-group-7">
-                                            <div className="full-services-repair">
-                                                Full services
-                                                <br />
-                                                Repair &amp; Maintenance
-                                            </div>
-                                            <p className="opens-daily-AM">
-                                                <span className="text-wrapper-11">
-                                                    Opens daily 8.00 AM - 6.00 PM
-                                                    <br />
-                                                    <br />
-                                                </span>
-                                                <span className="text-wrapper-12">
-                                                    <br />
-                                                </span>
-                                            </p>
-                                        </div>
-                                        <div>
-
-                                            <i
-                                                className="bi bi-check2-circle check-perspective-6"
-                                                alt="Check perspective" />
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setAnimate(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
 
-                                            <i
-                                                className="bi bi-check2-circle check-perspective-5"
-                                                alt="Check perspective"
-
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="div-2">
-                                    <div className="overlap-group-wrapper">
-                                        <div className="overlap-group-5">
-                                            <button className="text-wrapper-13" onClick={handleLocateNowClick}>
-                                                Locate Now
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div className="overlap-wrapper">
-                                        <div className="overlap-6">
-                                            <button className="text-wrapper-13 " onClick={handleLocateNowClick}>Make a Reservation</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <i
-                                    className="bi bi-geo location-perspective"
-                                    alt="Location perspective"
-
-                                />
-                                <p className="div-3">
-                                    <span className="text-wrapper-14">
-                                        No 64, Galle Street,
-                                        <br />
-                                        Colombo-06
-                                        <br />
-                                        +94 11 455 4665
-                                        <br />
-                                        &nbsp;&nbsp;&nbsp;&nbsp;{" "}
-                                    </span>
-                                    <a href="your_destination_url" className="text-wrapper-16">
-                                        Get directions
-                                        <br />
-                                    </a>
-                                </p>
-                            </div>
-                            <div className="text-wrapper-19">Volecare</div>
-                        </div>
-                    </div>
-                    <div className="text-wrapper-20">1000+ Service Stations</div>
-                    <div className="search-bar">
-
-                        <div className="overlap-8">
-                            <button className="bi bi-search search-btn"></button>
-                            <div className="rectangle" />
-
-                            <input
-                                type="text"
-                                className="text-wrapper-21"
-                                placeholder="Search by city, District or Zip code"
-                            />
-                        </div>
-                    </div>
-
-                </div>
-                <div className="promotions">
-                    <p className="we-re-resetting-bike">We&#39;re resetting bike care standards.</p>
-                    <p className="text-wrapper-22">One Service at a time.</p>
-                    <img className="unsplash-lghmdc" alt="Unsplash lghmdc" src={bike3} />
-                    <div className="overlap-9">
-                        <div className="group-12">
-                            <div className="overlap-group-8">
-                                <img className="ellipse" alt="Ellipse" src="ellipse-5.svg" />
-                                <img className="ellipse-2" alt="Ellipse" src="ellipse-6.svg" />
-                                <div className="text-wrapper-23">10M+</div>
-                            </div>
-                            <div className="text-wrapper-24">50M+</div>
-                        </div>
-                        <div className="group-13">
-                            <div className="overlap-10">
-                                <img className="ellipse-3" alt="Ellipse" src="image.svg" />
-                                <img className="ellipse-4" alt="Ellipse" src="ellipse-6-2.svg" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="text-wrapper-25">Customers</div>
-                    <div className="text-wrapper-26">Services</div>
-                </div>
-                
-                <img className="below-the-nav-bar" alt="Below the nav bar" src="below-the-nav-bar.png" />
-                <div className="frame">
-                    <div className="vector-wrapper">
-                        <i className=" bi bi-card-checklist img-2" alt="Vector" />
-                    </div>
-                    <div className="reserve-wrapper">
-                        <i className="bi bi-pencil-square img-2" alt="Reserve" />
-                    </div>
-                    <div className="place-marker-wrapper">
-                        <i className=" bi bi-geo-alt img-2" alt="Place marker" />
-                    </div>
-                    <div className="payment-history-wrapper">
-                        <i className="bi bi-hourglass-split payment-history" alt="Payment history" />
-                    </div>
-                    <div className="earth-planet-wrapper">
-                        <i className=" bi bi-globe-americas img-2" alt="Earth planet" />
-                    </div>
-                    <div className="text-wrapper-32">Island Reach</div>
-                    <div className="text-wrapper-33">Real Time Update</div>
-                    <div className="text-wrapper-34">Reservation Management</div>
-                    <div className="text-wrapper-35">Multiple Shops Locations</div>
-                    <div className="text-wrapper-36">Reservation History</div>
-                </div>
+  return (
+    <div className="home-carousel">
+      <Carousel>
+        <Carousel.Item>
+          <img src={bike5} className="d-block w-100" alt="First slide" />
+          <Carousel.Caption>
+            <h1>BEST BOOKING SOFTWARE FOR MOTOR BIKE REPAIR SERVICES</h1>
+            <div className="button-container">
+              <button className="carousel-button">Reserve Now
+                <img src={reservenow} alt="Reserve Now Icon" className="reserve-now-icon" />
+              </button>
+              <button className="carousel-button">Register Shop
+                <img src={registershop} alt="Reserve Now Icon" className="reserve-now-icon" />
+              </button>
             </div>
+          </Carousel.Caption>
+
+        </Carousel.Item>
+        <Carousel.Item>
+          <img src={bike6} className="d-block w-100" alt="Second slide" />
+
+          <Carousel.Caption>
+            <h1>REVITIALIZE YOUR BIKE WITH US</h1>
+            <div className="button-container">
+              <button className="carousel-button">Reserve Now
+                <img src={reservenow} alt="Reserve Now Icon" className="reserve-now-icon" />
+              </button>
+              <button className="carousel-button">Register Shop
+                <img src={registershop} alt="Reserve Now Icon" className="reserve-now-icon" />
+              </button>
+            </div>
+          </Carousel.Caption>
+
+        </Carousel.Item>
+        <Carousel.Item>
+
+          <img src={bike5} className="d-block w-100" alt="Third slide" />
+          <Carousel.Caption>
+            <h1>TRUSTED BIKE REPAIRS, READY RIDE!</h1>
+            <div className="button-container">
+              <button className="carousel-button">Reserve Now
+                <img src={reservenow} alt="Reserve Now Icon" className="reserve-now-icon" />
+              </button>
+              <button className="carousel-button">Register Shop
+                <img src={registershop} alt="Reserve Now Icon" className="reserve-now-icon" />
+              </button>
+            </div>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img src={bike5} className="d-block w-100" alt="First slide" />
+          <Carousel.Caption>
+            <h1>BEST BOOKING SOFTWARE FOR MOTOR BIKE REPAIR SERVICES</h1>
+            <div className="button-container">
+              <button className="carousel-button">Reserve Now
+                <img src={reservenow} alt="Reserve Now Icon" className="reserve-now-icon" />
+              </button>
+              <button className="carousel-button">Register Shop
+                <img src={registershop} alt="Reserve Now Icon" className="reserve-now-icon" />
+              </button>
+            </div>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+      </Carousel>
+      <div className="home-body">
+        <img src={bike3} alt="Home body" className="home-body-image" />
+        <div className="home-body-text">
+          <p className="resetting-text">We&#39;re resetting bike care standards.</p>
+          <p>One service at a time.</p>
+          <div className="circles-container">
+            <CircularProgressBar label="10M+" animate={animate} />
+            <CircularProgressBar label="50M+" animate={animate} />
+
+          </div>
+
         </div>
-    )
+        <div className="home-customer-text">
+          <p>Customers</p>
+          <p>Services</p>
+
+        </div>
+      </div>
+      <div class="search-container">
+        <input type="text" class="search-bar" placeholder="Search by City, District, or Zip Code" />
+        <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
+
+        <div className="service-station-container">
+          <p className="service-station-text">1000+ Service Stations</p>
+        </div>
+        <div class="container">
+          <div class="card-container">
+            <div class="card">
+              <div class="details">
+                <div class="column">
+                  <p className="text-heading">Velocare</p>
+                  <p>No.64, Galle Street, Colombo-06</p>
+                  <p>+94114554665</p>
+                  <p>
+                    <img src={location} alt="Location Image" />
+                    <a href="#" className="direction-link">Get Direction</a>
+                  </p>
+                </div>
+                <div class="details-content">
+                  <p>Opens daily 8.00 AM - 6.00 PM</p>
+                  <p><img src={tickmark} alt="Tick Mark" />Full services</p>
+                  <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
+                </div>
+
+                <div class="buttons">
+                  <button className="button-locate">Locate Now</button>
+                  <button className="button-reservation">Make a Reservation</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="details">
+                <div class="column">
+                  <p className="text-heading">VroomVille</p>
+                  <p>No 24 Main Street,
+                    Piyagama</p>
+                  <p>+94 26 555 4623</p>
+                  <p>
+                    <img src={location} alt="Location Image" />
+                    <a href="#" className="direction-link">Get Direction</a>
+                  </p>
+
+                </div>
+                <div class="details-content">
+                  <p>Opens daily 8.00 AM - 6.00 PM</p>
+                  <p><img src={tickmark} alt="Tick Mark" />Full services</p>
+                  <p><img src={tickmark} alt="Tick Mark" />Company Services</p>
+                  <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
+                </div>
+
+                <div class="buttons">
+                  <button className="button-locate">Locate Now</button>
+                  <button className="button-reservation">Make a Reservation</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="details">
+                <div class="column">
+                  <p className="text-heading">Asphalt Motors</p>
+                  <p>Homagama villa Street,
+                    Ambalangode-06</p>
+                  <p>+94 11 455 4665</p>
+                  <p>
+                    <img src={location} alt="Location Image" />
+                    <a href="#" className="direction-link">Get Direction</a>
+                  </p>
+                </div>
+                <div class="details-content">
+                  <p>Opens daily 8.00 AM - 6.00 PM</p>
+                  <p><img src={tickmark} alt="Tick Mark" /> Company Services only</p>
+                  <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
+                </div>
+
+                <div class="buttons">
+                  <button className="button-locate">Locate Now</button>
+                  <button className="button-reservation">Make a Reservation</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="srilanka-image-container">
+          <img src={srilanka} alt="Image" class="srilanka-image" />
+        </div>
+
+
+      </div>
+
+
+    </div>
+  );
 }
 
-export default Home
+export default Home;

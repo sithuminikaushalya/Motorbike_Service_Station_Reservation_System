@@ -1,11 +1,8 @@
 import React from "react";
 
-const Aboutus = () =>{
+function Aboutus(){
     return(
-        <div>
-            <h1>HI</h1>
-        </div>
-    )
+        <h1>Hi</h1>
+    );
 }
-
-export default Aboutus
+export default Aboutus;

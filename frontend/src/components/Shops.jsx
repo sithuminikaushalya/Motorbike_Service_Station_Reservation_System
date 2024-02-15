@@ -1,11 +1,9 @@
 import React from "react";
 
-const Shops = () =>{
+function Shops(){
     return(
-        <div>
-
-        </div>
-    )
+        <h1>Hi</h1>
+    );
 }
 
-export default Shops
+export default Shops;
