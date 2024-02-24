@@ -1,0 +1,40 @@
+/* src/admin/views/AdminDashboard.css */
+
+.admin-dashboard {
+    /* Add your general styles for the admin dashboard container here */
+    display: flex;
+  }
+  
+  .admin-content {
+    /* Add styles for the main content area */
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .dashboard-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .dashboard-option {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    user-select: none;
+  }
+  
+  .dashboard-option:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .dashboard-option.selected {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  .dashboard-content {
+    margin-top: 20px;
+  }
+  

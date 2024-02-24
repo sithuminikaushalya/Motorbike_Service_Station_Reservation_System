@@ -1,0 +1,11 @@
+/* src/admin/views/RightSidebar.css */
+
+.right-sidebar {
+    /* Add your styles for the right sidebar */
+    width: 200px;
+    background-color: #ADE8F4;
+    color: #fff;
+    padding: 10px;
+    height: 100vh;
+  }
+  

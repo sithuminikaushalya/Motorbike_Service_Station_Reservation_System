@@ -1,0 +1,11 @@
+/* src/admin/views/LeftSidebar.css */
+
+.left-sidebar {
+    /* Add your styles for the left sidebar */
+    width: 200px;
+    background-color: #CAF0F8;
+    color: #fff;
+    padding: 10px;
+    height: 100vh;
+  }
+  
