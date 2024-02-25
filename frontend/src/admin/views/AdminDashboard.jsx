@@ -1,5 +1,3 @@
-// src/admin/views/AdminDashboard.jsx
-
 import React, { useState } from 'react';
 import './AdminDashboard.css';
 import LeftSidebar from '../common/LeftSidebar';

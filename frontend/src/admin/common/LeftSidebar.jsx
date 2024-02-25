@@ -1,5 +1,3 @@
-// src/admin/views/leftSidebar.jsx
-
 import React from 'react';
 import './LeftSidebar.css';
 import bikePulseLogo from '../../assets/logo.png';
@@ -8,7 +6,7 @@ import UserManagementIcon from '../../assets/UserManagement.svg';
 import SubscriptionIcon from '../../assets/Subscription.svg';
 import FaultIcon from '../../assets/Category.svg';
 import Account_Setting_Icon from '../../assets/account_setting.svg';
-import DropdownIcon from '../../assets/dropdown.svg'; // Add your dropdown icon
+import DropdownIcon from '../../assets/dropdown.svg'; 
 
 const LeftSidebar = () => {
   return (
