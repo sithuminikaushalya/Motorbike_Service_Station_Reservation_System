@@ -1,3 +1,1 @@
-# This is a platform for motorbike service station website
-
-readme written
+# This is Admin Flow Of the our Project.
