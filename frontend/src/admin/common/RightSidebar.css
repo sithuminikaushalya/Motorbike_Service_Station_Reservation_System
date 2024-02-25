@@ -1,11 +1,18 @@
-/* src/admin/views/RightSidebar.css */
-
 .right-sidebar {
-    /* Add your styles for the right sidebar */
-    width: 200px;
+    width: 80px;
     background-color: #ADE8F4;
     color: #fff;
     padding: 10px;
     height: 100vh;
-  }
-  
+}
+
+.icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

@@ -1,11 +1,70 @@
-/* src/admin/views/LeftSidebar.css */
-
 .left-sidebar {
-    /* Add your styles for the left sidebar */
-    width: 200px;
+    width: 350px;
     background-color: #CAF0F8;
     color: #fff;
     padding: 10px;
     height: 100vh;
   }
-  
+
+
+.logo-container {
+  padding: 20px;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}
+
+.search-bar {
+  padding: 10px;
+  position: center;
+}
+
+.divider {
+  border-top: 1px solid #000;
+  width: 100%;
+}
+
+.white-box {
+  padding: 20px;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.list-item img {
+  width: 24px; /* Adjust the icon size as needed */
+  height: 24px;
+  margin-right: 10px; /* Adjust spacing between icon and text */
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  display: none;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content span {
+  display: block;
+  margin-bottom: 8px;
+  cursor: pointer;
+}

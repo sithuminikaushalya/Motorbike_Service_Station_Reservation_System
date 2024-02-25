@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import './AdminDashboard.css';
-import LeftSidebar from './LeftSidebar';
-import RightSidebar from './RightSidebar';
+import LeftSidebar from '../common/LeftSidebar';
+import RightSidebar from '../common/RightSidebar';
 
 const AdminDashboard = () => {
   const [selectedOption, setSelectedOption] = useState('default');
