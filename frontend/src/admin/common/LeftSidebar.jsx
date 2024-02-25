@@ -8,6 +8,7 @@ import UserManagementIcon from '../../assets/UserManagement.svg';
 import SubscriptionIcon from '../../assets/Subscription.svg';
 import FaultIcon from '../../assets/Category.svg';
 import Account_Setting_Icon from '../../assets/account_setting.svg';
+import DropdownIcon from '../../assets/dropdown.svg'; // Add your dropdown icon
 
 const LeftSidebar = () => {
   return (
@@ -44,10 +45,10 @@ const LeftSidebar = () => {
           <span>Fault Category Management</span>
         </div>
 
-        <div className="divider"></div>
         <div className="list-item dropdown">
           <img src={Account_Setting_Icon} alt="Acount & Setting" />
           <span>Account & Setting</span>
+          <img src={DropdownIcon} alt="Dropdown" className="dropdown-icon" />
           <div className="dropdown-content">
             <span>Profile</span>
             <span>User Managemnt</span>
