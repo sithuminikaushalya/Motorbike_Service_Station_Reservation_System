@@ -1,9 +1,5 @@
-// src/admin/views/RightSidebar.jsx
-
 import React from 'react';
 import './RightSidebar.css';
-
-// Import SVGs
 import notificationIcon from '../../assets/notifications.svg';
 import chatIcon from '../../assets/chat.svg';
 import userIcon from '../../assets/User.svg';
