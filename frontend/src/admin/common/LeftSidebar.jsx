@@ -1,4 +1,3 @@
-// src/common/LeftSidebar.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './LeftSidebar.css';
@@ -49,7 +48,6 @@ const LeftSidebar = () => {
           <img src={DropdownIcon} alt="Dropdown" className="dropdown-icon" />
           <div className="dropdown-content">
             <span>Profile</span>
-            <span>User Managemnt</span>
             <span>Account Setting</span>
             <span>Chat Setting</span>
           </div>

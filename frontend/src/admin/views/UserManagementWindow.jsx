@@ -1,5 +1,3 @@
-// UserManagementWindow.jsx
-
 import React, { useState, useEffect } from 'react';
 import './UserManagementWindow.css';
 import LeftSidebar from '../common/LeftSidebar';
