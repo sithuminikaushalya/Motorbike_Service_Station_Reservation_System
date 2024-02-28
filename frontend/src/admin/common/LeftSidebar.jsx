@@ -1,4 +1,6 @@
+// src/common/LeftSidebar.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './LeftSidebar.css';
 import bikePulseLogo from '../../assets/logo.png';
 import ShopManagementIcon from '../../assets/Shop.svg';
@@ -6,12 +8,11 @@ import UserManagementIcon from '../../assets/UserManagement.svg';
 import SubscriptionIcon from '../../assets/Subscription.svg';
 import FaultIcon from '../../assets/Category.svg';
 import Account_Setting_Icon from '../../assets/account_setting.svg';
-import DropdownIcon from '../../assets/dropdown.svg'; 
+import DropdownIcon from '../../assets/dropdown.svg';
 
 const LeftSidebar = () => {
   return (
     <div className="left-sidebar">
-
       <div className="logo-container">
         <img src={bikePulseLogo} alt="BikePulse Logo" className="logo" />
       </div>
@@ -22,26 +23,25 @@ const LeftSidebar = () => {
 
       <div className="divider"></div>
       <div className="white-box">
-
-        <div className="list-item">
-          <img src={ShopManagementIcon } alt="Shop" />
+        <Link to="/shop-management" className="list-item">
+          <img src={ShopManagementIcon} alt="Shop" />
           <span>Shop Management</span>
-        </div>
+        </Link>
 
-        <div className="list-item">
+        <Link to="/user-management" className="list-item">
           <img src={UserManagementIcon} alt="UserManagement" />
           <span>User Management</span>
-        </div>
+        </Link>
 
-        <div className="list-item">
+        <Link to="/subscription-plans" className="list-item">
           <img src={SubscriptionIcon} alt="Subscription" />
           <span>Subscription Plans Management</span>
-        </div>
+        </Link>
 
-        <div className="list-item">
+        <Link to="/fault-management" className="list-item">
           <img src={FaultIcon} alt="FaultCategory" />
           <span>Fault Category Management</span>
-        </div>
+        </Link>
 
         <div className="list-item dropdown">
           <img src={Account_Setting_Icon} alt="Acount & Setting" />
@@ -54,7 +54,6 @@ const LeftSidebar = () => {
             <span>Chat Setting</span>
           </div>
         </div>
-        
       </div>
     </div>
   );

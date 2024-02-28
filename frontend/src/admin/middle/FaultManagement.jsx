@@ -1,4 +1,5 @@
 // import React, { useState } from 'react';
+// import './FaultManagement.css';
 
 // function FaultManagement() {
 //   const [faults, setFaults] = useState([
@@ -21,19 +22,21 @@
 //   };
 
 //   return (
-//     <div>
-//       <h2>Fault Management</h2>
-//       <div style={{ backgroundColor: '#ccc', padding: '20px', borderRadius: '8px' }}>
+//     <div className="fault-management-container">
+//       {/* Left Sidebar */}
+//       <div className="left-sidebar">
+//         {/* Add any left sidebar content here */}
+//       </div>
+
+//       {/* Middle Content */}
+//       <div className="fault-management-content">
+//         <h2>Fault Management</h2>
 //         {faults.map((fault) => (
-//           <div key={fault.id} style={{ marginBottom: '20px' }}>
+//           <div key={fault.id} className="fault-item">
 //             <h3>{fault.name}</h3>
-//             <form>
+//             <form className="fault-form">
 //               <label>Fault:</label>
-//               <input
-//                 type="text"
-//                 value={fault.name}
-//                 readOnly
-//               />
+//               <input type="text" value={fault.name} readOnly />
 //               <br />
 //               <label>Option 1:</label>
 //               <input
@@ -59,8 +62,15 @@
 //           </div>
 //         ))}
 //         <div>
-//           <button onClick={handleSave}>Save</button>
+//           <button className="save-button" onClick={handleSave}>
+//             Save
+//           </button>
 //         </div>
+//       </div>
+
+//       {/* Right Sidebar */}
+//       <div className="right-sidebar">
+//         {/* Add any right sidebar content here */}
 //       </div>
 //     </div>
 //   );
