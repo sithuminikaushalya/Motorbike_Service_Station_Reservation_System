@@ -14,6 +14,8 @@ const FaultManagementWindow = () => {
     }))
   );
 
+  const [editMode, setEditMode] = useState(false);
+
   const handleInputChange = (id, field, value) => {
     setFaults((prevFaults) =>
       prevFaults.map((fault) => (fault.id === id ? { ...fault, [field]: value } : fault))
@@ -21,7 +23,8 @@ const FaultManagementWindow = () => {
   };
 
   const handleSave = () => {
-    console.log('Faults saved:', faults);
+    setEditMode(false);
+    alert('Faults saved!');
   };
 
   return (
@@ -38,6 +41,7 @@ const FaultManagementWindow = () => {
                 type="text"
                 value={fault.name}
                 onChange={(e) => handleInputChange(fault.id, 'name', e.target.value)}
+                readOnly={!editMode}
               />
               <br />
               <label>Option 1:</label>
@@ -45,6 +49,7 @@ const FaultManagementWindow = () => {
                 type="text"
                 value={fault.option1}
                 onChange={(e) => handleInputChange(fault.id, 'option1', e.target.value)}
+                readOnly={!editMode}
               />
               <br />
               <label>Option 2:</label>
@@ -52,6 +57,7 @@ const FaultManagementWindow = () => {
                 type="text"
                 value={fault.option2}
                 onChange={(e) => handleInputChange(fault.id, 'option2', e.target.value)}
+                readOnly={!editMode}
               />
               <br />
               <label>Option 3:</label>
@@ -59,15 +65,21 @@ const FaultManagementWindow = () => {
                 type="text"
                 value={fault.option3}
                 onChange={(e) => handleInputChange(fault.id, 'option3', e.target.value)}
+                readOnly={!editMode}
               />
             </form>
           </div>
         ))}
         <div className="fault-management-buttons">
-          <button className="save-button" onClick={handleSave}>
+          <button
+            className={`edit-button ${editMode ? 'active' : ''}`}
+            onClick={() => setEditMode(!editMode)}
+          >
+            Edit
+          </button>
+          <button className="save-button" onClick={handleSave} disabled={!editMode}>
             Save
           </button>
-          <button className="edit-button">Edit</button>
         </div>
       </div>
 

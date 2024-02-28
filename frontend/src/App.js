@@ -16,6 +16,7 @@ const App = () =>{
         <Route path="/fault-management" element={<FaultManagementWindow />} />
         <Route path="/user-management" element={<UserManagementWindow />} />
         <Route path="/shop-management" element={<ShopManagementWindow />} />
+        
       </Routes>
     </Router>
 
