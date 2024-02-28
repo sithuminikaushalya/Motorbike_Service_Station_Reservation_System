@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './FaultManagementWindow.css'; // Add your CSS file for FaultManagementWindow
+import './FaultManagementWindow.css'; 
 import LeftSidebar from '../common/LeftSidebar';
 import RightSidebar from '../common/RightSidebar';
 

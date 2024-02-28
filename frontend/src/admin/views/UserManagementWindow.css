@@ -1,0 +1,47 @@
+.user-management {
+    display: flex;
+    height: 100vh;
+}
+
+.left-sidebar {
+    width: 350px;
+    background-color: #CAF0F8;
+    color: #fff;
+    padding: 10px;
+    height: 100vh;
+}
+
+.user-management-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-left: 350px;
+    margin-right: 100px;
+    padding: 20px;
+}
+
+.user-management-content h2 {
+    margin-top: 10px;
+    margin-bottom: 20px; 
+}
+
+.user-list {
+    overflow-y: auto; /* Enable vertical scroll if there are many users */
+}
+
+.user-item {
+    background-color: #F1F4F7;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.right-sidebar {
+    width: 80px;
+    background-color: #ADE8F4;
+    color: #fff;
+    padding: 10px;
+    height: 100vh;
+}
