@@ -47,9 +47,15 @@ const LeftSidebar = () => {
           <span>Account & Setting</span>
           <img src={DropdownIcon} alt="Dropdown" className="dropdown-icon" />
           <div className="dropdown-content">
-            <span>Profile</span>
-            <span>Account Setting</span>
-            <span>Chat Setting</span>
+            <Link to="/profile">
+              <span>Profile</span>
+            </Link>
+            <Link to="/account-setting">
+              <span>Account Setting</span>
+            </Link>
+            <Link to="/chat-setting">
+              <span>Chat Setting</span>
+            </Link>
           </div>
         </div>
       </div>

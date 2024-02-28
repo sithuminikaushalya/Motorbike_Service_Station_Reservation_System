@@ -7,6 +7,9 @@ import UserManagementWindow from "./admin/views/UserManagementWindow";
 import ShopManagementWindow from "./admin/views/ShopManagementWindow";
 import SubscriptionPlansManagementWindow from "./admin/views/SubscriptionPlansManagamentWindow";
 import AdminHomePage from "./admin/views/AdminHomePage";
+import AdminProfileWindow from "./admin/views/AdminprofileWindow";
+import AccountSettingWindow from "./admin/views/AccountSettingWindow";
+import ChatSettingWindow from "./admin/views/ChatSettingWindow";
 
 
 const App = () =>{
@@ -20,6 +23,9 @@ const App = () =>{
         <Route path="/user-management" element={<UserManagementWindow />} />
         <Route path="/shop-management" element={<ShopManagementWindow />} />
         <Route path="/subscription-plans" element={<SubscriptionPlansManagementWindow />} />
+        <Route path="/profile" element={<AdminProfileWindow />} />
+        <Route path="/account-setting" element={<AccountSettingWindow />} />
+        <Route path="/chat-setting" element={<ChatSettingWindow />} />
       </Routes>
     </Router>
 
