@@ -1,12 +1,19 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import './navbar.css';
-import logoImage from '../../src/assets/bike2.png'
+import logoImage from '../../src/assets/bike2.png';
+import { ReactComponent as ProfileIcon } from '../assets/profile.svg';
+
 
 
 
 function Navbar() {
+
+    const handleLoginClick = () => {
+     
+    }
+    
     return (
         <div className="navbar-container">
             <div className="navbar-logo">
@@ -17,8 +24,8 @@ function Navbar() {
                 <Link to="/" className="nav-link">Home</Link>
                 <Link to="/aboutus" className="nav-link">About us</Link>
                 <Link to="/shops" className="nav-link">Shops</Link>
-                <button className="login-button">LOGIN</button>
-                <i className="bi-bi-person-circle" />
+                <Link to="/login" className="login-button" style={{ textDecoration: 'none' }} >LOGIN</Link>
+                <ProfileIcon className="profile" />
             </div>
             
         </div>
