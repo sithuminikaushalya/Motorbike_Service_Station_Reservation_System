@@ -1,0 +1,55 @@
+.footer-container{
+    background-color: black !important;
+    width: 100%;
+    margin-top: 5%;
+   
+}
+.footer-display{
+    display: flex;
+
+}
+.footer-section1,
+.footer-section2 {
+  flex: 1;
+}
+
+ .section1-text{
+    justify-content: end;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    color: #FFFFFF;
+    margin-left: 20px;
+ 
+ }
+ .footer-followus{
+    font-family: "Poppins", sans-serif;
+    color: #FFFFFF; 
+    margin-left: 20px; 
+ }
+.company-text,
+.resources-text {
+    font-family: "Poppins", sans-serif;
+    color: #FFFFFF;
+}
+.footer-social-media {
+    width: 40px; 
+    height: auto; 
+    margin-right: 5px;
+    margin-left: 20px;
+  }
+ .footer-section2{
+    margin-left: 5px;
+    margin-top: 2%;
+ } 
+ .footer-section3{
+    margin-top: 2%;
+    margin-right: 30px;
+ }
+ .footer-contactus-text,
+ .business-address-text,
+ .business-address
+ {
+    color: #FFFFFF;
+    font-weight: 600;
+ }
+  
