@@ -1,4 +1,5 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
+import '../components/RightBar';
 import './shops.css';
 import shopImg from "../assets/shops_img.png"
 import velocare from "../assets/velocare.png"
@@ -6,15 +7,35 @@ import location from "../assets/location.png";
 import star2 from "../assets/star2.png";
 import tickmark from "../assets/tickmark.png";
 import { useNavigate } from "react-router-dom";
+import Rightbar from "../components/RightBar";
+
 
 
 function Shops() {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
     const handleViewButtonClick = () => {
         navigate("/shopdashboard");
     }
+    useEffect(() => {
+        // Your logic to check if user is logged in (e.g., checking session, local storage, etc.)
+        const userIsLoggedIn = checkIfUserIsLoggedIn(); // Implement this function
+    
+        // Update state based on whether user is logged in
+        setIsLoggedIn(userIsLoggedIn);
+      }, []);
+    
+      // Function to check if user is logged in (replace this with your actual authentication logic)
+      const checkIfUserIsLoggedIn = () => {
+        // Your authentication logic here (e.g., checking session, local storage, etc.)
+        // Return true if user is logged in, false otherwise
+        // Example:
+        return localStorage.getItem("token") ? true : false;
+      };
     return (
         <div className="shops-container">
+       
+       {isLoggedIn && <Rightbar />}
             <div className="image-section">
                 <img src={shopImg} className="full-width-image" />
 

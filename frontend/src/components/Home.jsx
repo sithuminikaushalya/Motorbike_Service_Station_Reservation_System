@@ -28,6 +28,7 @@ import star from "../assets/star.png";
 import { Carousel } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import './home.css';
+import { useNavigate } from "react-router-dom";
 
 import CircularProgressBar from './CircularProgressBar';
 
@@ -53,6 +54,10 @@ function Home() {
   const handleCardHovered =(index) =>{
     setActiveIndex(index);
   };
+  const navigate = useNavigate();
+  const handleReserveClick = () => {
+      navigate("/reservation");
+  }
 
 
 
@@ -65,8 +70,8 @@ function Home() {
           <Carousel.Caption>
             <h1>BEST BOOKING SOFTWARE FOR MOTOR BIKE REPAIR SERVICES</h1>
             <div className="button-container">
-              <button className="carousel-button">Reserve Now
-                <img src={reservenow} alt="Reserve Now Icon" className="reserve-now-icon" />
+              <button className="carousel-button" onClick={handleReserveClick}>Reserve Now
+                <img src={reservenow}  alt="Reserve Now Icon" className="reserve-now-icon" />
               </button>
               <button className="carousel-button">Register Shop
                 <img src={registershop} alt="Reserve Now Icon" className="reserve-now-icon" />

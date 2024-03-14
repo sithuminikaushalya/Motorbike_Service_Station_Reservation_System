@@ -46,6 +46,9 @@ import Register from "./components/Register";
 import Register2 from "./components/Register2";
 import Register3 from "./components/Register3";
 import ForgetPw from "./components/ForgetPw";
+import FaultSuggest from "./components/FaultSuggest";
+import ShopsNavbar from "./components/ShopsNavbar";
+import Reservation from "./components/Reservation";
 
 //import { Navbar } from "react-bootstrap";
 
@@ -54,6 +57,7 @@ function App() {
     <Router>
    <div>
    <Navbar/>
+    
    <Routes>
    
    
@@ -65,6 +69,8 @@ function App() {
     <Route path="/register2" element={<Register2/>}/>
     <Route path="/register3" element={<Register3/>}/>
     <Route path="/forgetpw" element={<ForgetPw/>}/>
+    <Route path="/faultsuggest" element={<FaultSuggest/>}/>
+    <Route path="/reservation" element={<Reservation/>}/>
    
    
     </Routes>
