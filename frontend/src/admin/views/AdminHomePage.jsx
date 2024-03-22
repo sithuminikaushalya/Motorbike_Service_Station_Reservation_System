@@ -1,27 +1,66 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './AdminHomePage.css';
+import axios from "axios";
 
 const AdminHomePage = () => {
+
   const navigate = useNavigate(); // Initialize useNavigate
 
-  const [loginData, setLoginData] = useState({ email: '', password: '' });
-  const [signupData, setSignupData] = useState({ email: '', password: '' });
+   //const [loginData, setLoginData] = useState({ });
+  // const [signupData, setSignupData] = useState({ email: '', password: '' });
+  const [adminName, setAdminName] = useState("");
+  const [adminPassword, setAdminPassword] = useState("");
 
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();
-    // Add your login logic here
-    console.log('Login submitted:', loginData);
+ 
+  // Use the following code to handle form submissions 
+
+  async function saveAdmin(event) {
+    event.preventDefault();
+    try {
+      await axios.post("http://localhost:8095/admin/save", {
+      adminName: adminName,
+      adminPassword: adminPassword,
+      });
+      alert("Admin Registation Successfully");
+      navigate('/admin/dashboard');
+    } catch (err) {
+      alert(err);
+    }
+  }
+
+  async function loginAdmin(event) {
+    event.preventDefault();
+    try {
+      await axios.post("http://localhost:8095/admin/login", {
+      adminName: adminName,
+      adminPassword: adminPassword,
+      });
+      alert("Admin Login Successfully");
+      navigate('/admin/dashboard');
+    } catch (err) {
+      alert(err);
+    }
+  }
+
+  // const handleSignupSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Add your signup logic here
+  //   console.log('Signup submitted:', signupData);
+  // };
+
+
+
+  // const handleLoginSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Add your login logic here
+  //   console.log('Login submitted:', loginData);
 
     // Assuming successful login, navigate to the admin dashboard
-    navigate('/admin/dashboard');
-  };
+     
+  // };
 
-  const handleSignupSubmit = (e) => {
-    e.preventDefault();
-    // Add your signup logic here
-    console.log('Signup submitted:', signupData);
-  };
+ 
 
   return (
     <div className="admin-home-page">
@@ -30,38 +69,52 @@ const AdminHomePage = () => {
         <h1 className="admin-title">Admin Portal</h1>
         
         <div className="forms-container">
-          <form className="login-form" onSubmit={handleLoginSubmit}>
+          <form className="login-form" >
+          
             <h2>Login</h2>
             <label>Email:</label>
             <input
-              type="email"
-              value={loginData.email}
-              onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
+              type="text"
+              value={adminName}
+              onChange={(e) => setAdminName(e.target.value)}
             />
             <label>Password:</label>
             <input
               type="password"
-              value={loginData.password}
-              onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
+              value={adminPassword}
+              onChange={(e) => setAdminPassword(e.target.value)}
             />
+ HEAD
             <button type="submit" className="home-button">Login</button>
+
+            <button type="submit" onClick={loginAdmin}>Login</button>
+ dd88de1c27e1b1f58ba1cc29762570f02782f861
           </form>
 
-          <form className="signup-form" onSubmit={handleSignupSubmit}>
+          <form className="signup-form" >
             <h2>Sign Up</h2>
-            <label>Email:</label>
+            <label>Admin Name:</label>
             <input
-              type="email"
-              value={signupData.email}
-              onChange={(e) => setSignupData({ ...signupData, email: e.target.value })}
+              // type="email"
+              // value={signupData.email}
+              // onChange={(e) => setSignupData({ ...signupData, email: e.target.value })}
+            
+            type="text"
+            value={adminName}
+            onChange={(e) => setAdminName(e.target.value)}
             />
+
             <label>Password:</label>
             <input
               type="password"
-              value={signupData.password}
-              onChange={(e) => setSignupData({ ...signupData, password: e.target.value })}
+              value={adminPassword}
+              onChange={(e) => setAdminPassword(e.target.value)}
             />
+ HEAD
             <button type="submit" className="home-button">Sign Up</button>
+
+            <button type="submit" onClick={saveAdmin}>Sign Up</button>
+ dd88de1c27e1b1f58ba1cc29762570f02782f861
           </form>
         </div>
       </div>
