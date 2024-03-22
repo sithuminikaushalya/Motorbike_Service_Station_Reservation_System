@@ -1,15 +1,15 @@
 .fault-management {
     display: flex;
-    height: 100vh;
+    height: 100%;
 }
 
-.left-sidebar {
+/* .left-sidebar {
     width: 350px;
     background-color: #CAF0F8;
     color: #fff;
     padding: 10px;
     height: 100vh;
-}
+} */
 
 .fault-management-content {
     flex: 1;
@@ -65,7 +65,7 @@
     color: #fff;
     padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 15px;
     cursor: pointer;
     margin-bottom: 20px;
 }

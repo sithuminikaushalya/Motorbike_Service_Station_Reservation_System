@@ -1,56 +1,73 @@
-.user-management {
-    display: flex;
-    height: 100vh;
-  }
-  
-  .left-sidebar {
-    width: 350px;
-    background-color: #CAF0F8;
-    color: #fff;
-    padding: 10px;
-    height: 100vh;
-  }
-  
-  .user-management-content {
+.user-management-content {
     flex: 1;
-    display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 350px;
-    margin-right: 100px;
+    margin-left: 460px;
+    /* margin-right: 100px; */
     padding: 20px;
-  }
+}
   
-  .user-management-content h2 {
+.user-management-content h2 {
     margin-top: 10px;
     margin-bottom: 20px;
-  }
+    text-align: center;
+    margin-bottom: 20px;
+}
   
-  .user-list {
+.user-list {
     overflow-y: auto;
-    width: 70%;
+    width: 80%;
     margin-top: 10px;
-  }
+    
+}
   
-  .user-item {
-    background-color: #F1F4F7;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
+.user-item {
+  width: 100%;
+  align-self: center;
+  background-color: #F1F4F7;
+  margin-bottom: 20px;
+  border: 0.5px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.3s, background-color 0.3s; 
+}
+  
+.user-item:hover {
+  transform: translateY(-5px); 
+  background: linear-gradient(to bottom, #eaeede, #9baab7);
+}
+
+
+.user-item p {
+  margin-bottom: 10px;
+  transition: color 0.3s; 
+}
+
+.user-item p:hover {
+  color: rgb(24, 74, 9); 
+}
+
+
+@media screen and (max-width: 768px) {
+  .user-management-content {
+    margin-left: 0; 
+    margin-right: 50; 
+  }
+
+  .shop-list {
+    width: 100%; 
+  }
+
+  .sidebar-icons {
     display: flex;
-    justify-content: space-between; 
-  }
-  
-  .user-item p {
-    margin-bottom: 10px;
-  }
-  
-  .right-sidebar {
-    width: 80px;
-    background-color: #ADE8F4;
-    color: #fff;
+    justify-content: flex-end;
     padding: 10px;
-    height: 100vh;
   }
+
+  .sidebar-icon {
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+}
   

@@ -48,7 +48,7 @@ const AccountSettingWindow = () => {
 
           {/* Add more fields for account settings */}
           
-          <button type="submit">Save Settings</button>
+          <button type="submit" className='setting-button'>Save Settings</button>
         </form>
       </div>
 

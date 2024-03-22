@@ -28,10 +28,10 @@ const UserManagementWindow = () => {
       <LeftSidebar />
 
       <div className="user-management-content">
-        <h2>User Management</h2>
+        <h2 username="user-management-heading" >User Management</h2>
 
         {users.length === 0 ? (
-          <p>No users found.</p>
+          <p className='user-management-no-users'>No users found.</p>
         ) : (
           <div className="user-list">
             {users.map((user) => (

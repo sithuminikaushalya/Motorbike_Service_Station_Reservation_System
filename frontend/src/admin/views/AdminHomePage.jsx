@@ -44,7 +44,7 @@ const AdminHomePage = () => {
               value={loginData.password}
               onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
             />
-            <button type="submit">Login</button>
+            <button type="submit" className="home-button">Login</button>
           </form>
 
           <form className="signup-form" onSubmit={handleSignupSubmit}>
@@ -61,7 +61,7 @@ const AdminHomePage = () => {
               value={signupData.password}
               onChange={(e) => setSignupData({ ...signupData, password: e.target.value })}
             />
-            <button type="submit">Sign Up</button>
+            <button type="submit" className="home-button">Sign Up</button>
           </form>
         </div>
       </div>

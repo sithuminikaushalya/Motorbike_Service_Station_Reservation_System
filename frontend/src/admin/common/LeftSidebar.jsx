@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaBars } from 'react-icons/fa'; // Import the hamburger icon
 import './LeftSidebar.css';
 import bikePulseLogo from '../../assets/logo.png';
 import ShopManagementIcon from '../../assets/Shop.svg';
@@ -7,11 +8,22 @@ import UserManagementIcon from '../../assets/UserManagement.svg';
 import SubscriptionIcon from '../../assets/Subscription.svg';
 import FaultIcon from '../../assets/Category.svg';
 import Account_Setting_Icon from '../../assets/account_setting.svg';
-import DropdownIcon from '../../assets/dropdown.svg';
 
 const LeftSidebar = () => {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+  const handleToggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <div className="left-sidebar">
+    <div className={`left-sidebar ${isSidebarOpen ? 'open' : ''}`}>
+      {/* Hamburger Icon for toggling the sidebar on smaller screens */}
+      <div className="hamburger-icon" onClick={handleToggleSidebar}>
+        <FaBars />
+      </div>
+
+      {/* Sidebar Content */}
       <div className="logo-container">
         <img src={bikePulseLogo} alt="BikePulse Logo" className="logo" />
       </div>
@@ -45,7 +57,6 @@ const LeftSidebar = () => {
         <div className="list-item dropdown">
           <img src={Account_Setting_Icon} alt="Acount & Setting" />
           <span>Account & Setting</span>
-          <img src={DropdownIcon} alt="Dropdown" className="dropdown-icon" />
           <div className="dropdown-content">
             <Link to="/profile">
               <span>Profile</span>

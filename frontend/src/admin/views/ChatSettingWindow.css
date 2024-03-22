@@ -1,3 +1,5 @@
+/* ChatSettingWindow.css */
+
 .chat-setting-window {
     display: flex;
     height: 100vh;
@@ -21,15 +23,25 @@
 }
 
 label {
-    display: block;
+    display: flex;
+    align-items: center;
     margin-bottom: 16px;
 }
 
-input {
+.checkbox-container {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-label {
+    margin-left: 8px;
+}
+
+input[type="checkbox"] {
     margin-right: 8px;
 }
 
-button {
+.chat-btn {
     background-color: #2467c5;
     color: #fff;
     padding: 10px 20px;
@@ -38,6 +50,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.chat-btn:hover {
     background-color: #45a049;
 }

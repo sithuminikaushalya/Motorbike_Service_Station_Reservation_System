@@ -3,10 +3,10 @@
     top: 0;
     right: 0;
     width: 80px;
-    background-color: #ADE8F4;
+    background: linear-gradient(to bottom, #ced1d2, #e3f7fb, #aee0f0, #87b8e9);
     color: #fff;
     padding: 10px;
-    height: 100vh;
+    height: 100%;
   }
   
   .icon {
@@ -20,3 +20,37 @@
     cursor: pointer;
   }
   
+  /* .right-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80px;
+    background: linear-gradient(to bottom, #ced1d2, #e3f7fb, #aee0f0, #87b8e9);
+    color: #fff;
+    padding: 10px;
+    height: 100vh;
+    transition: background-color 0.3s ease; //Add transition for smooth color change 
+} 
+
+.icon {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease; // Add transition for smooth color change 
+}
+
+// Change opacity on hover 
+.icon:hover {
+    opacity: 0.8;
+}
+
+// Add background color for the selected icon 
+.icon.selected {
+    background-color: #fff; // Add your preferred background color 
+    color: #000; // Adjust text color for better visibility 
+} */

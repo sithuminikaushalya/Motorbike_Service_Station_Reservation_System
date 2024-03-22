@@ -1,3 +1,5 @@
+// ChatSettingWindow.js
+
 import React, { useState } from 'react';
 import './ChatSettingWindow.css';
 import LeftSidebar from '../common/LeftSidebar';
@@ -6,10 +8,12 @@ import RightSidebar from '../common/RightSidebar';
 const ChatSettingWindow = () => {
   // State to manage chat settings
   const [chatSettings, setChatSettings] = useState({
-    // Add your chat settings fields here
     notifications: true,
     sound: true,
-    // ...
+    chatInbox: true,
+    unreadMessages: true,
+    deletedMessages: false,
+    // Add more chat settings as needed
   });
 
   const handleChatSettingsUpdate = (e) => {
@@ -46,9 +50,40 @@ const ChatSettingWindow = () => {
             Enable Sound
           </label>
 
-          {/* Add more fields for chat settings */}
+          <label>
+            <input
+              type="checkbox"
+              checked={chatSettings.chatInbox}
+              onChange={(e) => setChatSettings({ ...chatSettings, chatInbox: e.target.checked })}
+            />
+            Show Chat Inbox
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              checked={chatSettings.unreadMessages}
+              onChange={(e) =>
+                setChatSettings({ ...chatSettings, unreadMessages: e.target.checked })
+              }
+            />
+            Show Unread Messages
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              checked={chatSettings.deletedMessages}
+              onChange={(e) =>
+                setChatSettings({ ...chatSettings, deletedMessages: e.target.checked })
+              }
+            />
+            Show Deleted Messages
+          </label>
+
+          {/* Add more fields for additional chat settings */}
           
-          <button type="submit">Save Settings</button>
+          <button type="submit" className='chat-btn'>Save Settings</button>
         </form>
       </div>
 
