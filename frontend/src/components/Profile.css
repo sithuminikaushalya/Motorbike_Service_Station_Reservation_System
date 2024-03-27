@@ -1,0 +1,25 @@
+
+
+.icon-user{
+    margin-left: 50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    
+    
+}
+.input-group-reserve-profile:first-child input {
+    margin-right: 20%; 
+}
+.input-group-reserve-profile{
+    margin-left: 5%;
+    flex-basis: calc(20% - 10px);
+    position: relative;
+
+    
+}
+.input-group-reserve-profile input {
+    width: 100%; 
+    border: none;
+    height: 5%;
+ 
+}

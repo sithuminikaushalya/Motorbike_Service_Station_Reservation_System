@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*body {
+    background: #f2f2f2;
+}
+
+h1 {
+    font-size: 120px;
+    text-align: center;
+    color: rgba(255, 255, 255, .4);
+}*/
+
+.parallax-1 {
+    background: url('../assets/backimg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.parallax-2 {
+    background: url('../assets/SriLanka.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.parallax-3 {
+    background: url('../assets/backimg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.parallax-inner {
+    padding: 10% 0;
+}
+
+/*h2 {
+    font-size: 32px;
+    color: #555;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 20px 0 10px;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+    text-align: justify;
+    line-height: 30px;
+    margin: 0 50px 40px;
+}
+
+p:nth-of-type(2),
+p:nth-of-type(3) {
+    margin: 40px 50px;
+}*/
+.body{
+    width: 100%;
+    min-height: 100vh;
+}
+
+.homen-banner{
+    width: 100%;
+    height: 100vh;
+    background : url(../assets/backimg3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: grid;
+    place-items: center ;
+
+}
+
+.homen-banner::before{
+
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.9),rgba(0,0,0,0.65),transparent);
+
+}
+.homen-banner .homen-container{
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.homen-banner .homen-container .homen-text{
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    width: 600px;
+}
+
+.homen-banner .homen-container .homen-text h1{
+    font-size: 4.5rem;
+    padding-bottom: 1rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+
+
+.homen-banner .homen-container .homen-text p{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+.homen-banner .homen-container .homen-text a{
+    display: inline-block;
+    padding: 10px 30px;
+    border: 2px solid red;
+    background: transparent;
+    color: red;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.homen-banner .homen-container .homen-text a:nth-child(2){
+    background:red;
+    color: #fff;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem 0;
+  }
+  
+  .card {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .img-box {
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .img-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .card-heading {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+ 
+  .home-about-container {
+    width: 100%;
+    background: #f9f9f9;
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-about-text {
+    width: 80%;
+    color: #000;
+    align-items: center;
+  
+}
+
+.home-about-text h1 {
+    font-size: 3.5rem;
+    padding-bottom: 2rem;
+}
+
+.home-about-text h1 span {
+    color: red;
+}
+
+.home-about-text p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.home-about-image{
+    width: 10%; 
+    height: auto; 
+    border-radius: 8px;
+}

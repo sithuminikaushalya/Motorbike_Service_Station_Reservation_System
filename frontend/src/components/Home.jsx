@@ -240,6 +240,7 @@ function Home() {
 
       </div>
       <div className="services-container">
+      
         <p className="services-heading">Services We Offer</p>
         <div  className="horizontal-scroll-container" data-ride="carousel">
           <div className="card-horizontal" onMouseEnter={() => {handleCardHover(0); handleCardHovered(0)}}>
@@ -293,6 +294,8 @@ function Home() {
         </div>
       </div>
       <div className="vision-container">
+    
+      
   <div>
     <p className="vision-text">Our Vision</p>
     <p className="vision-revolutionize">Revolutionizing Riding Experiences, One Reservation at a Time.</p>
@@ -302,10 +305,14 @@ function Home() {
   <div className="vision-img">
     <img src={vision} alt="Vision"/>
   </div>
+ 
 </div>
 <div className="mission-container">
+<div className="services-backimg"></div>
+
  
   <div className="mission-content">
+  
     <div className="mission-img">
       <img src={mission} alt="Mission"/>
     </div>
@@ -319,6 +326,7 @@ function Home() {
   </div>
 </div>
 <div className="testimonial">
+
 <div className="testimonial-heading">
 <p>Why Our Services Capture <br></br>Hearts and Pedals</p>
 
@@ -332,6 +340,7 @@ function Home() {
             </p>
           </div>
           <div className="people-images">
+          
             <div className="person">
               <img src={person1} alt="Person 1" className="rounded-image"/>
               <div className="stars">
@@ -395,7 +404,10 @@ function Home() {
 
    
 </div>
- <div className="services-footer">
+ <section className="services-footer">
+ 
+
+
       <div className="services-footer-container">
         <div className="service-item">
           <img src={island} alt="Island Research" />
@@ -418,7 +430,9 @@ function Home() {
           <p>Reservation History</p>
         </div>
       </div>
-    </div>
+    </section>
+
+
 
 
 

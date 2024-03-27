@@ -49,6 +49,10 @@ import ForgetPw from "./components/ForgetPw";
 import FaultSuggest from "./components/FaultSuggest";
 import ShopsNavbar from "./components/ShopsNavbar";
 import Reservation from "./components/Reservation";
+import Profile from "./components/Profile";
+import Settings from "./components/Settings";
+import Parallax from "./components/Parallax";
+
 
 //import { Navbar } from "react-bootstrap";
 
@@ -71,6 +75,12 @@ function App() {
     <Route path="/forgetpw" element={<ForgetPw/>}/>
     <Route path="/faultsuggest" element={<FaultSuggest/>}/>
     <Route path="/reservation" element={<Reservation/>}/>
+    <Route path="/profile" element={<Profile/>}/>
+    <Route path="/account-setting" element={<Settings/>}/>
+    <Route path="/parallax" element={<Parallax/>}/>
+   
+    
+
    
    
     </Routes>

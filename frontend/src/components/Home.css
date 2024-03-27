@@ -529,6 +529,8 @@ align-items: flex-start;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+ 
+ 
 }
 
 .vision-text{
@@ -543,6 +545,7 @@ align-items: flex-start;
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 6%;
+
 }
 .mission-text{
   font-family: "Poppins", sans-serif;
@@ -687,7 +690,8 @@ align-items: flex-start;
 .services-footer {
   width: 100%;
   padding: 20px 0;
-
+  position: relative;
+  overflow: hidden;
 }
 
 .services-footer-container {
@@ -696,6 +700,8 @@ align-items: flex-start;
   align-items: center;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
+  position: relative; /* This might not be necessary */
+  z-index: 1;
 }
 
 .service-item {
@@ -704,16 +710,15 @@ align-items: flex-start;
   width: 150px;
   border-radius: 10px;
 }
+
 .service-item:hover {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
 }
-
 
 .service-item img {
   width: 50px;
   height: 50px;
   border-radius: 10px;
- 
   margin-bottom: 10px;
 }
 
@@ -721,3 +726,23 @@ align-items: flex-start;
   color: #333;
   font-size: 14px;
 }
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
+  z-index: 0; /* Ensure the overlay is behind the content */
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  color: #ffffff;
+}
+
+

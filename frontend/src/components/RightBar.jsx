@@ -16,7 +16,9 @@ const Rightbar = () => {
         <Link to="/profile" className="icon-link">
           <img className="icon" src={userIcon} alt="User" />
         </Link>
+        <Link to="/notification" className="icon-link">
         <img className="icon" src={notificationIcon} alt="Notification" />
+        </Link>
   
         <Link to="/chat-setting" className="icon-link">
           <img className="icon" src={chatIcon} alt="Chat" />

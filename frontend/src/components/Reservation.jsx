@@ -3,10 +3,12 @@ import './Reservation.css';
 import date from "../assets/date.png";
 import time from "../assets/time.png";
 import Rightbar from "./RightBar";
+import verification from "../assets/verification.png";
 
 function Reservation(){
     return(
         <div className="reservation-container">
+        <div className="reservation-background"></div>
             <Rightbar/>
             <div className="reservation-form">
             <p className="suggestion-form-text">Get Started</p>
@@ -122,6 +124,17 @@ function Reservation(){
       
     </div>
 </div>
+   <div className="input-group-reserve">
+    <label htmlFor="payment">Payment Method</label>
+    <div className="input-with-image">
+        <select id="availabletime">
+            <option value="morning">Online</option>
+            <option value="afternoon">Cash</option>
+           
+        </select>
+      
+    </div>
+</div>
             <div className="input-group-reserve">
                 <label htmlFor="availabletime">Additional Comment</label>
                 <div className="comment-container-reserve">
@@ -133,7 +146,15 @@ function Reservation(){
                 
 
             </div>
+
             </div>
+            <div className="checkbox-container">
+                        <input type="checkbox" id="robotCheckbox" />
+                        <label htmlFor="robotCheckbox">I am not a robot</label>
+                        <img src={verification} alt="Robot" className="robot-image" />
+                        
+                    </div>
+                    <button type="submit" className="submit-button-reserve">Submit</button>
             </div>
         </div>
 
