@@ -12,10 +12,22 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 import person1 from "../assets/person1.png";
-import person2 from "../assets/person2.png";
-import person3 from "../assets/person3.png";
-import Swiper from 'swiper';
-import 'swiper/swiper-bundle.css'; 
+
+
+//import '../../node_modules/swiper/swiper-bundle.min.js';
+//import '../../node_modules/swiper/swiper-bundle.min.css';
+
+//import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+
+//import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
 
 
 
@@ -25,6 +37,7 @@ import 'swiper/swiper-bundle.css';
 
 
 function Parallax() {
+
   useEffect(() => {
     const swiper = new Swiper('.slide-content', {
         slidesPerView: 3,
@@ -57,11 +70,7 @@ function Parallax() {
     return () => {
       swiper.destroy(); 
   };
-}, []); 
- 
-
-
-
+}, []);
   return (
     <div className='homen-page-container'>
    
@@ -268,7 +277,7 @@ function Parallax() {
                         <div className="image-content">
                             <span className="overlay"></span>
                             <div className="card-image">
-                                <img src={person1}/>
+                                <img src={person1} alt='Testimonial'/>
                             </div>
                         </div>
                         <div className="card-content">
@@ -281,7 +290,7 @@ function Parallax() {
                         <div className="image-content">
                             <span className="overlay"></span>
                             <div className="card-image">
-                                <img src={person1}/>
+                                <img src={person1} alt='Testimonial'/>
                             </div>
                         </div>
                         <div className="card-content">
@@ -294,7 +303,33 @@ function Parallax() {
                         <div className="image-content">
                             <span className="overlay"></span>
                             <div className="card-image">
-                                <img src={person1}/>
+                                <img src={person1} alt='Testimonial'/>
+                            </div>
+                        </div>
+                        <div className="card-content">
+                            <h2 className="name">David Dell</h2>
+                            <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                            <button className="button-view">View More</button>
+                        </div>
+                    </div>
+                    <div className="card swiper-slide">
+                        <div className="image-content">
+                            <span className="overlay"></span>
+                            <div className="card-image">
+                                <img src={person1} alt='Testimonial'/>
+                            </div>
+                        </div>
+                        <div className="card-content">
+                            <h2 className="name">David Dell</h2>
+                            <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                            <button className="button-view">View More</button>
+                        </div>
+                    </div>
+                    <div className="card swiper-slide">
+                        <div className="image-content">
+                            <span className="overlay"></span>
+                            <div className="card-image">
+                                <img src={person1} alt='Testimonial'/>
                             </div>
                         </div>
                         <div className="card-content">
@@ -304,18 +339,28 @@ function Parallax() {
                         </div>
                     </div>
                     
+                    
                 </div>
             </div>
+            
             <div className="swiper-button-next swiper-navBtn"></div>
             <div className="swiper-button-prev swiper-navBtn"></div>
-            <div className="swiper-pagination"></div>
+            <div className="swiper-pagination"></div>  
+        
           
         </div>
+
+  
+    
+        
     </div>
 
 
 
   );
 }
+
+
+
 
 export default Parallax;
