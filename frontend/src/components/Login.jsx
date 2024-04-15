@@ -11,18 +11,28 @@ function Login(){
 
     const [customerEmail, setCustomerEmail] = useState("");
     const [customerPassword, setCustomerPassword] = useState("");
+    
 
     async function loginCustomer(event) {
         event.preventDefault();
         try {
-          await axios.post("http://localhost:8095/customer/login", {
+            const response = await axios.post("http://localhost:8095/customer/login", {
             customerEmail,
             customerPassword,
           });
-          alert("Login Successful");
-          navigate('/Shops'); 
-        } catch (err) {
-          alert(err);
+          
+            if (response.data.status === true) {
+            
+            navigate('/Shops');
+         
+             }
+             else if(response.data.status === false){
+               alert(response.data.message);
+            }
+           
+        } catch (error) {
+           alert(error);
+            
         }
       }
     
@@ -33,7 +43,7 @@ function Login(){
     return(
         <div className="signup-container">
         <div className="signup-wrapper">
-            <form onSubmit={loginCustomer}>
+        <form onSubmit={loginCustomer}>
                 <h1>Login</h1>
                 <div className="signup-input-box">
                     <input type="email" placeholder='Email' required
