@@ -12,6 +12,10 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 import person1 from "../assets/person1.png";
+import ellie from "../assets/Ellie_Anderson.jpg"
+import john from "../assets/John_Morgan.jpg"
+import nia from "../assets/Nia_Adebayo.jpg"
+import rigo from "../assets/Rigo_Louie.jpg"
 
 
 //import '../../node_modules/swiper/swiper-bundle.min.js';
@@ -28,6 +32,7 @@ import 'swiper/css/navigation';
 //import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
+import service1 from '../assets/mobile_app.png';
 
 
 
@@ -97,7 +102,7 @@ function Parallax() {
         </div>
         <h1 className='card-heading'>Heading one</h1>
         <p className='card-text'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer at dolor vitae turpis placerat convallis nec id justo. Quisque rhoncus, tortor et facilisis pharetra, lorem leo sodales nulla, eget cursus dolor dolor nec nisi. Vivamus interdum ligula et justo cursus, nec bibendum metus ullamcorper. Integer sit amet libero non massa vestibulum sagittis
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
       </div>
       <div className="card">
@@ -106,7 +111,7 @@ function Parallax() {
         </div>
         <h1 className='card-heading'>Heading two</h1>
         <p className='card-text'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer at dolor vitae turpis placerat convallis nec id justo. Quisque rhoncus, tortor et facilisis pharetra, lorem leo sodales nulla, eget cursus dolor dolor nec nisi. Vivamus interdum ligula et justo cursus, nec bibendum metus ullamcorper. Integer sit amet libero non massa vestibulum sagittis
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
       </div>
       <div className="card">
@@ -115,7 +120,7 @@ function Parallax() {
         </div>
         <h1 className='card-heading'>Heading three</h1>
         <p className='card-text'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer at dolor vitae turpis placerat convallis nec id justo. Quisque rhoncus, tortor et facilisis pharetra, lorem leo sodales nulla, eget cursus dolor dolor nec nisi. Vivamus interdum ligula et justo cursus, nec bibendum metus ullamcorper. Integer sit amet libero non massa vestibulum sagittis
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
         </p>
       </div>
     </div>
@@ -290,7 +295,7 @@ function Parallax() {
                         <div className="image-content">
                             <span className="overlay"></span>
                             <div className="card-image">
-                                <img src={person1} alt='Testimonial'/>
+                                <img src={ellie} alt='Testimonial'/>
                             </div>
                         </div>
                         <div className="card-content">
@@ -303,7 +308,7 @@ function Parallax() {
                         <div className="image-content">
                             <span className="overlay"></span>
                             <div className="card-image">
-                                <img src={person1} alt='Testimonial'/>
+                                <img src={rigo} alt='Testimonial'/>
                             </div>
                         </div>
                         <div className="card-content">
@@ -316,7 +321,7 @@ function Parallax() {
                         <div className="image-content">
                             <span className="overlay"></span>
                             <div className="card-image">
-                                <img src={person1} alt='Testimonial'/>
+                                <img src={nia} alt='Testimonial'/>
                             </div>
                         </div>
                         <div className="card-content">
@@ -329,7 +334,7 @@ function Parallax() {
                         <div className="image-content">
                             <span className="overlay"></span>
                             <div className="card-image">
-                                <img src={person1} alt='Testimonial'/>
+                                <img src={john} alt='Testimonial'/>
                             </div>
                         </div>
                         <div className="card-content">
@@ -349,9 +354,58 @@ function Parallax() {
         
           
         </div>
+        <div className='parallax-1'>
+          <div className='parallax-inner'>
+          <div className='service-cards-container'>
+          <div className='service-card'>
+          <div className='service-card-content'>
+          <p className='service-card-heading'>Instant Motor Bike Repair</p>
+          <i class="fa fa-wrench fa-lg" aria-hidden="true"></i>
+          <p>The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+         
+          </div>
+          </div>
+          <div className='service-card'>
+          <div className='service-card-content'>
+          <p className='service-card-heading'>Easy Reservation through Mobile App</p>
+          <i class="fa fa-mobile fa-lg" aria-hidden="true"></i>
+          <p>The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          </div>
+          <div className='service-card'>
+          <div className='service-card-content'>
+          <p className='service-card-heading'>Flexible Payment Options </p>
+          <i class="fa fa-cc-mastercard fa-lg" aria-hidden="true"></i>
+          <p>The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          </div>
+          <div className='service-card'>
+          <div className='service-card-content'>
+          <p className='service-card-heading'>Live Chat Box</p>
+          <i class="fa fa-comments fa-lg" aria-hidden="true"></i>
+          <p>The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          </div>
+          <div className='service-card'>
+          <div className='service-card-content'>
+          <p className='service-card-heading'>Progress Tracking</p>
+          <i class="fa fa-line-chart fa-lg" aria-hidden="true"></i>
+          <p>The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          </div>
+          <div className='service-card'>
+          <div className='service-card-content'>
+          <p className='service-card-heading'>Filtering Feature</p>
+          <i class="fa fa-filter fa-lg" aria-hidden="true"></i>
+          <p>The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          </div>
+        </div>
 
-  
-    
+          </div>
+        </div>
+
+        
         
     </div>
 

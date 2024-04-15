@@ -1,10 +1,28 @@
-import React from "react";
+import React,{useState} from "react";
 import { Link,useNavigate } from "react-router-dom";
 import './Register3.css';
+import axios from "axios";
 import sideImage from "../assets/sideimage.png"
 import verification from "../assets/verification.png";
 
 function Register3(){
+    const[userName, setUserName] = useState("");
+    const [userPassword,setUserPassword]= useState("");
+    async function saveUser(event){
+        event.preventDefault();
+        try{
+            await
+            axios.post("http://localhost:8095/customer/save",{
+                userName: userName,
+                userPassword:userPassword,
+
+            });
+            alert("User Registration Successful");
+            navigate('/shops');
+        }catch(err){
+            alert(err);
+        }
+    }
     const navigate = useNavigate();
 
     const handleRegisterButtonClick = () => {
@@ -24,12 +42,16 @@ function Register3(){
 
             <div className="input-group">
                 <label htmlFor="username">User Name</label>
-                <input type="text" id="username" placeholder="Enter UserName" />
+                <input type="text" id="username" placeholder="Enter UserName"
+                 value={userName}
+                        onChange={(e) => setUserName(e.target.value)}  />
 
             </div>
             <div className="input-group">
                         <label htmlFor="password">Password</label>
-                        <input type="password" id="password" placeholder="Enter Password" />
+                        <input type="password" id="password" placeholder="Enter Password" 
+                             value={userPassword} onChange={(e) => setUserPassword(e.target.value)}
+                        />
                     </div>
                 
                     <div className="checkbox-container">

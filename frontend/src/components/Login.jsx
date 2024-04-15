@@ -1,50 +1,63 @@
 import React from "react";
+import facebook from "../assets/facebook.png";
+import google from "../assets/Google.png";
 import './Login.css';
-import sideImage from "../assets/sideimage.png"
-import { Link } from "react-router-dom";
 
-function Login() {
-    return (
-        <div className="login-container">
-            <div className="form-container">
-                <p className="login-text">LOG IN</p>
-                <form>
-                    <div className="input-group">
-                        <label htmlFor="username">User Name</label>
-                        <input type="text" id="username" placeholder="Enter UserName" />
+import { useNavigate } from "react-router-dom";
+function Login(){
+    const navigate = useNavigate();
 
-                    </div>
-                    <div className="input-group">
-                        <label htmlFor="password">Password</label>
-                        <input type="password" id="password" placeholder="Enter Password" />
-                    </div>
-                    <div className="forget-remember">
-                    <div className="remember-me">
-                        <input type="checkbox" id="remember-me" />
-                        <label htmlFor="remember-me">Remember me</label>
+    const handleSignupButtonClick = () => {
+        navigate("/signup");
+    };
 
+    return(
+        
+        <div className="container forms">
+            <div className="form login">
+                <div className="form-content">
+                    <header>Login</header>
+                    <form action="#">
+                        <div className="field input-field">
+                            <input type="email" placeholder="Email" class="input"/>
+                        </div>
+                        <div className="field input-field">
+                            <input type="password" placeholder="Password" class="password"/>
+                          
+                        </div>
+                        <div className="form-link">
+                            <a href="#" class="forgot-pass">Forgot password?</a>
+                        </div>
+                        <div className="field button-field">
+                            <button>Login</button>
+                        </div>
+                    </form>
+                    <div className="form-link">
+                        <span>Don't have an account? <a href="#" class="link signup-link" onClick={handleSignupButtonClick}>Signup</a> </span>
                     </div>
-                    <div className="forget-password">
-    <Link to="/forgetpw">Forget Password</Link>
-</div>
-
-                    </div>
-                    <button type="submit" className="login-button-form">Log in</button>
-                </form>
-                <div className="seperator">
-                    <span>Or</span>
                 </div>
-                <div className="signup-link">
-                Don't have an account? <Link to="/register">Click here</Link>
+                <div className="line"></div>
+                <div className="media-options">
+                    <a href="#" className="field google">
+                    <img src={facebook} alt="" class="google-img"/>
+                        <span>Login with Facebook</span>
+                    </a>
                 </div>
+                <div className="media-options">
+                    <a href="#" className="field google">
+                        <img src={google} alt="" class="google-img"/>
+                        <span>Login with Google</span>
+                    </a>
+                </div>
+            </div>
 
-            </div>
-            <div className="image-container">
-                <img src={sideImage} alt="Login" />
-            </div>
+
         </div>
 
+  
+    
     );
+
 
 }
 

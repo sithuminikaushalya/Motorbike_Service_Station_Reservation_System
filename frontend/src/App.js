@@ -39,12 +39,10 @@ import Home from "./components/home";
 import Aboutus from "./components/aboutus";
 import Shops from "./components/shops";
 import Footer from "./components/Footer";
-import Login from "./components/Login";
+
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Register from "./components/Register";
-import Register2 from "./components/Register2";
-import Register3 from "./components/Register3";
+
 import ForgetPw from "./components/ForgetPw";
 import FaultSuggest from "./components/FaultSuggest";
 import ShopsNavbar from "./components/ShopsNavbar";
@@ -52,6 +50,8 @@ import Reservation from "./components/Reservation";
 import Profile from "./components/Profile";
 import Settings from "./components/Settings";
 import Parallax from "./components/Parallax";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
 
 
 //import { Navbar } from "react-bootstrap";
@@ -69,15 +69,13 @@ function App() {
     <Route path="/aboutus" element={<Aboutus/>}/>
     <Route path="/shops" element={<Shops/>}/>
     <Route path="/login" element={<Login/>}/>
-    <Route path="/register" element={<Register/>}/>
-    <Route path="/register2" element={<Register2/>}/>
-    <Route path="/register3" element={<Register3/>}/>
     <Route path="/forgetpw" element={<ForgetPw/>}/>
     <Route path="/faultsuggest" element={<FaultSuggest/>}/>
     <Route path="/reservation" element={<Reservation/>}/>
     <Route path="/profile" element={<Profile/>}/>
     <Route path="/account-setting" element={<Settings/>}/>
     <Route path="/parallax" element={<Parallax/>}/>
+    <Route path="/signup" element={<Signup/>}/>
    
     
 
