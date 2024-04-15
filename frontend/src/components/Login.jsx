@@ -12,7 +12,7 @@ function Login(){
     };
 
     return(
-        
+        <div className="login-container">
         <div className="container forms">
             <div className="form login">
                 <div className="form-content">
@@ -52,6 +52,7 @@ function Login(){
             </div>
 
 
+        </div>
         </div>
 
   

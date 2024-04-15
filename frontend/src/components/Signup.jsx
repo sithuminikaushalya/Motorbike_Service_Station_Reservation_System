@@ -1,49 +1,49 @@
 import React from "react";
 import facebook from "../assets/facebook.png";
-import google from "../assets/Google.png"
+import google from "../assets/Google.png";
+import { FaUser ,FaLock,FaEnvelope} from "react-icons/fa";
+import './Signup.css'
 
 
-function Signup(){
-    return(
-        
-        <div className="form signup">
-        <div className="form-content">
-            <header>Signup</header>
-            <form action="#">
-                <div className="field input-field">
-                    <input type="email" placeholder="Email" class="input"/>
+
+function Signup() {
+    return (
+        <div className="signup-container">
+        <div className="signup-wrapper">
+            <form action="">
+                <h1>Signup</h1>
+                <div className="signup-input-box">
+                    <input type="text" placeholder='First Name' required/>
+                    <FaUser className="signup-icon"/>
                 </div>
-                <div className="field input-field">
-                    <input type="password" placeholder="Create password" class="password"/>
+                <div className="signup-input-box">
+                    <input type="text" placeholder='Last Name' required/>
+                    <FaUser className="signup-icon"/>
                 </div>
-                <div className="field input-field">
-                    <input type="password" placeholder="Confirm password" class="password"/>
-                    <i class='bx bx-hide eye-icon'></i>
+                <div className="signup-input-box">
+                    <input type="text" placeholder='Email' required/>
+                    <FaEnvelope className="signup-icon"/>
                 </div>
-                <div className="field button-field">
-                    <button>Signup</button>
+                <div className="signup-input-box">
+                    <input type="password" placeholder='Password' required/>
+                    <FaLock className="signup-icon"/>
                 </div>
+                <div className="remember-forgot">
+                <label><input type="checkbox"/>Remember me</label>
+                <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" className="signup-button">Signup</button>
+               <div className="register-link">
+               <p>Already Have an Account? <a href="#">Login</a></p>
+
+               </div>
+
+
+             
             </form>
-            <div className="form-link">
-                <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
-            </div>
         </div>
-        <div className="line"></div>
-        <div className="media-options">
-            <a href="#" class="field facebook">
-            <img src={facebook} alt="" class="google-img"/>
-                <span>Login with Facebook</span>
-            </a>
         </div>
-        <div className="media-options">
-            <a href="#" class="field google">
-                <img src={google} alt="" class="google-img"/>
-                <span>Login with Google</span>
-            </a>
-        </div>
-    </div>
     );
-
 }
 
 export default Signup;

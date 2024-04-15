@@ -1,3 +1,14 @@
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../assets/backimg3.jpg');
+    background-size: cover;
+    background-position: center;
+   
+}
+
 .container{
     height: 100vh;
     width: 100%;
