@@ -2,6 +2,7 @@ import React from "react";
 import facebook from "../assets/facebook.png";
 import google from "../assets/Google.png";
 import './Login.css';
+import { FaUser ,FaLock,FaEnvelope} from "react-icons/fa";
 
 import { useNavigate } from "react-router-dom";
 function Login(){
@@ -12,50 +13,48 @@ function Login(){
     };
 
     return(
-        <div className="login-container">
-        <div className="container forms">
-            <div className="form login">
-                <div className="form-content">
-                    <header>Login</header>
-                    <form action="#">
-                        <div className="field input-field">
-                            <input type="email" placeholder="Email" class="input"/>
-                        </div>
-                        <div className="field input-field">
-                            <input type="password" placeholder="Password" class="password"/>
-                          
-                        </div>
-                        <div className="form-link">
-                            <a href="#" class="forgot-pass">Forgot password?</a>
-                        </div>
-                        <div className="field button-field">
-                            <button>Login</button>
-                        </div>
-                    </form>
-                    <div className="form-link">
-                        <span>Don't have an account? <a href="#" class="link signup-link" onClick={handleSignupButtonClick}>Signup</a> </span>
-                    </div>
+        <div className="signup-container">
+        <div className="signup-wrapper">
+            <form action="">
+                <h1>Login</h1>
+                <div className="signup-input-box">
+                    <input type="text" placeholder='Name' required/>
+                    <FaUser className="signup-icon"/>
                 </div>
-                <div className="line"></div>
+             
+                <div className="signup-input-box">
+                    <input type="password" placeholder='Password' required/>
+                    <FaLock className="signup-icon"/>
+                </div>
+                <div className="remember-forgot">
+                <label><input type="checkbox"/>Remember me</label>
+                <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" className="signup-button">Login</button>
+               <div className="register-link">
+               <p>Don't Have an Account? <a href="#" onClick={handleSignupButtonClick}>Signup</a></p>
+
+               </div>
+               <div className="line"></div>
                 <div className="media-options">
                     <a href="#" className="field google">
-                    <img src={facebook} alt="" class="google-img"/>
+                    <img src={facebook} alt="Facebook Image" className="google-img"/>
                         <span>Login with Facebook</span>
                     </a>
                 </div>
                 <div className="media-options">
                     <a href="#" className="field google">
-                        <img src={google} alt="" class="google-img"/>
+                        <img src={google} alt="Google Image" className="google-img"/>
                         <span>Login with Google</span>
                     </a>
                 </div>
-            </div>
+            
 
 
+             
+            </form>
         </div>
         </div>
-
-  
     
     );
 
