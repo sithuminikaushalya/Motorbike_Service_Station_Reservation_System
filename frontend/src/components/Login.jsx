@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useState } from 'react';
 import facebook from "../assets/facebook.png";
 import google from "../assets/Google.png";
 import './Login.css';
 import { FaUser ,FaLock,FaEnvelope} from "react-icons/fa";
+import axios from "axios";
 
 import { useNavigate } from "react-router-dom";
 function Login(){
     const navigate = useNavigate();
 
+    const [customerEmail, setCustomerEmail] = useState("");
+    const [customerPassword, setCustomerPassword] = useState("");
+
+    async function loginCustomer(event) {
+        event.preventDefault();
+        try {
+          await axios.post("http://localhost:8095/customer/login", {
+            customerEmail,
+            customerPassword,
+          });
+          alert("Login Successful");
+          navigate('/Shops'); 
+        } catch (err) {
+          alert(err);
+        }
+      }
+    
     const handleSignupButtonClick = () => {
         navigate("/signup");
     };
@@ -15,15 +33,21 @@ function Login(){
     return(
         <div className="signup-container">
         <div className="signup-wrapper">
-            <form action="">
+            <form onSubmit={loginCustomer}>
                 <h1>Login</h1>
                 <div className="signup-input-box">
-                    <input type="text" placeholder='Name' required/>
+                    <input type="email" placeholder='Email' required
+                    value={customerEmail}
+                    onChange={(e) => setCustomerEmail(e.target.value)}
+                    />
                     <FaUser className="signup-icon"/>
                 </div>
              
                 <div className="signup-input-box">
-                    <input type="password" placeholder='Password' required/>
+                    <input type="password" placeholder='Password' required
+                    value={customerPassword}
+                    onChange={(e) => setCustomerPassword(e.target.value)}
+                    />
                     <FaLock className="signup-icon"/>
                 </div>
                 <div className="remember-forgot">
@@ -31,6 +55,8 @@ function Login(){
                 <a href="#">Forgot Password?</a>
                 </div>
                 <button type="submit" className="signup-button">Login</button>
+                </form>
+                
                <div className="register-link">
                <p>Don't Have an Account? <a href="#" onClick={handleSignupButtonClick}>Signup</a></p>
 
@@ -52,7 +78,7 @@ function Login(){
 
 
              
-            </form>
+            
         </div>
         </div>
     

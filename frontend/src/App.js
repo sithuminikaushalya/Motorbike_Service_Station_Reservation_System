@@ -37,7 +37,7 @@ import React from "react";
 import Navbar from "./components/navbar";
 import Home from "./components/home";
 import Aboutus from "./components/aboutus";
-import Shops from "./components/shops";
+import Shops from "./components/Shops";
 import Footer from "./components/Footer";
 
 
