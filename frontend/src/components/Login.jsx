@@ -12,6 +12,10 @@ function Login(){
         navigate("/signup");
     };
 
+    const handleForgotPwClick =() =>{
+        navigate("/forgotpw")
+    }
+
     return(
         <div className="signup-container">
         <div className="signup-wrapper">
@@ -28,7 +32,7 @@ function Login(){
                 </div>
                 <div className="remember-forgot">
                 <label><input type="checkbox"/>Remember me</label>
-                <a href="#">Forgot Password?</a>
+                <a href="#" onClick={handleForgotPwClick}>Forgot Password?</a>
                 </div>
                 <button type="submit" className="signup-button">Login</button>
                <div className="register-link">

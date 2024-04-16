@@ -43,7 +43,7 @@ import Footer from "./components/Footer";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import ForgetPw from "./components/ForgetPw";
+import ForgotPw from "./components/ForgotPw";
 import FaultSuggest from "./components/FaultSuggest";
 import ShopsNavbar from "./components/ShopsNavbar";
 import Reservation from "./components/Reservation";
@@ -52,6 +52,7 @@ import Settings from "./components/Settings";
 import Parallax from "./components/Parallax";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import Payment from "./components/Payment";
 
 
 //import { Navbar } from "react-bootstrap";
@@ -69,13 +70,15 @@ function App() {
     <Route path="/aboutus" element={<Aboutus/>}/>
     <Route path="/shops" element={<Shops/>}/>
     <Route path="/login" element={<Login/>}/>
-    <Route path="/forgetpw" element={<ForgetPw/>}/>
+    
     <Route path="/faultsuggest" element={<FaultSuggest/>}/>
     <Route path="/reservation" element={<Reservation/>}/>
     <Route path="/profile" element={<Profile/>}/>
     <Route path="/account-setting" element={<Settings/>}/>
     <Route path="/parallax" element={<Parallax/>}/>
     <Route path="/signup" element={<Signup/>}/>
+    <Route path="/forgotpw" element={<ForgotPw/>}/>
+    <Route path="/payment" element={<Payment/>}/>
    
     
 
