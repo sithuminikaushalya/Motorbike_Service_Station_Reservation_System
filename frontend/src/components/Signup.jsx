@@ -1,14 +1,40 @@
-import React from "react";
+import React, { useState } from 'react';
 import facebook from "../assets/facebook.png";
 import google from "../assets/Google.png";
-import { FaUser ,FaLock,FaEnvelope} from "react-icons/fa";
+import { FaUser ,FaLock,FaEnvelope, FaPhone} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import './Signup.css'
+import axios from "axios";
 
 
 
 function Signup() {
     const navigate = useNavigate();
+
+    const [customerName, setCustomerName] = useState("");
+    const [customerEmail, setCustomerEmail] = useState("");
+    const [customerPhoneNumber, setCustomerPhoneNumber] = useState("");
+    const [customerUsername, setCustomerUsername] = useState("");
+    const [customerPassword, setCustomerPassword] = useState("");
+    
+
+    async function saveCustomer(event) {
+        event.preventDefault();
+        try {
+          await axios.post("http://localhost:8095/customer/save", {
+            customerName,
+            customerEmail,
+            customerPhoneNumber,
+            customerUsername,
+            customerPassword,
+            
+          });
+          alert("Registration Successful");
+          navigate('/Shops'); 
+        } catch (err) {
+          alert(err);
+        }
+      }
 
     const handleLoginButtonClick = () => {
         navigate("/login");
@@ -18,22 +44,45 @@ function Signup() {
     return (
         <div className="signup-container">
         <div className="signup-wrapper">
-            <form action="">
+            <form  onSubmit={saveCustomer}>
                 <h1>Signup</h1>
                 <div className="signup-input-box">
-                    <input type="text" placeholder='Name' required/>
+                    <input type="text" placeholder='Name' required
+                    value={customerName}
+                    onChange={(e) => setCustomerName(e.target.value)}
+                    />
                     <FaUser className="signup-icon"/>
                 </div>
                 <div className="signup-input-box">
+<<<<<<< HEAD
                     <input type="email" placeholder='Email' required/>
+=======
+                    <input type="email" placeholder='Email' required
+                    value={customerEmail}
+                    onChange={(e) => setCustomerEmail(e.target.value)}
+                    />
+>>>>>>> 3674a0f35d5246579102e6eb5752a761a809887a
                     <FaEnvelope className="signup-icon"/>
                 </div>
                 <div className="signup-input-box">
-                    <input type="text" placeholder='Username' required/>
+                    <input type="text" placeholder='Phone Number' required
+                    value={customerPhoneNumber}
+                    onChange={(e) => setCustomerPhoneNumber(e.target.value)}
+                    />
+                    <FaPhone className="signup-icon"/>
+                </div>
+                <div className="signup-input-box">
+                    <input type="text" placeholder='Username' required
+                    value={customerUsername}
+                    onChange={(e) => setCustomerUsername(e.target.value)}
+                    />
                     <FaUser className="signup-icon"/>
                 </div>
                 <div className="signup-input-box">
-                    <input type="password" placeholder='Password' required/>
+                    <input type="password" placeholder='Password' required
+                    value={customerPassword}
+                    onChange={(e) => setCustomerPassword(e.target.value)}
+                    />
                     <FaLock className="signup-icon"/>
                 </div>
               

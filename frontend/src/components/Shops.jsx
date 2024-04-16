@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react";
-import '../components/RightBar';
+import './RightBar';
 import './shops.css';
 import shopImg from "../assets/shops_img.png"
 import velocare from "../assets/velocare.png"
@@ -7,7 +7,7 @@ import location from "../assets/location.png";
 import star2 from "../assets/star2.png";
 import tickmark from "../assets/tickmark.png";
 import { useNavigate } from "react-router-dom";
-import Rightbar from "../components/RightBar";
+import Rightbar from "./RightBar";
 
 
 
