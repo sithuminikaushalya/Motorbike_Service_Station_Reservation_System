@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('../assets/backimg3.jpg');
+    background: url('../assets/backimg5.jpg');
     background-size: cover;
     background-position: center;
    
@@ -24,6 +24,7 @@
 .signup-wrapper h1{
     font-size: 36px;
     text-align: center;
+    font-weight: 500;
 }
 
 .signup-input-box{

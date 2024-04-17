@@ -1,6 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './navbar.css';
 import logoImage from '../../src/assets/bike2.png';
 import { ReactComponent as ProfileIcon } from '../assets/profile.svg';
@@ -10,10 +10,7 @@ import { ReactComponent as ProfileIcon } from '../assets/profile.svg';
 
 function Navbar() {
 
-    const handleLoginClick = () => {
-     
-    }
-    
+  
     return (
         <div className="navbar-container">
             <div className="navbar-logo">

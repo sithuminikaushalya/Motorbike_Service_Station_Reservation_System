@@ -75,16 +75,16 @@ function Login(){
                <p>Don't Have an Account? <a href="#" onClick={handleSignupButtonClick}>Signup</a></p>
 
                </div>
-               <div className="line"></div>
-                <div className="media-options">
-                    <a href="#" className="field google">
-                    <img src={facebook} alt="Facebook Image" className="google-img"/>
+               <div class="line"></div>
+                <div class="media-options">
+                    <a href="#" class="field facebook">
+                        <img src={facebook} alt='Facebook Icon' className='facebook-icon'/>
                         <span>Login with Facebook</span>
                     </a>
                 </div>
-                <div className="media-options">
-                    <a href="#" className="field google">
-                        <img src={google} alt="Google Image" className="google-img"/>
+                <div class="media-options">
+                    <a href="#" class="field google">
+                        <img src={google} alt="Google" class="google-img"/>
                         <span>Login with Google</span>
                     </a>
                 </div>

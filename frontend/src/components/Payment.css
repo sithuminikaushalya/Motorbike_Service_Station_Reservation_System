@@ -78,6 +78,7 @@
     color:#fff;
     margin-top: 5px;
     cursor: pointer;
+    border-radius: 20px;
   }
   
   .payment-container form .payment-submit-btn:hover{

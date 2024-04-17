@@ -54,14 +54,10 @@ function Signup() {
                     <FaUser className="signup-icon"/>
                 </div>
                 <div className="signup-input-box">
-<<<<<<< HEAD
-                    <input type="email" placeholder='Email' required/>
-=======
                     <input type="email" placeholder='Email' required
                     value={customerEmail}
                     onChange={(e) => setCustomerEmail(e.target.value)}
                     />
->>>>>>> 3674a0f35d5246579102e6eb5752a761a809887a
                     <FaEnvelope className="signup-icon"/>
                 </div>
                 <div className="signup-input-box">

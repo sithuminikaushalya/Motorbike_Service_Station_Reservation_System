@@ -33,6 +33,7 @@ import 'swiper/css/navigation';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import service1 from '../assets/mobile_app.png';
+import backgroundclip from '../assets/vid.mp4';
 
 
 
@@ -403,6 +404,16 @@ function Parallax() {
         </div>
 
           </div>
+        </div>
+        <div className='video-container'>
+        <video autoPlay loop muted plays-inline src={backgroundclip} className='background-clip'>
+          <source src={backgroundclip} type='video/mp4'/>
+        </video>
+        <div className='video-content'>
+          <h1>Explore More</h1>
+          <a href='#' >Start Searching</a>
+        </div>
+
         </div>
 
         
