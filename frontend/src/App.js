@@ -35,7 +35,6 @@ export default App;*/
 
 import React from "react";
 import Navbar from "./components/navbar";
-import Home from "./components/home";
 import Aboutus from "./components/aboutus";
 import Shops from "./components/Shops";
 import Footer from "./components/Footer";
@@ -49,7 +48,7 @@ import ShopsNavbar from "./components/ShopsNavbar";
 import Reservation from "./components/Reservation";
 import Profile from "./components/Profile";
 import Settings from "./components/Settings";
-import Parallax from "./components/Parallax";
+import Home from "./components/Home";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Payment from "./components/Payment";
@@ -75,7 +74,7 @@ function App() {
     <Route path="/reservation" element={<Reservation/>}/>
     <Route path="/profile" element={<Profile/>}/>
     <Route path="/account-setting" element={<Settings/>}/>
-    <Route path="/parallax" element={<Parallax/>}/>
+ 
     <Route path="/signup" element={<Signup/>}/>
     <Route path="/forgotpw" element={<ForgotPw/>}/>
     <Route path="/payment" element={<Payment/>}/>

@@ -1,446 +1,431 @@
-import React from "react";
-import bike5 from "../assets/bike5.jpg"
+import React, { useEffect, useRef } from 'react';
+import './Home.css'; 
+import card1 from "../assets/service1.jpg";
 import reservenow from "../assets/reserve_now.png"
 import registershop from "../assets/register_shop.png"
-import bike3 from "../assets/bike3.png"
-import bike6 from "../assets/bike6.jpg"
-import srilanka from "../assets/SriLanka.png"
-import tickmark from "../assets/tickmark.png";
-import location from "../assets/location.png";
-import mobileapp from "../assets/mobile_app.png";
-import livechat from "../assets/live_chat.png";
-import filter from "../assets/filtering_feature.png";
-import mission from "../assets/Mission.png";
-import vision from "../assets/Vision.png";
-import invertedcomma from "../assets/inverted_comma.png";
-import invertedComma from "../assets/inverted.png";
+import $ from 'jquery';
+import 'jquery.counterup';
+import Waypoint from 'waypoints/lib/noframework.waypoints.min.js';
+import { faFacebookF, faTwitter, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 import person1 from "../assets/person1.png";
-import person2 from "../assets/person2.png";
-import person3 from "../assets/person3.png";
-import person4 from "../assets/person4.png";
-import person5 from "../assets/person5.png";
-import island from "../assets/earth.png";
-import realtime from "../assets/realtime.png"
-import reserve from "../assets/reserve.png";
-import multi from "../assets/multi.png";
-import history from "../assets/history.png";
-import star from "../assets/star.png";
-import { Carousel } from "react-bootstrap";
-import { useState, useEffect } from "react";
-import './home.css';
-import { useNavigate } from "react-router-dom";
+import ellie from "../assets/Ellie_Anderson.jpg"
+import john from "../assets/John_Morgan.jpg"
+import nia from "../assets/Nia_Adebayo.jpg"
+import rigo from "../assets/Rigo_Louie.jpg"
 
-import CircularProgressBar from './CircularProgressBar';
+
+//import '../../node_modules/swiper/swiper-bundle.min.js';
+//import '../../node_modules/swiper/swiper-bundle.min.css';
+
+//import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+
+//import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
+import service1 from '../assets/mobile_app.png';
+import backgroundclip from '../assets/vid.mp4';
+
+
+
+
+
+
 
 
 function Home() {
-  const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setAnimate(true);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const[activeIndicator,setActiveIndicator] =useState(0);
-
-  const handleCardHover = (index) =>{
-    setActiveIndicator(index);
+    const swiper = new Swiper('.slide-content', {
+        slidesPerView: 3,
+        spaceBetween: 25,
+        loop: true,
+        centerSlide: true,
+        fade: true,
+        grabCursor: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            520: {
+                slidesPerView: 2,
+            },
+            950: {
+                slidesPerView: 3,
+            },
+        },
+    });
+    return () => {
+      swiper.destroy(); 
   };
-
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const handleCardHovered =(index) =>{
-    setActiveIndex(index);
-  };
-  const navigate = useNavigate();
-  const handleReserveClick = () => {
-      navigate("/reservation");
-  }
-
-
-
-
+}, []);
   return (
-    <div className="home-carousel">
-      <Carousel>
-        <Carousel.Item>
-          <img src={bike5} className="d-block w-100" alt="First slide" />
-          <Carousel.Caption>
-            <h1>BEST BOOKING SOFTWARE FOR MOTOR BIKE REPAIR SERVICES</h1>
-            <div className="button-container">
-              <button className="carousel-button" onClick={handleReserveClick}>Reserve Now
-                <img src={reservenow}  alt="Reserve Now Icon" className="reserve-now-icon" />
-              </button>
-              <button className="carousel-button">Register Shop
-                <img src={registershop} alt="Reserve Now Icon" className="reserve-now-icon" />
-              </button>
-            </div>
-          </Carousel.Caption>
-
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={bike6} className="d-block w-100" alt="Second slide" />
-
-          <Carousel.Caption>
-            <h1>REVITIALIZE YOUR BIKE WITH US</h1>
-            <div className="button-container">
-              <button className="carousel-button">Reserve Now
-                <img src={reservenow} alt="Reserve Now Icon" className="reserve-now-icon" />
-              </button>
-              <button className="carousel-button">Register Shop
-                <img src={registershop} alt="Reserve Now Icon" className="reserve-now-icon" />
-              </button>
-            </div>
-          </Carousel.Caption>
-
-        </Carousel.Item>
-        <Carousel.Item>
-
-          <img src={bike5} className="d-block w-100" alt="Third slide" />
-          <Carousel.Caption>
-            <h1>TRUSTED BIKE REPAIRS, READY RIDE!</h1>
-            <div className="button-container">
-              <button className="carousel-button">Reserve Now
-                <img src={reservenow} alt="Reserve Now Icon" className="reserve-now-icon" />
-              </button>
-              <button className="carousel-button">Register Shop
-                <img src={registershop} alt="Reserve Now Icon" className="reserve-now-icon" />
-              </button>
-            </div>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={bike5} className="d-block w-100" alt="First slide" />
-          <Carousel.Caption>
-            <h1>BEST BOOKING SOFTWARE FOR MOTOR BIKE REPAIR SERVICES</h1>
-            <div className="button-container">
-              <button className="carousel-button">Reserve Now
-                <img src={reservenow} alt="Reserve Now Icon" className="reserve-now-icon" />
-              </button>
-              <button className="carousel-button">Register Shop
-                <img src={registershop} alt="Reserve Now Icon" className="reserve-now-icon" />
-              </button>
-            </div>
-          </Carousel.Caption>
-        </Carousel.Item>
-
-      </Carousel>
-      <div className="home-body">
-        <img src={bike3} alt="Home body" className="home-body-image" />
-        <div className="home-body-text">
-          <p className="resetting-text">We&#39;re resetting bike care standards.</p>
-          <p>One service at a time.</p>
-          <div className="circles-container">
-            <CircularProgressBar label="10M+" animate={animate} />
-            <CircularProgressBar label="50M+" animate={animate} />
-
-          </div>
-
-        </div>
-        <div className="home-customer-text">
-          <p>Customers</p>
-          <p>Services</p>
-
-        </div>
-      </div>
-      <div class="search-container">
-        <input type="text" class="search-bar" placeholder="Search by City, District, or Zip Code" />
-        <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
-
-        <div className="service-station-container">
-          <p className="service-station-text">1000+ Service Stations</p>
-        </div>
-        <div class="container">
-          <div class="card-container">
-            <div class="card">
-              <div class="details">
-                <div class="column">
-                  <p className="text-heading">Velocare</p>
-                  <p>No.64, Galle Street, Colombo-06</p>
-                  <p>+94114554665</p>
-                  <p>
-                    <img src={location} alt="Location Image" />
-                    <a href="#" className="direction-link">Get Direction</a>
-                  </p>
-                </div>
-                <div class="details-content">
-                  <p>Opens daily 8.00 AM - 6.00 PM</p>
-                  <p><img src={tickmark} alt="Tick Mark" />Full services</p>
-                  <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                </div>
-
-                <div class="buttons">
-                  <button className="button-locate">Locate Now</button>
-                  <button className="button-reservation">Make a Reservation</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="details">
-                <div class="column">
-                  <p className="text-heading">VroomVille</p>
-                  <p>No 24 Main Street,
-                    Piyagama</p>
-                  <p>+94 26 555 4623</p>
-                  <p>
-                    <img src={location} alt="Location Image" />
-                    <a href="#" className="direction-link">Get Direction</a>
-                  </p>
-
-                </div>
-                <div class="details-content">
-                  <p>Opens daily 8.00 AM - 6.00 PM</p>
-                  <p><img src={tickmark} alt="Tick Mark" />Full services</p>
-                  <p><img src={tickmark} alt="Tick Mark" />Company Services</p>
-                  <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                </div>
-
-                <div class="buttons">
-                  <button className="button-locate">Locate Now</button>
-                  <button className="button-reservation">Make a Reservation</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="details">
-                <div class="column">
-                  <p className="text-heading">Asphalt Motors</p>
-                  <p>Homagama villa Street,
-                    Ambalangode-06</p>
-                  <p>+94 11 455 4665</p>
-                  <p>
-                    <img src={location} alt="Location Image" />
-                    <a href="#" className="direction-link">Get Direction</a>
-                  </p>
-                </div>
-                <div class="details-content">
-                  <p>Opens daily 8.00 AM - 6.00 PM</p>
-                  <p><img src={tickmark} alt="Tick Mark" /> Company Services only</p>
-                  <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                </div>
-
-                <div class="buttons">
-                  <button className="button-locate">Locate Now</button>
-                  <button className="button-reservation">Make a Reservation</button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-        <div class="srilanka-image-container">
-          <img src={srilanka} alt="Image" class="srilanka-image" />
-        </div>
-
-
-      </div>
-      <div className="services-container">
-      
-        <p className="services-heading">Services We Offer</p>
-        <div  className="horizontal-scroll-container" data-ride="carousel">
-          <div className="card-horizontal" onMouseEnter={() => {handleCardHover(0); handleCardHovered(0)}}>
-          <img src={mobileapp} alt="Payment Options" />
-            <h3 className="card-title">Flexible Payment Options</h3>
-            <p className="card-text">Enjoy the freedom of flexible payment options. Pay online in advance during reservation or conveniently settle the bill after your bike is back in top-notch condition. Your choice, your convenience.</p>
-          </div>
-          <div  className="card-horizontal" onMouseEnter={() => {handleCardHover(1); handleCardHovered(1)}}>
-          <img src={mobileapp} alt="Mobile App" />
-            <h3 className="card-title">Mobile App Development</h3>
-            <p className="card-text">A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age.</p>
-          </div>
-          <div className="card-horizontal" onMouseEnter={() =>{handleCardHover(2); handleCardHovered(2)}} >
-          <img src={livechat} alt="Live Chat" />
-            <h3 className="card-title">Live Chat Box</h3>
-            <p className="card-text">A live chat box on your website acts as a friendly guide in the digital realm, instantly connecting visitors with assistance. It's a modern tool that transforms your site into a responsive and approachable space, catering to the expectations of today's online audience.</p>
-          </div>
-          <div  className="card-horizontal" onMouseEnter={() => {handleCardHover(3); handleCardHovered(3)}}>
-          <img src={filter} alt="Filtering Feature" />
-            <h3 className="card-title">Filtering Feature</h3>
-            <p className="card-text">Filtering parts of the bike is like crafting a tailored experience for your vehicle's needs. It's about personalizing your bike service, ensuring it aligns seamlessly with the digital age's demand for precision and efficiency.</p>
-          </div>
-          <div  className="card-horizontal" onMouseEnter={() => {handleCardHover(4); handleCardHovered(4)}}>
-          <img src={livechat} alt="Service Progress" />
-            <h3 className="card-title">Service Progress System</h3>
-            <p className="card-text">Stay in the loop with real-time service progress updates. Our system keeps you informed every step of the way, ensuring transparency and peace of mind throughout the bike service jo</p>
-          </div>
-          
-        </div>
-        <div className="carousel-indicator-slider">
-        <div className="custom-carousel-indicators">
-          {[...Array(5)].map((_, index) => (
-            <div key={index} className={`indicator ${activeIndicator === index ? 'active' : ''}`}></div>
-          ))}
-        </div>
-        <div className="carousel-number-slider">
-        <div className="carousel-number-slider">
-  <div className="services-slider-bar">
-    {[...Array(5)].map((_, index) => (
-      <div
-        key={index}
-        className={`slider-number ${activeIndex === index ? 'active' : ''}`}
-        onMouseEnter={() => handleCardHovered(index)}
-      >
-        {index + 1}
-      </div>
-    ))}
-  </div>
-</div>
-        </div>
-        </div>
-      </div>
-      <div className="vision-container">
-    
-      
-  <div>
-    <p className="vision-text">Our Vision</p>
-    <p className="vision-revolutionize">Revolutionizing Riding Experiences, One Reservation at a Time.</p>
-    <p className="vision-envision">We envision a future where every motorbike owner experiences<br />the thrill of the road without any concerns about maintenance or service.</p>
-
-  </div>
-  <div className="vision-img">
-    <img src={vision} alt="Vision"/>
-  </div>
- 
-</div>
-<div className="mission-container">
-<div className="services-backimg"></div>
-
- 
-  <div className="mission-content">
-  
-    <div className="mission-img">
-      <img src={mission} alt="Mission"/>
-    </div>
-    <div>
-    <div className="mission-text">
-    <p>Our Mission</p>
-  </div>
-      <p className="mission-empower">Empowering Journeys, Connecting Riders.</p>
-      <p className="mission-innovative">Through innovative technology and a commitment to excellence, we aim to create a community where riders feel confident and inspired to explore their passion for two-wheel adventures.</p>
-    </div>
-  </div>
-</div>
-<div className="testimonial">
-
-<div className="testimonial-heading">
-<p>Why Our Services Capture <br></br>Hearts and Pedals</p>
-
-</div>
-            <p className="testimonial-text">
-              <img src={invertedcomma} alt="Inverted Comma" className="inverted-comma"/> 
-              Undoubtedly, I highly recommend BikePulse as one of the <br></br> premier platforms for bike services.
-              It stands out as one of the <br></br> finest in the industry.
-              I wouldn't hesitate to recommend this<br></br> exceptional platform to anyone in need of top-notch bike<br></br> services.
-              <img src={invertedComma} alt="Inverted Comma" className="inverted-comma"/> 
-            </p>
-          </div>
-          <div className="people-images">
-          
-            <div className="person">
-              <img src={person1} alt="Person 1" className="rounded-image"/>
-              <div className="stars">
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-              </div>
-              <p className="person-name">Nithiw</p>
-              <p className="shop-name">VeloCare</p>
-            </div>
-            <div className="person">
-              <img src={person2} alt="Person 2" className="rounded-image"/>
-              <div className="stars">
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-              </div>
-              <p className="person-name">Rusiru</p>
-              <p className="shop-name">SpinFix</p>
-            </div>
-            <div className="person">
-              <img src={person3} alt="Person 3" className="rounded-image"/>
-              <div className="stars">
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-              </div>
-              <p className="person-name">Praveen</p>
-              <p className="shop-name">VeloCare</p>
-            </div>
-            <div className="person">
-              <img src={person3} alt="Person 4" className="rounded-image"/>
-              <div className="stars">
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-              </div>
-              <p className="person-name">DeSilva</p>
-              <p className="shop-name">RapidRide</p>
-            </div>
-            <div className="person">
-              <img src={person1} alt="Person 5" className="rounded-image"/>
-              <div className="stars">
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-                <img src={star} alt="Star" className="star" />
-              </div>
-              <p className="person-name">DeSilva</p>
-              <p className="shop-name">RapidRide</p>
-            </div>
-
+    <div className='homen-page-container'>
    
-</div>
- <section className="services-footer">
+    <div className='homen-banner'>
+    <div className='homen-container'>
+    <div className='homen-text'>
+        <h1>Motor Bike Service Reservation Center</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br></br>Nulla facilisi. Integer at dolor vitae turpis placerat convallis nec id justo.<br></br> Quisque rhoncus, tortor et facilisis pharetra, lorem <br></br>leo sodales nulla, eget cursus dolor dolor nec nisi. Vivamus interdum ligula et justo cursus, nec bibendum metus ullamcorper. <br></br>Integer sit amet libero non massa vestibulum sagittis.<br></br> Fusce rutrum sapien vel felis posuere, vel tempor sapien consequat. Integer gravida nec ligula ut aliquet. Etiam vestibulum felis non justo posuere eleifend.</p>
+        <div className='homen-button'>
+           
+            <a href='#'>REGISTER SHOP
+            <img src={registershop} alt="Reserve Now Icon" className="reserve-now-icon" /></a>
+            <a href='#'>RESERVE NOW
+            <img src={reservenow}  alt="Reserve Now Icon" className="reserve-now-icon" /></a>
+        </div>
+    </div>
+    
+    </div>
+    </div>
+    <div className="cards-container">
+      <div className="card">
+        <div className="img-box">
+          <img src={card1} alt='Card1' />
+        </div>
+        <h1 className='card-heading'>Heading one</h1>
+        <p className='card-text'>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+      </div>
+      <div className="card">
+        <div className="img-box">
+          <img src={card1} alt='Card1' />
+        </div>
+        <h1 className='card-heading'>Heading two</h1>
+        <p className='card-text'>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+      </div>
+      <div className="card">
+        <div className="img-box">
+          <img src={card1} alt='Card1' />
+        </div>
+        <h1 className='card-heading'>Heading three</h1>
+        <p className='card-text'>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        </p>
+      </div>
+    </div>
+    <div className='home-about-container'>
+    <div className='parallax-1'>
+    <div className='parallax-inner'>
+    <div className='home-about-text'>
+      <h1>About Us<br></br><span>WE OVER 20 YEARS EXPERIENCE</span></h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br></br>Nulla facilisi. Integer at dolor vitae turpis placerat convallis nec id justo.<br></br> Quisque rhoncus, tortor et facilisis pharetra, lorem leo sodales nulla, eget cursus dolor dolor nec nisi.<br></br> Vivamus interdum ligula et justo cursus, nec bibendum metus ullamcorper.<r></r> Integer sit amet libero non massa vestibulum sagittis. Fusce rutrum sapien vel felis posuere, <br></br>vel tempor sapien consequat. Integer gravida nec ligula ut aliquet. Etiam vestibulum felis non justo posuere eleifend.</p>
+    </div>
+    <button className='homeabout-button'>ABOUT US</button>
+
  
-
-
-      <div className="services-footer-container">
-        <div className="service-item">
-          <img src={island} alt="Island Research" />
-          <p>Island Research</p>
+    </div>
+    </div>
+    </div>
+    <div className='counter-up' >
+      <div className='counter-content'>
+      <div className='counter-box'>
+        <div className='counter-icon'><i className='fa fa-history'></i> </div>
+        <p className='counter'>724</p>
+        <p className='counter-text'>Working hours</p>
         </div>
-        <div className="service-item">
-          <img src={realtime} alt="Realtime Update" />
-          <p>Realtime Update</p>
+        <div className='counter-box'>
+        <div className='counter-icon'><i className='fa fa-history'></i> </div>
+        <p className='counter'>724</p>
+        <p className='counter-text'>Working hours</p>
         </div>
-        <div className="service-item">
-          <img src={reserve} alt="Reservation Management" />
-          <p>Reservation Management</p>
+        <div className='counter-box'>
+        <div className='counter-icon'><i className='fa fa-gift'></i> </div>
+        <p className='counter'>120</p>
+        <p className='counter-text'>Award Recieved</p>
         </div>
-        <div className="service-item">
-          <img src={multi} alt="Multishop Locations" />
-          <p>Multishop Locations</p>
-        </div>
-        <div className="service-item">
-          <img src={history} alt="Reservation History" />
-          <p>Reservation History</p>
+        <div className='counter-box'>
+        <div className='counter-icon'><i className='fa fa-users'></i> </div>
+        <p className='counter'>190</p>
+        <p className='counter-text'>Happy Customers</p>
         </div>
       </div>
-    </section>
-
-
-
-
-
-      
-
     </div>
+    <div className='flipping-cards-container'>
+    
+        <div className="center">
+          <div className="front-face">
+            <div className="contents front">
+              <p>David Smith</p>
+              <span>Kathmandu, Nepal</span>
+            </div>
+          </div>
+          <div className="back-face">
+            <div className="contents back">
+              <h2>CodingNepal</h2>
+              <span>Follow Me</span>
+              <div className="icons">
+                <FontAwesomeIcon icon={faFacebookF} />
+                <FontAwesomeIcon icon={faTwitter} />
+                <FontAwesomeIcon icon={faLinkedin} />
+                <FontAwesomeIcon icon={faGithub} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="center">
+          <div className="front-face">
+            <div className="contents front">
+              <p>David Smith</p>
+              <span>Kathmandu, Nepal</span>
+            </div>
+          </div>
+          <div className="back-face">
+            <div className="contents back">
+              <h2>CodingNepal</h2>
+              <span>Follow Me</span>
+              <div className="icons">
+                <FontAwesomeIcon icon={faFacebookF} />
+                <FontAwesomeIcon icon={faTwitter} />
+                <FontAwesomeIcon icon={faLinkedin} />
+                <FontAwesomeIcon icon={faGithub} />
+              </div>
+            </div>
+          </div>
+        </div>
+    
+   
+    </div>
+    <p className='testimonial'>Testimonials</p>
+    <p className='testimonial-client-text'>WHAT ARE CLIENTS SAY</p>
+    <div className="wrapper-testamonial">
+
+      <div className="box-testamonial">
+      <FontAwesomeIcon icon={faQuoteLeft} className="quote" />
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
+        <div className="content-testamonial">
+          <div className="info-testamonial">
+            <div className="name-testamonial">John Doe</div>
+            <div className="job-testamonial">Job Title</div>
+            <div className="stars-testamonial">
+            <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+            </div>
+          </div>
+          <div className="image-testamonial">
+            <img src={card1} alt="Profile" />
+          </div>
+        </div>
+      </div>
+      <div className="box-testamonial">
+      <FontAwesomeIcon icon={faQuoteLeft} className="quote" />
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
+        <div className="content-testamonial">
+          <div className="info-testamonial">
+            <div className="name-testamonial">John Doe</div>
+            <div className="job-testamonial">Job Title</div>
+            <div className="stars-testamonial">
+            <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={farStar} />
+            </div>
+          </div>
+          <div className="image-testamonial">
+            <img src={card1} alt="Profile" />
+          </div>
+        </div>
+      </div>
+      <div className="box-testamonial">
+      <FontAwesomeIcon icon={faQuoteLeft} className="quote" />
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
+        <div className="content-testamonial">
+          <div className="info-testamonial">
+            <div className="name-testamonial">John Doe</div>
+            <div className="job-testamonial">Job Title</div>
+            <div className="stars-testamonial">
+            <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={farStar} />
+            </div>
+          </div>
+          <div className="image-testamonial">
+            <img src={card1} alt="Profile" />
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div className="slide-container swiper">
+            <div className="slide-content">
+                <div className="card-wrapper swiper-wrapper">
+                    <div className="card swiper-slide">
+                        <div className="image-content">
+                            <span className="overlay"></span>
+                            <div className="card-image">
+                                <img src={person1} alt='Testimonial'/>
+                            </div>
+                        </div>
+                        <div className="card-content">
+                            <h2 className="name">David Dell</h2>
+                            <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                            <button className="button-view">View More</button>
+                        </div>
+                    </div>
+                    <div className="card swiper-slide">
+                        <div className="image-content">
+                            <span className="overlay"></span>
+                            <div className="card-image">
+                                <img src={ellie} alt='Testimonial'/>
+                            </div>
+                        </div>
+                        <div className="card-content">
+                            <h2 className="name">David Dell</h2>
+                            <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                            <button className="button-view">View More</button>
+                        </div>
+                    </div>
+                    <div className="card swiper-slide">
+                        <div className="image-content">
+                            <span className="overlay"></span>
+                            <div className="card-image">
+                                <img src={rigo} alt='Testimonial'/>
+                            </div>
+                        </div>
+                        <div className="card-content">
+                            <h2 className="name">David Dell</h2>
+                            <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                            <button className="button-view">View More</button>
+                        </div>
+                    </div>
+                    <div className="card swiper-slide">
+                        <div className="image-content">
+                            <span className="overlay"></span>
+                            <div className="card-image">
+                                <img src={nia} alt='Testimonial'/>
+                            </div>
+                        </div>
+                        <div className="card-content">
+                            <h2 className="name">David Dell</h2>
+                            <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                            <button className="button-view">View More</button>
+                        </div>
+                    </div>
+                    <div className="card swiper-slide">
+                        <div className="image-content">
+                            <span className="overlay"></span>
+                            <div className="card-image">
+                                <img src={john} alt='Testimonial'/>
+                            </div>
+                        </div>
+                        <div className="card-content">
+                            <h2 className="name">David Dell</h2>
+                            <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                            <button className="button-view">View More</button>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+            <div className="swiper-button-next swiper-navBtn"></div>
+            <div className="swiper-button-prev swiper-navBtn"></div>
+            <div className="swiper-pagination"></div>  
+        
+          
+        </div>
+        <div className='parallax-1'>
+          <div className='parallax-inner'>
+          <div className='service-cards-container'>
+          <div className='service-card'>
+          <div className='service-card-content'>
+          <p className='service-card-heading'>Instant Motor Bike Repair</p>
+          <i class="fa fa-wrench fa-lg" aria-hidden="true"></i>
+          <p>The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+         
+          </div>
+          </div>
+          <div className='service-card'>
+          <div className='service-card-content'>
+          <p className='service-card-heading'>Easy Reservation through Mobile App</p>
+          <i class="fa fa-mobile fa-lg" aria-hidden="true"></i>
+          <p>The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          </div>
+          <div className='service-card'>
+          <div className='service-card-content'>
+          <p className='service-card-heading'>Flexible Payment Options </p>
+          <i class="fa fa-cc-mastercard fa-lg" aria-hidden="true"></i>
+          <p>The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          </div>
+          <div className='service-card'>
+          <div className='service-card-content'>
+          <p className='service-card-heading'>Live Chat Box</p>
+          <i class="fa fa-comments fa-lg" aria-hidden="true"></i>
+          <p>The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          </div>
+          <div className='service-card'>
+          <div className='service-card-content'>
+          <p className='service-card-heading'>Progress Tracking</p>
+          <i class="fa fa-line-chart fa-lg" aria-hidden="true"></i>
+          <p>The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          </div>
+          <div className='service-card'>
+          <div className='service-card-content'>
+          <p className='service-card-heading'>Filtering Feature</p>
+          <i class="fa fa-filter fa-lg" aria-hidden="true"></i>
+          <p>The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          </div>
+        </div>
+
+          </div>
+        </div>
+        <div className='video-container'>
+        <video autoPlay loop muted plays-inline src={backgroundclip} className='background-clip'>
+          <source src={backgroundclip} type='video/mp4'/>
+        </video>
+        <div className='video-content'>
+          <h1>Explore More</h1>
+          <a href='#' >Start Searching</a>
+        </div>
+
+        </div>
+
+        
+        
+    </div>
+
+
 
   );
 }
+
+
+
 
 export default Home;

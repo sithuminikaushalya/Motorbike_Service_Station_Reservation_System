@@ -1,104 +1,112 @@
-.resrvation-form-text{
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin-left: 5%;
-    margin-top: 5%;
-}
-.personal-info,
-.bike-details,
-shop-details{
+.reservation-form-container{
     display: flex;
-}
-
-#bikebrand,
-#bikemodel,
-#bikeyear,
-#serialno,
-#availabledate,
-#availabletime{
-border-radius: 15px; 
-background-color: #F5FBFF;
-}
-
-.input-group-reserve:first-child input {
-    margin-right: 20%; 
-}
-.input-group-reserve{
-    margin-left: 5%;
-    flex-basis: calc(20% - 10px);
-    position: relative;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../assets/backimg5.jpg');
+    background-size: cover;
+    background-position: center;
     
 }
-.input-group-reserve input {
-    width: 100%; 
-    border: none;
 
+.reservation-form-body{
+    max-width: 350px;
+    border: 1px solid #ced4da;
+    margin: 10% auto 0;
+    
 }
 
-.input-with-image{
+.radio-btn-container{
+    margin: 0 20px
+
+}
+.radio-btn-container .btn{
+    margin: 20px 10px 20px 0;
+    box-shadow: none;
+}
+.radio-btn-container .btn::after{
+  
+    height: 15px;
+    width: 15px;
+    top: -2px;
+    left: -1px;
+    background-color: #fff;
     position: relative;
-    display: flex;
-    align-items: center;
+    display: inline-block;
+    border: 3px solid #fff;
+    visibility: visible;
+    border-radius: 50%;
+   
 }
-.date{
-    position: absolute;
-    right: 7%; 
-    top: 50%;
-    transform: translateY(-50%);
-    width: 8%;
-    height: auto;
+.radio-btn-container .btn:checked::after{
+    background-color: #000;
+    transition: 0.5s;
 }
-.input-with-image select {
-    width: 100%; 
-    padding-right: 10%;
-    padding-bottom: 5%;
-    padding-top: 5%;
-    border: none;
+.radio-btn-container span{
+    color: #fff;
+    margin-right: 5px;
+    font-size: 12px;
 }
-.comment-box-reserve{
-    width: 60%;
-    height: 30%; 
-    padding: 5%;
-    margin-top: 3%;
-    resize: vertical; 
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-family: "Poppins", sans-serif;
-    font-size: 1rem;
-    background-color: #F5FBFF;
-    margin-left: 3%;
-    outline: none;   
+.booking-form{
+   padding: 0 20px 20px; 
 }
-.submit-button-reserve{
-    width: 10%;
-    margin-left: 40%;
-    margin-top: 5%;
-    border: none;
-    border-radius: 15px;
-   background-color: #C1E1F8;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-weight: 600;
-    font-family: "Poppins", sans-serif;
-    color: #03045E;
+.booking-form label{
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #fff;
 }
 
-.reservation-container {
-    position: relative; /* Ensure relative positioning */
+input::placeholder{
+    color: #fff !important;
 }
-.reservation-background {
-    position: fixed; /* Fixed positioning to keep the background image in place */
-    top: 0;
-    left: 0;
+.input-grp-reservation{
+    width: 151px;
+    display: inline-block;
+}
+
+.form-control{
+    font-size: 12px !important;
+    border-radius: 0 !important;
+    color: #fff !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.select-date::-webkit-inner-spin-button,
+.select-date::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin:0;
+}
+
+.select-date::-webkit-calender-picker-indicator{
+    background: transparent !important;
+}
+
+.custom-select{
+    color: #fff !important;
+    font-size: 12px !important;
+    border: 1px solid #ced4da !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+}
+
+.custom-select option{
+    color: #333;
+}
+
+.reservation{
     width: 100%;
-    height: 100%;
+    padding: 9px 0;
+    border: 1px solid #ced4da !important;
+    background: transparent !important;
+    box-shadow: none!important;
+    border-radius: 0 !important;
 
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1; /* Ensure the background stays behind the content */
 }
-.reservation-form{
-    position: relative; /* Ensure content is stacked above the background */
-    z-index: 1;
+.reservation:hover{
+    background: #fff!important;
+    color: #000!important;
+    transition: 0.5s;
 }
