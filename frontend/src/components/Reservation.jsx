@@ -10,23 +10,23 @@ function Reservation(){
     <div className="reservation-form-body">
     <div className="radio-btn-container">
         <input type="radio" className="btn" name="check"  checked="checked" />
-        <span>Roundtrip</span>
+        <span>Motor bike</span>
         <input type="radio" className="btn" name="check"  checked="checked" />
-        <span>One way</span>
+        <span>Scooter</span>
         <input type="radio" className="btn" name="check"  checked="checked" />
-        <span>Multi-City</span>
+        <span>Electric Bike</span>
     </div>
     <div className="booking-form">
-        <label>Flying Form</label>
-        <input type="text" className="form-control" placeholder="City or Airport"/>
-        <label>Flying Form</label>
-        <input type="text" className="form-control" placeholder="City or Airport"/>
+        <label>User Name</label>
+        <input type="text" className="form-control" placeholder="Enter UserName"/>
+        <label>Motorbike Number</label>
+        <input type="text" className="form-control" placeholder="Enter MotorBikeNo"/>
         <div className="input-grp-reservation">
-            <label>Returning</label>
+            <label>Reservation Date</label>
             <input type="date" className="form-control select-date"/>
         </div>
         <div className="input-grp-reservation">
-            <label>Adults</label>
+            <label>Time</label>
             <input type="number" className="form-control" value="1"/>
         </div>
         <div className="input-grp-reservation">
@@ -34,17 +34,17 @@ function Reservation(){
             <input type="number" className="form-control" value="0"/>
         </div>
         <div className="input-grp-reservation">
-            <label>Travel Class</label>
+            <label>Advance Payment</label>
             <select className="custom-select">
-            <option value="1">Economy Class</option>
-            <option value="2">Economy Class</option>
+            <option value="1">Cash</option>
+            <option value="2">Online</option>
            
 
             </select>
            
         </div>
         <div className="input-grp-reservation">
-            <button type="button" className="btn-btn-primary reservation">Show Flight</button> 
+            <button type="button" className="btn-btn-primary reservation">Reserve</button> 
         </div>
 
     </div>
