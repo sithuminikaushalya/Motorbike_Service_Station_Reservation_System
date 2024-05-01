@@ -129,6 +129,22 @@ const Fault = () => {
   }, []);
   }
 
+  // useEffect(() => {
+  //   const fetchSectionDropdownOptions = async () => {
+  //     try {
+  //       const response = await fetch('http://localhost:8096/company/company');
+  //       const data = await response.json();
+  //       const dropdownOptions = data.map((company) => company.bikeCompany);
+  //       setDropdownOptions(dropdownOptions);
+  //     } catch (error) {
+  //       console.error('Error fetching dropdown options:', error);
+  //     }
+  //   };
+
+  //   fetchSectionDropdownOptions();
+  // }, []);
+  // }
+
 
   return (
     <div className="datetime-picker-container">
