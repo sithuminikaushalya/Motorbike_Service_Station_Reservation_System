@@ -52,6 +52,7 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Payment from "./components/Payment";
+import Fault from "./components/Fault";
 
 
 //import { Navbar } from "react-bootstrap";
@@ -78,6 +79,8 @@ function App() {
     <Route path="/signup" element={<Signup/>}/>
     <Route path="/forgotpw" element={<ForgotPw/>}/>
     <Route path="/payment" element={<Payment/>}/>
+
+    <Route path="/Fault" element={<Fault/>}/>
    
     
 
