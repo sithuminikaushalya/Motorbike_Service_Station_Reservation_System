@@ -3,11 +3,14 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url('../assets/backimg5.jpg');
+    background:url('../assets/backimg5.jpg');
     background-size: cover;
     background-position: center;
     
+    
 }
+
+
 
 .reservation-form-body{
     max-width: 350px;

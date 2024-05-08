@@ -16,7 +16,9 @@ import ellie from "../assets/Ellie_Anderson.jpg"
 import john from "../assets/John_Morgan.jpg"
 import nia from "../assets/Nia_Adebayo.jpg"
 import rigo from "../assets/Rigo_Louie.jpg"
-
+import tickmark from "../assets/tickmark.png";
+import location from "../assets/location.png";
+import { useNavigate } from "react-router-dom";
 
 //import '../../node_modules/swiper/swiper-bundle.min.js';
 //import '../../node_modules/swiper/swiper-bundle.min.css';
@@ -43,6 +45,20 @@ import backgroundclip from '../assets/vid.mp4';
 
 
 function Home() {
+
+  const navigate = useNavigate();
+
+  const handleAboutButtonClick = () => {
+    navigate("/aboutus");
+};
+
+const handleReserveClick = () => {
+  navigate("/reservation");
+};
+
+const handleRegisterClick = () => {
+  navigate("/registershop");
+};
 
   useEffect(() => {
     const swiper = new Swiper('.slide-content', {
@@ -84,13 +100,13 @@ function Home() {
     <div className='homen-container'>
     <div className='homen-text'>
         <h1>Motor Bike Service Reservation Center</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br></br>Nulla facilisi. Integer at dolor vitae turpis placerat convallis nec id justo.<br></br> Quisque rhoncus, tortor et facilisis pharetra, lorem <br></br>leo sodales nulla, eget cursus dolor dolor nec nisi. Vivamus interdum ligula et justo cursus, nec bibendum metus ullamcorper. <br></br>Integer sit amet libero non massa vestibulum sagittis.<br></br> Fusce rutrum sapien vel felis posuere, vel tempor sapien consequat. Integer gravida nec ligula ut aliquet. Etiam vestibulum felis non justo posuere eleifend.</p>
+        <p>Introducing BikePulse, the premier online platform revolutionizing bike rentals and services. <br></br>Seamlessly blending convenience with quality, BikePulse offers a diverse array of meticulously maintained bikes for every rider, from urban explorers to outdoor enthusiasts. With our intuitive reservation system, users can effortlessly book their ideal bike,<br></br> selecting from a curated selection tailored to their preferences. Beyond rentals, BikePulse provides comprehensive service options, ensuring bikes are always in peak condition. <br></br>Backed by a commitment to excellence, BikePulse redefines the cycling experience, empowering riders to explore with confidence and ease.</p>
         <div className='homen-button'>
            
             <a href='#'>REGISTER SHOP
-            <img src={registershop} alt="Reserve Now Icon" className="reserve-now-icon" /></a>
+            <img src={registershop} alt="Reserve Now Icon" className="reserve-now-icon" onClick={handleRegisterClick}/></a>
             <a href='#'>RESERVE NOW
-            <img src={reservenow}  alt="Reserve Now Icon" className="reserve-now-icon" /></a>
+            <img src={reservenow}  alt="Reserve Now Icon" className="reserve-now-icon" onClick={handleReserveClick}/></a>
         </div>
     </div>
     
@@ -101,28 +117,63 @@ function Home() {
         <div className="img-box">
           <img src={card1} alt='Card1' />
         </div>
-        <h1 className='card-heading'>Heading one</h1>
-        <p className='card-text'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
+        <h1 className='card-heading'>Asphalt Motors</h1>
+        
+        <p><i class="fa fa-location-arrow" aria-hidden="true"></i>  Homagama villa Street,
+                    Ambalangode-06</p>
+                   
+                  <p><i class="fa fa-phone" aria-hidden="true"></i>+94 11 455 4665</p>
+                  <p>
+                    <img src={location} alt="Location Image" />
+                    <a href="#" className="direction-link">Get Direction</a>
+                  </p>
+                  <div class="details-content">
+                  <p>Opens daily 8.00 AM - 6.00 PM</p>
+                  <p><img src={tickmark} alt="Tick Mark" /> Company Services only</p>
+                  <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
+                </div>              
+                  
       </div>
       <div className="card">
         <div className="img-box">
           <img src={card1} alt='Card1' />
         </div>
-        <h1 className='card-heading'>Heading two</h1>
-        <p className='card-text'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
+        <h1 className='card-heading'>Velocare</h1>
+        
+        <p><i class="fa fa-location-arrow" aria-hidden="true"></i>  No.64, Galle Street, Colombo-06</p>
+                  <p><i class="fa fa-phone" aria-hidden="true"></i>+94 11 455 6650</p>
+         <p>
+          <img src={location} alt="Location Image" />
+           <a href="#" className="direction-link">Get Direction</a>
+           </p>
+           <div class="details-content">
+                  <p>Opens daily 8.00 AM - 6.00 PM</p>
+                  <p><img src={tickmark} alt="Tick Mark" />Full services</p>
+                  <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
+                </div>           
+
       </div>
       <div className="card">
         <div className="img-box">
           <img src={card1} alt='Card1' />
         </div>
-        <h1 className='card-heading'>Heading three</h1>
+        <h1 className='card-heading'>VroomVille</h1>
         <p className='card-text'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+         
         </p>
+        <p><i class="fa fa-location-arrow" aria-hidden="true"></i>  No 24 Main Street,
+                    Piyagama</p>
+                  <p><i class="fa fa-phone" aria-hidden="true"></i>+94 26 555 4623</p>
+                  <p>
+                    <img src={location} alt="Location Image" />
+                    <a href="#" className="direction-link">Get Direction</a>
+                  </p> 
+                  <div class="details-content">
+                  <p>Opens daily 8.00 AM - 6.00 PM</p>
+                  <p><img src={tickmark} alt="Tick Mark" />Full services</p>
+                  <p><img src={tickmark} alt="Tick Mark" />Company Services</p>
+                  <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
+                </div>                  
       </div>
     </div>
     <div className='home-about-container'>
@@ -130,9 +181,9 @@ function Home() {
     <div className='parallax-inner'>
     <div className='home-about-text'>
       <h1>About Us<br></br><span>WE OVER 20 YEARS EXPERIENCE</span></h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br></br>Nulla facilisi. Integer at dolor vitae turpis placerat convallis nec id justo.<br></br> Quisque rhoncus, tortor et facilisis pharetra, lorem leo sodales nulla, eget cursus dolor dolor nec nisi.<br></br> Vivamus interdum ligula et justo cursus, nec bibendum metus ullamcorper.<r></r> Integer sit amet libero non massa vestibulum sagittis. Fusce rutrum sapien vel felis posuere, <br></br>vel tempor sapien consequat. Integer gravida nec ligula ut aliquet. Etiam vestibulum felis non justo posuere eleifend.</p>
+      <p>At BikePulse, we're passionate about cycling and dedicated to enhancing the biking experience for riders everywhere. <br></br>Founded with a vision to promote sustainability and active living, BikePulse is more than just a rental and service platform; it's a community-driven hub for cyclists of all levels.<br></br> Our team of cycling enthusiasts brings years of expertise to curate a collection of top-quality bikes and deliver unparalleled service.<br></br> Whether you're commuting through the city streets or embarking on a weekend adventure, BikePulse is here to support you every step of the way. <br></br>Join us in our mission to inspire and enable more people to embrace the joy of biking while fostering a healthier, happier planet. Welcome to BikePulse, where every ride is an adventure waiting to happen.</p>
     </div>
-    <button className='homeabout-button'>ABOUT US</button>
+    <button className='homeabout-button' onClick={handleAboutButtonClick }>ABOUT US</button>
 
  
     </div>
@@ -362,7 +413,7 @@ function Home() {
           <div className='service-card-content'>
           <p className='service-card-heading'>Instant Motor Bike Repair</p>
           <i class="fa fa-wrench fa-lg" aria-hidden="true"></i>
-          <p>The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+          <p>Instant Bike repair without being delayed</p>
          
           </div>
           </div>
@@ -370,35 +421,35 @@ function Home() {
           <div className='service-card-content'>
           <p className='service-card-heading'>Easy Reservation through Mobile App</p>
           <i class="fa fa-mobile fa-lg" aria-hidden="true"></i>
-          <p>The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+          <p>Mobile App provides a big handrail to maake the reservation done smoothly</p>
           </div>
           </div>
           <div className='service-card'>
           <div className='service-card-content'>
           <p className='service-card-heading'>Flexible Payment Options </p>
           <i class="fa fa-cc-mastercard fa-lg" aria-hidden="true"></i>
-          <p>The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+          <p>Enjoy the freedom of flexible payment options. Pay online in advance during reservation or conveniently settle the bill after your bike is back in top-notch condition. Your choice, your convenience.</p>
           </div>
           </div>
           <div className='service-card'>
           <div className='service-card-content'>
           <p className='service-card-heading'>Live Chat Box</p>
           <i class="fa fa-comments fa-lg" aria-hidden="true"></i>
-          <p>The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+          <p>A live chat box on your website acts as a friendly guide in the digital realm, instantly connecting visitors with assistance. It's a modern tool that transforms your site into a responsive and approachable space, catering to the expectations of today's online audience</p>
           </div>
           </div>
           <div className='service-card'>
           <div className='service-card-content'>
           <p className='service-card-heading'>Progress Tracking</p>
           <i class="fa fa-line-chart fa-lg" aria-hidden="true"></i>
-          <p>The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+          <p>Stay in the loop with real-time service progress updates. Our system keeps you informed every step of the way, ensuring transparency and peace of mind throughout the bike service </p>
           </div>
           </div>
           <div className='service-card'>
           <div className='service-card-content'>
           <p className='service-card-heading'>Filtering Feature</p>
           <i class="fa fa-filter fa-lg" aria-hidden="true"></i>
-          <p>The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+          <p>Filtering parts of the bike is like crafting a tailored experience for your vehicle's needs. It's about personalizing your bike service, ensuring it aligns seamlessly with the digital age's demand for precision and efficiency.</p>
           </div>
           </div>
         </div>
