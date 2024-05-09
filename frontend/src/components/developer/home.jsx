@@ -266,7 +266,7 @@ function Home() {
           <div  className="card-horizontal" onMouseEnter={() => {handleCardHover(4); handleCardHovered(4)}}>
           <img src={livechat} alt="Service Progress" />
             <h3 className="card-title">Service Progress System</h3>
-            <p className="card-text">Stay in the loop with real-time service progress updates. Our system keeps you informed every step of the way, ensuring transparency and peace of mind throughout the bike service jo</p>
+            <p className="card-text">Stay in the loop with real-time service progress updates. Our system keeps you informed every step of the way, ensuring transparency and peace of mind throughout the bike service </p>
           </div>
           
         </div>

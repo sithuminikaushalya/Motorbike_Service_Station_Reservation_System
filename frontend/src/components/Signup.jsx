@@ -16,7 +16,12 @@ function Signup() {
     const [customerPhoneNumber, setCustomerPhoneNumber] = useState("");
     const [customerUsername, setCustomerUsername] = useState("");
     const [customerPassword, setCustomerPassword] = useState("");
-    
+
+    const validatePhoneNumber = (phoneNumber) => {
+      
+        const phonePattern = /^07[0-9]{8}$/;
+        return phonePattern.test(phoneNumber);
+    };
 
     async function saveCustomer(event) {
         event.preventDefault();
@@ -61,9 +66,15 @@ function Signup() {
                     <FaEnvelope className="signup-icon"/>
                 </div>
                 <div className="signup-input-box">
-                    <input type="text" placeholder='Phone Number' required
+                    <input type="tel" placeholder='Phone Number' required
+                    
                     value={customerPhoneNumber}
-                    onChange={(e) => setCustomerPhoneNumber(e.target.value)}
+                    onChange={(e) =>{
+                        const inputValue = e.target.value;
+                        if(validatePhoneNumber(inputValue)){
+                            setCustomerPhoneNumber(inputValue)
+                        }
+                    }}
                     />
                     <FaPhone className="signup-icon"/>
                 </div>

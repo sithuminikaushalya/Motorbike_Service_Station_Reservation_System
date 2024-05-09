@@ -1,25 +1,79 @@
+/* Profile.css */
 
+.profile-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background:url('../assets/backimg6.jpg');
+  background-size: cover;
+  background-position: center;
+}
 
-.icon-user{
-    margin-left: 50%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    
-    
-}
-.input-group-reserve-profile:first-child input {
-    margin-right: 20%; 
-}
-.input-group-reserve-profile{
-    margin-left: 5%;
-    flex-basis: calc(20% - 10px);
-    position: relative;
-
-    
-}
-.input-group-reserve-profile input {
-    width: 100%; 
-    border: none;
-    height: 5%;
+.profile-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+background: transparent;
+  border-radius: 10px;
+  
  
 }
+
+.profile-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.two-factor-auth {
+  display: flex;
+  align-items: center;
+}
+
+.two-factor-auth input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.two-factor-auth label {
+  font-size: 1rem;
+  color: #fff;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+  

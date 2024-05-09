@@ -1,67 +1,56 @@
-import React from "react";
+
+// Profile.jsx
+
+import React, { useState } from "react";
 import './Profile.css';
-import userIcon from "../assets/maleuser.png";
-import Rightbar from "./RightBar";
 
-function Profile(){
+function Profile() {
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [recoveryPhone, setRecoveryPhone] = useState("");
+  const [recoveryEmail, setRecoveryEmail] = useState("");
+  const [twoFactorAuth, setTwoFactorAuth] = useState(false);
 
-    return(
-        
-      <div className="profile-container">
-      <Rightbar/>
-      <img className="icon-user" src={userIcon} alt="User" />
-           <div className="personal-info">
-            <div className="input-group-reserve">
-                <label htmlFor="username">User Name</label>
-                <input type="text" id="username" placeholder="Enter First Name" />
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", { currentPassword, newPassword, recoveryPhone, recoveryEmail, twoFactorAuth });
+  };
 
-            </div>
-            <div className="input-group-reserve">
-                <label htmlFor="phhoneno">Phone Number</label>
-                <input type="text" id="phoneno" placeholder="Enter Phone Number" />
-
-            </div>
-            </div>
-            <div className="personal-info">
-            <div className="input-group-reserve">
-                <label htmlFor="email">Email Address</label>
-                <input type="text" id="email" placeholder="Enter Email Address" />
-
-            </div>
-            <div className="input-group-reserve">
-                <label htmlFor="location">Location</label>
-                <input type="text" id="location" placeholder="Enter Location" />
-
-            </div>
-            </div>
-            <p className="resrvation-form-text">Bike Details</p>
-            <div className="bike-details">
-            <div className="input-group-reserve">
-                <label htmlFor="bikebrand">Bike Brand</label>
-                <input type="text" id="bikebrand" placeholder="Enter Bike Brand" />
-
-            </div>
-            <div className="input-group-reserve">
-                <label htmlFor="bikemodel">Bike Model</label>
-                <input type="text" id="bikemodel" placeholder="Enter Bike Model" />
-
-            </div>
-            </div>
-            <div className="bike-details">
-            <div className="input-group-reserve">
-                <label htmlFor="bikeyear">Bike Year</label>
-                <input type="text" id="bikeyear" placeholder="Enter Bike Year" />
-
-            </div>
-            <div className="input-group-reserve">
-                <label htmlFor="serialno">Serial Number</label>
-                <input type="text" id="serialno" placeholder="Enter Serial Number" />
-
-            </div>
-            </div>
-            <button type="submit" className="submit-button-reserve">Save</button>
-      </div>
-    );
-    
+  return (
+    <div className="profile-content">
+    <div className="profile-container">
+      <h2 className="profile-title">Account Settings</h2>
+      <form onSubmit={handleSubmit} className="profile-form">
+        <div className="form-group">
+          <label htmlFor="currentPassword">Current Password</label>
+          <input type="password" id="currentPassword" value={currentPassword} onChange={(e) => setCurrentPassword(e.target.value)} required />
+        </div>
+        <div className="form-group">
+          <label htmlFor="newPassword">New Password</label>
+          <input type="password" id="newPassword" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} required />
+        </div>
+        <div className="form-group">
+          <label htmlFor="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
+        </div>
+        <div className="form-group">
+          <label htmlFor="recoveryPhone">Recovery Phone Number</label>
+          <input type="tel" id="recoveryPhone" value={recoveryPhone} onChange={(e) => setRecoveryPhone(e.target.value)} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="recoveryEmail">Recovery Email Address</label>
+          <input type="email" id="recoveryEmail" value={recoveryEmail} onChange={(e) => setRecoveryEmail(e.target.value)} />
+        </div>
+        <div className="form-group two-factor-auth">
+          <input type="checkbox" id="twoFactorAuthToggle" checked={twoFactorAuth} onChange={(e) => setTwoFactorAuth(e.target.checked)} />
+          <label htmlFor="twoFactorAuthToggle">Enable Two-Factor Authentication</label>
+        </div>
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
+    </div>
+  );
 }
+
 export default Profile;
