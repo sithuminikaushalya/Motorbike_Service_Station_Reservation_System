@@ -1,67 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import './Profile.css';
 import userIcon from "../assets/maleuser.png";
 import Rightbar from "./RightBar";
 
-function Profile(){
+function Profile() {
 
-    return(
-        
-      <div className="profile-container">
-      <Rightbar/>
-      <img className="icon-user" src={userIcon} alt="User" />
-           <div className="personal-info">
-            <div className="input-group-reserve">
-                <label htmlFor="username">User Name</label>
-                <input type="text" id="username" placeholder="Enter First Name" />
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [bikeModel, setBikeModel] = useState('');
+  const [serialNumber, setSerialNumber] = useState('');
+  const [serviceType, setServiceType] = useState('');
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
 
-            </div>
-            <div className="input-group-reserve">
-                <label htmlFor="phhoneno">Phone Number</label>
-                <input type="text" id="phoneno" placeholder="Enter Phone Number" />
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-            </div>
-            </div>
-            <div className="personal-info">
-            <div className="input-group-reserve">
-                <label htmlFor="email">Email Address</label>
-                <input type="text" id="email" placeholder="Enter Email Address" />
+    console.log('Reservation submitted:', { name, email, phone, bikeModel, serviceType, date, time });
+  };
+  return (
 
-            </div>
-            <div className="input-group-reserve">
-                <label htmlFor="location">Location</label>
-                <input type="text" id="location" placeholder="Enter Location" />
+    <div className="resrvation-content">
 
-            </div>
-            </div>
-            <p className="resrvation-form-text">Bike Details</p>
-            <div className="bike-details">
-            <div className="input-group-reserve">
-                <label htmlFor="bikebrand">Bike Brand</label>
-                <input type="text" id="bikebrand" placeholder="Enter Bike Brand" />
-
-            </div>
-            <div className="input-group-reserve">
-                <label htmlFor="bikemodel">Bike Model</label>
-                <input type="text" id="bikemodel" placeholder="Enter Bike Model" />
-
-            </div>
-            </div>
-            <div className="bike-details">
-            <div className="input-group-reserve">
-                <label htmlFor="bikeyear">Bike Year</label>
-                <input type="text" id="bikeyear" placeholder="Enter Bike Year" />
-
-            </div>
-            <div className="input-group-reserve">
-                <label htmlFor="serialno">Serial Number</label>
-                <input type="text" id="serialno" placeholder="Enter Serial Number" />
-
-            </div>
-            </div>
-            <button type="submit" className="submit-button-reserve">Save</button>
-      </div>
-    );
+      <div className="reservation-container">
+        <h2 className="reservation-title">Online Reservation</h2>
+        <form onSubmit={handleSubmit} className="reservation-form">
     
+          <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+        
+          <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input type="tel" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
+          <input type="text" placeholder="Bike Model" value={bikeModel} onChange={(e) => setBikeModel(e.target.value)} />
+          <input type="tel" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
+          <input type="text"  placeholder="Serial Number" value={serialNumber} onChange={(e) => setSerialNumber(e.target.value)} required />
+          <select value={serviceType} onChange={(e) => setServiceType(e.target.value)}>
+            <option value="">Select Service Type</option>
+            <option value="Repair">Repair</option>
+            <option value="Maintenance">Maintenance</option>
+          </select>
+          <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+          <input type="time" value={time} onChange={(e) => setTime(e.target.value)} />
+          <button type="submit">Submit Reservation</button>
+        </form>
+      </div>
+
+    </div>
+
+  );
+
 }
 export default Profile;

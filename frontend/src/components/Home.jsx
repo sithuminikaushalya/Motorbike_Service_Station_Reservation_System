@@ -103,8 +103,8 @@ const handleRegisterClick = () => {
         <p>Introducing BikePulse, the premier online platform revolutionizing bike rentals and services. <br></br>Seamlessly blending convenience with quality, BikePulse offers a diverse array of meticulously maintained bikes for every rider, from urban explorers to outdoor enthusiasts. With our intuitive reservation system, users can effortlessly book their ideal bike,<br></br> selecting from a curated selection tailored to their preferences. Beyond rentals, BikePulse provides comprehensive service options, ensuring bikes are always in peak condition. <br></br>Backed by a commitment to excellence, BikePulse redefines the cycling experience, empowering riders to explore with confidence and ease.</p>
         <div className='homen-button'>
            
-            <a href='#'>REGISTER SHOP
-            <img src={registershop} alt="Reserve Now Icon" className="reserve-now-icon" onClick={handleRegisterClick}/></a>
+            <a href='#'>REGISTER SHOP 
+            <img src={registershop} alt="Reserve Now Icon" className="reserve-now-icon" onClick={handleRegisterClick} /></a>
             <a href='#'>RESERVE NOW
             <img src={reservenow}  alt="Reserve Now Icon" className="reserve-now-icon" onClick={handleReserveClick}/></a>
         </div>
@@ -265,7 +265,7 @@ const handleRegisterClick = () => {
       <div className="box-testamonial">
       <FontAwesomeIcon icon={faQuoteLeft} className="quote" />
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
+        <p>"BikePulse isn't just for rentals; it's my go-to for bike repairs too! When my bike needed a tune-up, I booked a service appointment through their online reservation system. The process was quick and convenient, and my bike was back to its best in no time. Thanks, BikePulse, for keeping me rolling smoothly!</p>
         <div className="content-testamonial">
           <div className="info-testamonial">
             <div className="name-testamonial">John Doe</div>
@@ -286,7 +286,7 @@ const handleRegisterClick = () => {
       <div className="box-testamonial">
       <FontAwesomeIcon icon={faQuoteLeft} className="quote" />
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
+        <p>"What I love most about BikePulse is their all-in-one approach. Not only can I easily rent a bike for my weekend adventures, but I can also schedule repairs through their online platform. It's incredibly convenient and saves me so much time. BikePulse has definitely become my go-to for all things cycling!"</p>
         <div className="content-testamonial">
           <div className="info-testamonial">
             <div className="name-testamonial">John Doe</div>
@@ -307,7 +307,7 @@ const handleRegisterClick = () => {
       <div className="box-testamonial">
       <FontAwesomeIcon icon={faQuoteLeft} className="quote" />
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
+        <p>"BikePulse has made managing my bike repairs a breeze. Their platform connects me with trusted service shops, and I can easily schedule appointments and track the progress of my repairs. It's a game-changer!"</p>
         <div className="content-testamonial">
           <div className="info-testamonial">
             <div className="name-testamonial">John Doe</div>
@@ -339,7 +339,7 @@ const handleRegisterClick = () => {
                         </div>
                         <div className="card-content">
                             <h2 className="name">David Dell</h2>
-                            <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                            <p className="description">"I'm blown away by the convenience of the BikePulse mobile app. Booking repair appointments is quick and easy, and I love being able to track the status of my repairs in real-time. It's like having a personal mechanic in my pocket!"</p>
                             <button className="button-view">View More</button>
                         </div>
                     </div>
@@ -352,7 +352,7 @@ const handleRegisterClick = () => {
                         </div>
                         <div className="card-content">
                             <h2 className="name">David Dell</h2>
-                            <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                            <p className="description">"Thanks to BikePulse, finding reputable bike service shops has never been easier. Their platform makes it simple to discover and connect with top-notch repair centers, ensuring my bike is always in tip-top shape."</p>
                             <button className="button-view">View More</button>
                         </div>
                     </div>
@@ -365,7 +365,7 @@ const handleRegisterClick = () => {
                         </div>
                         <div className="card-content">
                             <h2 className="name">David Dell</h2>
-                            <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                            <p className="description">"BikePulse's online payment system has made handling repair costs a breeze. I can pay securely through the app, saving me time and hassle. It's just one more way BikePulse has simplified my cycling experience."</p>
                             <button className="button-view">View More</button>
                         </div>
                     </div>
@@ -378,7 +378,7 @@ const handleRegisterClick = () => {
                         </div>
                         <div className="card-content">
                             <h2 className="name">David Dell</h2>
-                            <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                            <p className="description">"I'm impressed by the level of transparency BikePulse provides. Being able to track the progress of my repairs gives me peace of mind, knowing exactly what's happening every step of the way."</p>
                             <button className="button-view">View More</button>
                         </div>
                     </div>
@@ -391,7 +391,7 @@ const handleRegisterClick = () => {
                         </div>
                         <div className="card-content">
                             <h2 className="name">David Dell</h2>
-                            <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                            <p className="description">"BikePulse has made it so easy for me to find and book repair appointments. Their user-friendly interface and intuitive design make the whole process seamless and stress-free."</p>
                             <button className="button-view">View More</button>
                         </div>
                     </div>
