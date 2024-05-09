@@ -1,74 +1,79 @@
-/* Reservation.css */
+/* Profile.css */
 
-.resrvation-content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background:url('../assets/backimg6.jpg');
-    background-size: cover;
-    background-position: center;
+.profile-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background:url('../assets/backimg6.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
-.reservation-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-    
-  }
+.profile-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+background: transparent;
+  border-radius: 10px;
   
-  .reservation-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #f1eded;
-  }
-  
-  .reservation-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .reservation-form input,
-  .reservation-form select {
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 1rem;
-    border-radius: 20px;
-    background: transparent; 
-    outline: none;
-
-    width: 100%;
-    height: 100%;
-   
-   
-   
-    border: 2px solid rgba(255,255,255,.2);
-    border-radius: 40px;
-    font-size: 16px;
-    color: #fff;
-    padding: 20px 45px 20px 20px;
-
-  }
-
-  .reservation-form input::placeholder,
-.reservation-form select::placeholder {
-    color: #999; 
+ 
 }
-  
-  .reservation-form button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .reservation-form button:hover {
-    background-color: #0056b3;
-  }
+
+.profile-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.two-factor-auth {
+  display: flex;
+  align-items: center;
+}
+
+.two-factor-auth input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.two-factor-auth label {
+  font-size: 1rem;
+  color: #fff;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
   

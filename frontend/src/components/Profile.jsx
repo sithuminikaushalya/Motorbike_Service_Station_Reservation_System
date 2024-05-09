@@ -1,53 +1,56 @@
+
+// Profile.jsx
+
 import React, { useState } from "react";
 import './Profile.css';
-import userIcon from "../assets/maleuser.png";
-import Rightbar from "./RightBar";
 
 function Profile() {
-
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [bikeModel, setBikeModel] = useState('');
-  const [serialNumber, setSerialNumber] = useState('');
-  const [serviceType, setServiceType] = useState('');
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [recoveryPhone, setRecoveryPhone] = useState("");
+  const [recoveryEmail, setRecoveryEmail] = useState("");
+  const [twoFactorAuth, setTwoFactorAuth] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log('Reservation submitted:', { name, email, phone, bikeModel, serviceType, date, time });
+    console.log("Form submitted:", { currentPassword, newPassword, recoveryPhone, recoveryEmail, twoFactorAuth });
   };
+
   return (
-
-    <div className="resrvation-content">
-
-      <div className="reservation-container">
-        <h2 className="reservation-title">Online Reservation</h2>
-        <form onSubmit={handleSubmit} className="reservation-form">
-    
-          <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-        
-          <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-          <input type="tel" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
-          <input type="text" placeholder="Bike Model" value={bikeModel} onChange={(e) => setBikeModel(e.target.value)} />
-          <input type="tel" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
-          <input type="text"  placeholder="Serial Number" value={serialNumber} onChange={(e) => setSerialNumber(e.target.value)} required />
-          <select value={serviceType} onChange={(e) => setServiceType(e.target.value)}>
-            <option value="">Select Service Type</option>
-            <option value="Repair">Repair</option>
-            <option value="Maintenance">Maintenance</option>
-          </select>
-          <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
-          <input type="time" value={time} onChange={(e) => setTime(e.target.value)} />
-          <button type="submit">Submit Reservation</button>
-        </form>
-      </div>
-
+    <div className="profile-content">
+    <div className="profile-container">
+      <h2 className="profile-title">Account Settings</h2>
+      <form onSubmit={handleSubmit} className="profile-form">
+        <div className="form-group">
+          <label htmlFor="currentPassword">Current Password</label>
+          <input type="password" id="currentPassword" value={currentPassword} onChange={(e) => setCurrentPassword(e.target.value)} required />
+        </div>
+        <div className="form-group">
+          <label htmlFor="newPassword">New Password</label>
+          <input type="password" id="newPassword" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} required />
+        </div>
+        <div className="form-group">
+          <label htmlFor="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
+        </div>
+        <div className="form-group">
+          <label htmlFor="recoveryPhone">Recovery Phone Number</label>
+          <input type="tel" id="recoveryPhone" value={recoveryPhone} onChange={(e) => setRecoveryPhone(e.target.value)} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="recoveryEmail">Recovery Email Address</label>
+          <input type="email" id="recoveryEmail" value={recoveryEmail} onChange={(e) => setRecoveryEmail(e.target.value)} />
+        </div>
+        <div className="form-group two-factor-auth">
+          <input type="checkbox" id="twoFactorAuthToggle" checked={twoFactorAuth} onChange={(e) => setTwoFactorAuth(e.target.checked)} />
+          <label htmlFor="twoFactorAuthToggle">Enable Two-Factor Authentication</label>
+        </div>
+        <button type="submit">Save Changes</button>
+      </form>
     </div>
-
+    </div>
   );
-
 }
+
 export default Profile;
