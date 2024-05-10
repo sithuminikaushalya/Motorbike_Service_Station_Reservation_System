@@ -16,8 +16,7 @@ import ellie from "../assets/Ellie_Anderson.jpg"
 import john from "../assets/John_Morgan.jpg"
 import nia from "../assets/Nia_Adebayo.jpg"
 import rigo from "../assets/Rigo_Louie.jpg"
-import tickmark from "../assets/tickmark.png";
-import location from "../assets/location.png";
+
 import { useNavigate } from "react-router-dom";
 
 //import '../../node_modules/swiper/swiper-bundle.min.js';
@@ -34,7 +33,7 @@ import 'swiper/css/navigation';
 //import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
-import service1 from '../assets/mobile_app.png';
+
 import backgroundclip from '../assets/vid.mp4';
 
 
@@ -93,6 +92,35 @@ const handleRegisterClick = () => {
       swiper.destroy(); 
   };
 }, []);
+
+const cardsData = [
+  {
+    id: 1,
+    name: 'Asphalt Motors',
+    address: 'Homagama villa Street, Ambalangode-06',
+    phone: '+94 11 455 4665',
+    openingHours: 'Opens daily 8.00 AM - 6.00 PM',
+    services: ['Company Services only', 'Repair & Maintenance'],
+  },
+  {
+    id: 2,
+    name: 'Velocare',
+    address: 'No.64, Galle Street, Colombo-06',
+    phone: '+94 11 455 6650',
+    openingHours: 'Opens daily 8.00 AM - 6.00 PM',
+    services: ['Full services', 'Repair & Maintenance'],
+  },
+  {
+    id: 3,
+    name: 'VroomVille',
+    address: 'No 24 Main Street, Piyagama',
+    phone: '+94 26 555 4623',
+    openingHours: 'Opens daily 8.00 AM - 6.00 PM',
+    services: ['Full services', 'Company Services', 'Repair & Maintenance'],
+  },
+];
+
+
   return (
     <div className='homen-page-container'>
    
@@ -113,68 +141,35 @@ const handleRegisterClick = () => {
     </div>
     </div>
     <div className="cards-container">
-      <div className="card">
-        <div className="img-box">
-          <img src={card1} alt='Card1' />
+      {cardsData.map(card => (
+        <div key={card.id} className="card">
+          <div className="img-box">
+       
+            <img src={require('../assets/bike9.jpg')} alt="Card1" />
+          </div>
+          <h1 className="card-heading">{card.name}</h1>
+          <p>
+            <i className="fa fa-location-arrow" aria-hidden="true" /> {card.address}
+          </p>
+          <p>
+            <i className="fa fa-phone" aria-hidden="true" /> {card.phone}
+          </p>
+          <p>
+            <img src={require('../assets/location.png')} alt="Location Image" />
+            <a href="#" className="direction-link">
+              Get Direction
+            </a>
+          </p>
+          <div className="details-content">
+            <p>{card.openingHours}</p>
+            {card.services.map((service, index) => (
+              <p key={index}>
+                <img src={require('../assets/tickmark.png')} alt="Tick Mark" /> {service}
+              </p>
+            ))}
+          </div>
         </div>
-        <h1 className='card-heading'>Asphalt Motors</h1>
-        
-        <p><i class="fa fa-location-arrow" aria-hidden="true"></i>  Homagama villa Street,
-                    Ambalangode-06</p>
-                   
-                  <p><i class="fa fa-phone" aria-hidden="true"></i>+94 11 455 4665</p>
-                  <p>
-                    <img src={location} alt="Location Image" />
-                    <a href="#" className="direction-link">Get Direction</a>
-                  </p>
-                  <div class="details-content">
-                  <p>Opens daily 8.00 AM - 6.00 PM</p>
-                  <p><img src={tickmark} alt="Tick Mark" /> Company Services only</p>
-                  <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                </div>              
-                  
-      </div>
-      <div className="card">
-        <div className="img-box">
-          <img src={card1} alt='Card1' />
-        </div>
-        <h1 className='card-heading'>Velocare</h1>
-        
-        <p><i class="fa fa-location-arrow" aria-hidden="true"></i>  No.64, Galle Street, Colombo-06</p>
-                  <p><i class="fa fa-phone" aria-hidden="true"></i>+94 11 455 6650</p>
-         <p>
-          <img src={location} alt="Location Image" />
-           <a href="#" className="direction-link">Get Direction</a>
-           </p>
-           <div class="details-content">
-                  <p>Opens daily 8.00 AM - 6.00 PM</p>
-                  <p><img src={tickmark} alt="Tick Mark" />Full services</p>
-                  <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                </div>           
-
-      </div>
-      <div className="card">
-        <div className="img-box">
-          <img src={card1} alt='Card1' />
-        </div>
-        <h1 className='card-heading'>VroomVille</h1>
-        <p className='card-text'>
-         
-        </p>
-        <p><i class="fa fa-location-arrow" aria-hidden="true"></i>  No 24 Main Street,
-                    Piyagama</p>
-                  <p><i class="fa fa-phone" aria-hidden="true"></i>+94 26 555 4623</p>
-                  <p>
-                    <img src={location} alt="Location Image" />
-                    <a href="#" className="direction-link">Get Direction</a>
-                  </p> 
-                  <div class="details-content">
-                  <p>Opens daily 8.00 AM - 6.00 PM</p>
-                  <p><img src={tickmark} alt="Tick Mark" />Full services</p>
-                  <p><img src={tickmark} alt="Tick Mark" />Company Services</p>
-                  <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                </div>                  
-      </div>
+      ))}
     </div>
     <div className='home-about-container'>
     <div className='parallax-1'>

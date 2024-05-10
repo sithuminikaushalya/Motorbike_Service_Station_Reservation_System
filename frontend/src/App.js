@@ -34,8 +34,8 @@ function App  () {
 export default App;*/
 
 import React from "react";
-import Navbar from "./components/navbar";
-import Aboutus from "./components/aboutus";
+import Navbar from "./components/Navbar";
+import Aboutus from "./components/Aboutus";
 import Shops from "./components/Shops";
 import Footer from "./components/Footer";
 
@@ -53,6 +53,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Payment from "./components/Payment";
 import Fault from "./components/Fault";
+import Cart from "./components/Cart";
 
 
 //import { Navbar } from "react-bootstrap";
@@ -81,6 +82,7 @@ function App() {
     <Route path="/payment" element={<Payment/>}/>
 
     <Route path="/Fault" element={<Fault/>}/>
+    <Route path="/cart" element={<Cart/>}/>
    
     
 
