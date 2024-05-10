@@ -34,8 +34,8 @@ function App  () {
 export default App;*/
 
 import React from "react";
-import Navbar from "./components/navbar";
-import Aboutus from "./components/aboutus";
+import Navbar from "./components/Navbar";
+import Aboutus from "./components/Aboutus";
 import Shops from "./components/Shops";
 import Footer from "./components/Footer";
 
