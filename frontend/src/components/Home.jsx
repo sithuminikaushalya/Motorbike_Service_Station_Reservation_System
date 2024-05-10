@@ -94,6 +94,8 @@ const handleRegisterClick = () => {
   };
 }, []);
 
+
+
 const [shops, setShops] = useState([
   { shopId: 1, shopName: 'Shop 1', shopAddress: 'Location 1',contactNumber:'+94 11 455 4665', openingHours: 'Opens daily 8.00 AM - 6.00 PM',services: ['Company Services only', 'Repair & Maintenance'],},
   { shopId: 2, shopName: 'Shop 2', shopAddress: 'Location 2',contactNumber: '+94 11 455 6650', openingHours: 'Opens daily 8.00 AM - 6.00 PM', services: ['Full services', 'Repair & Maintenance'], },
@@ -102,16 +104,18 @@ const [shops, setShops] = useState([
   { shopId: 5, shopName: 'Shop 5', shopAddress: 'Location 5', contactNumber: '+94 71 987 6543', openingHours: 'Opens daily 9.00 AM - 7.00 PM', services: ['Company Services only'],}
 ]);
 
-useEffect(() => {
-  fetchData();
-}, []);
+// useEffect(() => {
+//   fetchData();
+// }, []);
+
 
 const fetchData = async () => {
   try {
+    // Example using axios:
     const response = await axios.get('http://localhost:8095/shop/getShop');
     setShops(response.data);
   } catch (error) {
-    console.error('Error fetching shops:', error);
+    console.error('Error fetching users:', error);
   }
 };
 
@@ -136,18 +140,18 @@ const fetchData = async () => {
     </div>
     </div>
     <div className="cards-container">
-      {shops.map((card) => (
-        <div key={card.shopId} className="card">
+    {shops.map((shop) => (
+        <div key={shop.shopId} className="card">
           <div className="img-box">
        
             <img src={require('../assets/bike9.jpg')} alt="Card1" />
           </div>
-          <h1 className="card-heading">{card.shopName}</h1>
+          <h1 className="card-heading">{shop.shopName}</h1>
           <p>
-            <i className="fa fa-location-arrow" aria-hidden="true" /> {card.shopAddress}
+            <i className="fa fa-location-arrow" aria-hidden="true" /> {shop.shopAddress}
           </p>
           <p>
-            <i className="fa fa-phone" aria-hidden="true" /> {card.contactNumber}
+            <i className="fa fa-phone" aria-hidden="true" /> {shop.contactNumber}
           </p>
           <p>
             <img src={require('../assets/location.png')} alt="Location Image" />
@@ -156,8 +160,8 @@ const fetchData = async () => {
             </a>
           </p>
           <div className="details-content">
-            <p>{card.openingHours}</p>
-            {card.services.map((service, index) => (
+            <p>{shop.openingHours}</p>
+            {shop.services.map((service, index) => (
               <p key={index}>
                 <img src={require('../assets/tickmark.png')} alt="Tick Mark" /> {service}
               </p>
@@ -339,7 +343,7 @@ const fetchData = async () => {
                                 <img src={ellie} alt='Testimonial'/>
                             </div>
                         </div>
-                        <div className="card-content">
+                        <div className="card-coshopt">
                             <h2 className="name">David Dell</h2>
                             <p className="description">"Thanks to BikePulse, finding reputable bike service shops has never been easier. Their platform makes it simple to discover and connect with top-notch repair centers, ensuring my bike is always in tip-top shape."</p>
                             <button className="button-view">View More</button>
@@ -401,7 +405,7 @@ const fetchData = async () => {
           <div className='service-card'>
           <div className='service-card-content'>
           <p className='service-card-heading'>Instant Motor Bike Repair</p>
-          <i class="fa fa-wrench fa-lg" aria-hidden="true"></i>
+          <i className="fa fa-wrench fa-lg" aria-hidden="true"></i>
           <p>Instant Bike repair without being delayed</p>
          
           </div>
@@ -409,35 +413,35 @@ const fetchData = async () => {
           <div className='service-card'>
           <div className='service-card-content'>
           <p className='service-card-heading'>Easy Reservation through Mobile App</p>
-          <i class="fa fa-mobile fa-lg" aria-hidden="true"></i>
+          <i className="fa fa-mobile fa-lg" aria-hidden="true"></i>
           <p>Mobile App provides a big handrail to maake the reservation done smoothly</p>
           </div>
           </div>
           <div className='service-card'>
           <div className='service-card-content'>
           <p className='service-card-heading'>Flexible Payment Options </p>
-          <i class="fa fa-cc-mastercard fa-lg" aria-hidden="true"></i>
+          <i className="fa fa-cc-mastercard fa-lg" aria-hidden="true"></i>
           <p>Enjoy the freedom of flexible payment options. Pay online in advance during reservation or conveniently settle the bill after your bike is back in top-notch condition. Your choice, your convenience.</p>
           </div>
           </div>
           <div className='service-card'>
           <div className='service-card-content'>
           <p className='service-card-heading'>Live Chat Box</p>
-          <i class="fa fa-comments fa-lg" aria-hidden="true"></i>
+          <i className="fa fa-comments fa-lg" aria-hidden="true"></i>
           <p>A live chat box on your website acts as a friendly guide in the digital realm, instantly connecting visitors with assistance. It's a modern tool that transforms your site into a responsive and approachable space, catering to the expectations of today's online audience</p>
           </div>
           </div>
           <div className='service-card'>
           <div className='service-card-content'>
           <p className='service-card-heading'>Progress Tracking</p>
-          <i class="fa fa-line-chart fa-lg" aria-hidden="true"></i>
+          <i className="fa fa-line-chart fa-lg" aria-hidden="true"></i>
           <p>Stay in the loop with real-time service progress updates. Our system keeps you informed every step of the way, ensuring transparency and peace of mind throughout the bike service </p>
           </div>
           </div>
           <div className='service-card'>
           <div className='service-card-content'>
           <p className='service-card-heading'>Filtering Feature</p>
-          <i class="fa fa-filter fa-lg" aria-hidden="true"></i>
+          <i className="fa fa-filter fa-lg" aria-hidden="true"></i>
           <p>Filtering parts of the bike is like crafting a tailored experience for your vehicle's needs. It's about personalizing your bike service, ensuring it aligns seamlessly with the digital age's demand for precision and efficiency.</p>
           </div>
           </div>
