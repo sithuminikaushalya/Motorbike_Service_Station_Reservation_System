@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef ,useState } from 'react';
 import './Home.css'; 
 import card1 from "../assets/service1.jpg";
 import reservenow from "../assets/reserve_now.png"
@@ -28,6 +28,7 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import axios from 'axios';
 
 
 //import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
@@ -93,32 +94,26 @@ const handleRegisterClick = () => {
   };
 }, []);
 
-const cardsData = [
-  {
-    id: 1,
-    name: 'Asphalt Motors',
-    address: 'Homagama villa Street, Ambalangode-06',
-    phone: '+94 11 455 4665',
-    openingHours: 'Opens daily 8.00 AM - 6.00 PM',
-    services: ['Company Services only', 'Repair & Maintenance'],
-  },
-  {
-    id: 2,
-    name: 'Velocare',
-    address: 'No.64, Galle Street, Colombo-06',
-    phone: '+94 11 455 6650',
-    openingHours: 'Opens daily 8.00 AM - 6.00 PM',
-    services: ['Full services', 'Repair & Maintenance'],
-  },
-  {
-    id: 3,
-    name: 'VroomVille',
-    address: 'No 24 Main Street, Piyagama',
-    phone: '+94 26 555 4623',
-    openingHours: 'Opens daily 8.00 AM - 6.00 PM',
-    services: ['Full services', 'Company Services', 'Repair & Maintenance'],
-  },
-];
+const [shops, setShops] = useState([
+  { shopId: 1, shopName: 'Shop 1', shopAddress: 'Location 1',contactNumber:'+94 11 455 4665', openingHours: 'Opens daily 8.00 AM - 6.00 PM',services: ['Company Services only', 'Repair & Maintenance'],},
+  { shopId: 2, shopName: 'Shop 2', shopAddress: 'Location 2',contactNumber: '+94 11 455 6650', openingHours: 'Opens daily 8.00 AM - 6.00 PM', services: ['Full services', 'Repair & Maintenance'], },
+  { shopId: 3, shopName: 'Shop 3', shopAddress: 'Location 3',contactNumber: '+94 26 555 4623', openingHours: 'Opens daily 8.00 AM - 6.00 PM', services: ['Full services', 'Company Services', 'Repair & Maintenance'], },
+  { shopId: 4,shopName: 'Shop 4', shopAddress: 'Location 4',contactNumber: '+94 77 123 4567', openingHours: 'Opens daily 9.00 AM - 7.00 PM', services: ['Full services', 'Repair & Maintenance'],},
+  { shopId: 5, shopName: 'Shop 5', shopAddress: 'Location 5', contactNumber: '+94 71 987 6543', openingHours: 'Opens daily 9.00 AM - 7.00 PM', services: ['Company Services only'],}
+]);
+
+// useEffect(() => {
+//   fetchData();
+// }, []);
+
+// const fetchData = async () => {
+//   try {
+//     const response = await axios.get('http://localhost:8095/shop/getShopDetails');
+//     setShops(response.data);
+//   } catch (error) {
+//     console.error('Error fetching shops:', error);
+//   }
+// };
 
 
   return (
@@ -141,18 +136,18 @@ const cardsData = [
     </div>
     </div>
     <div className="cards-container">
-      {cardsData.map(card => (
-        <div key={card.id} className="card">
+      {shops?.map(card => (
+        <div key={card.shopId} className="card">
           <div className="img-box">
        
             <img src={require('../assets/bike9.jpg')} alt="Card1" />
           </div>
-          <h1 className="card-heading">{card.name}</h1>
+          <h1 className="card-heading">{card.shopName}</h1>
           <p>
-            <i className="fa fa-location-arrow" aria-hidden="true" /> {card.address}
+            <i className="fa fa-location-arrow" aria-hidden="true" /> {card.shopAddress}
           </p>
           <p>
-            <i className="fa fa-phone" aria-hidden="true" /> {card.phone}
+            <i className="fa fa-phone" aria-hidden="true" /> {card.contactNumber}
           </p>
           <p>
             <img src={require('../assets/location.png')} alt="Location Image" />
@@ -320,7 +315,6 @@ const cardsData = [
           </div>
         </div>
       </div>
-      
     </div>
     <div className="slide-container swiper">
             <div className="slide-content">
