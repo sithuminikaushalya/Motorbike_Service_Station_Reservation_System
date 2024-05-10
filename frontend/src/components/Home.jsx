@@ -102,18 +102,18 @@ const [shops, setShops] = useState([
   { shopId: 5, shopName: 'Shop 5', shopAddress: 'Location 5', contactNumber: '+94 71 987 6543', openingHours: 'Opens daily 9.00 AM - 7.00 PM', services: ['Company Services only'],}
 ]);
 
-// useEffect(() => {
-//   fetchData();
-// }, []);
+useEffect(() => {
+  fetchData();
+}, []);
 
-// const fetchData = async () => {
-//   try {
-//     const response = await axios.get('http://localhost:8095/shop/getShopDetails');
-//     setShops(response.data);
-//   } catch (error) {
-//     console.error('Error fetching shops:', error);
-//   }
-// };
+const fetchData = async () => {
+  try {
+    const response = await axios.get('http://localhost:8095/shop/getShop');
+    setShops(response.data);
+  } catch (error) {
+    console.error('Error fetching shops:', error);
+  }
+};
 
 
   return (
@@ -136,7 +136,7 @@ const [shops, setShops] = useState([
     </div>
     </div>
     <div className="cards-container">
-      {shops?.map(card => (
+      {shops.map((card) => (
         <div key={card.shopId} className="card">
           <div className="img-box">
        
