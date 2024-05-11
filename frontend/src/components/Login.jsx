@@ -8,7 +8,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 function Login(){
     const navigate = useNavigate();
-
+    const [customerId, setCustomerId] = useState('');
     const [customerEmail, setCustomerEmail] = useState("");
     const [customerPassword, setCustomerPassword] = useState("");
     
@@ -22,8 +22,11 @@ function Login(){
           });
           
             if (response.data.status === true) {
-            
+            //alert(response.data.customerId);
             navigate('/Shops');
+            const loggedInCustomerId = response.data.customerId; // replace with actual login logic
+            setCustomerId(loggedInCustomerId);
+            Login(loggedInCustomerId);
          
              }
              else if(response.data.status === false){

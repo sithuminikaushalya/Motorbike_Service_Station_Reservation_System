@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import './Reservation.css';
 
 
@@ -7,17 +7,71 @@ function Reservation() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [bikeModel, setBikeModel] = useState('');
-  const [serialNumber, setSerialNumber] = useState('');
-  const [serviceType, setServiceType] = useState('');
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
-
+  const [motobikeNumber, setmotobikeNumber] = useState('');
+  const [faultId, setfaultId] = useState('');
+  const [service, setService] = useState('');
+  const [reservationDate, setreservationDate] = useState('');
+  const [reservationTime, setreservationTime] = useState('');
+  const [advancedPayment, setAdvancedPayment] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
+    saveData();
 
-    console.log('Reservation submitted:', { name, email, phone, bikeModel, serviceType, date, time });
+    console.log('Reservation submitted:', { motobikeNumber, faultId, service, reservationDate, reservationTime, advancedPayment});
   };
+
+  const [serviceDropdownOptions, setServiceDropdownOptions] = useState([]);
+  // const [companySelectedOption, setCompanySelectedOption] = useState('');
+
+   // Function to handle dropdown change
+  
+   const serviceDropdownChange = (e) => {
+    setService(e.target.value);
+  };
+
+   // Function to save data to the database
+  
+   const saveData = async () => {
+    try {
+      const response = await fetch('http://localhost:8095/reservation/addReservation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          motobikeNumber,
+          faultId,
+          service,
+          reservationDate,
+          reservationTime,
+          advancedPayment
+        }),
+      });
+      const data = await response.json();
+      console.log('Data saved successfully:', data);
+    } catch (error) {
+      console.error('Error saving data:', error);
+    }
+  };
+
+  // Fetch dropdown options from the database
+  {
+
+    useEffect(() => {
+      const fetchServiceDropdownOptions = async () => {
+        try {
+          const response = await fetch('http://localhost:8096/serviceType/serviceType');
+          const data = await response.json();
+          const dropdownOptions = data.map((serviceType) => serviceType.serviceType);
+          setServiceDropdownOptions(dropdownOptions);
+        } catch (error) {
+          console.error('Error fetching dropdown options:', error);
+        }
+      };
+  
+      fetchServiceDropdownOptions();
+    }, []);
+  }
   return (
 
     <div className="resrvation-content">
@@ -26,20 +80,33 @@ function Reservation() {
         <h2 className="reservation-title">Online Reservation</h2>
         <form onSubmit={handleSubmit} className="reservation-form">
     
-          <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+          {/* <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
         
           <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-          <input type="tel" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
-          <input type="text" placeholder="Bike Model" value={bikeModel} onChange={(e) => setBikeModel(e.target.value)} />
-          <input type="tel" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
-          <input type="text"  placeholder="Serial Number" value={serialNumber} onChange={(e) => setSerialNumber(e.target.value)} required />
-          <select value={serviceType} onChange={(e) => setServiceType(e.target.value)}>
+          <input type="tel" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} /> */}
+          <input type="text" placeholder="Bike Number" value={motobikeNumber} onChange={(e) => setmotobikeNumber(e.target.value)} />
+          {/* <input type="tel" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} /> */}
+          <input type="text"  placeholder="Fault" value={faultId} onChange={(e) => setfaultId(e.target.value)} required />
+          <select
+           value={service} required
+          onChange={serviceDropdownChange}
+          className="dropdown-select"
+        >
+          <option value="">Service Type</option>
+          {serviceDropdownOptions.map((option, index) => (
+            <option key={index} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+          {/* <select value={service} onChange={(e) => setService(e.target.value)}>
             <option value="">Select Service Type</option>
             <option value="Repair">Repair</option>
             <option value="Maintenance">Maintenance</option>
-          </select>
-          <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
-          <input type="time" value={time} onChange={(e) => setTime(e.target.value)} />
+          </select> */}
+          <input type="date" value={reservationDate} onChange={(e) => setreservationDate(e.target.value)} />
+          <input type="time" step="1" value={reservationTime} onChange={(e) => setreservationTime(e.target.value)} />
+          <input type="text"  placeholder="Advanced Payment" value={advancedPayment} onChange={(e) => setAdvancedPayment(e.target.value)} required />
           <button type="submit">Submit Reservation</button>
         </form>
       </div>

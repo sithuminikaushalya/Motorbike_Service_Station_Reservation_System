@@ -8,6 +8,8 @@ import axios from "axios";
 
 
 
+
+
 function Signup() {
     const navigate = useNavigate();
 
@@ -44,6 +46,7 @@ function Signup() {
     const handleLoginButtonClick = () => {
         navigate("/login");
     };
+    	
   
     
     return (
