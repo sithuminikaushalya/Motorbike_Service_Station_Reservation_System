@@ -38,6 +38,8 @@ import Navbar from "./components/Navbar";
 import Aboutus from "./components/Aboutus";
 import Shops from "./components/Shops";
 import Footer from "./components/Footer";
+import { Provider } from 'react-redux';
+
 
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -54,12 +56,14 @@ import Signup from "./components/Signup";
 import Payment from "./components/Payment";
 import Fault from "./components/Fault";
 import Cart from "./components/Cart";
+import store from "./Store/Store";
 
 
 //import { Navbar } from "react-bootstrap";
 
 function App() {
   return(
+    <Provider store={store}>
     <Router>
    <div>
    <Navbar/>
@@ -80,22 +84,18 @@ function App() {
     <Route path="/signup" element={<Signup/>}/>
     <Route path="/forgotpw" element={<ForgotPw/>}/>
     <Route path="/payment" element={<Payment/>}/>
-
+    
     <Route path="/Fault" element={<Fault/>}/>
     <Route path="/cart" element={<Cart/>}/>
-   
-    
-
-   
-   
     </Routes>
    
+    <Footer/>
   
 
    </div>
    
    </Router>
-
+   </Provider>
    
 
   );

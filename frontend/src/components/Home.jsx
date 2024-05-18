@@ -104,9 +104,9 @@ const [shops, setShops] = useState([
   { shopId: 5, shopName: 'Shop 5', shopAddress: 'Location 5', contactNumber: '+94 71 987 6543', openingHours: 'Opens daily 9.00 AM - 7.00 PM', services: ['Company Services only'],}
 ]);
 
-// useEffect(() => {
-//   fetchData();
-// }, []);
+useEffect(() => {
+  fetchData();
+}, []);
 
 
 const fetchData = async () => {
@@ -127,7 +127,12 @@ const fetchData = async () => {
     <div className='homen-container'>
     <div className='homen-text'>
         <h1>Motor Bike Service Reservation Center</h1>
-        <p>Introducing BikePulse, the premier online platform revolutionizing bike rentals and services. <br></br>Seamlessly blending convenience with quality, BikePulse offers a diverse array of meticulously maintained bikes for every rider, from urban explorers to outdoor enthusiasts. With our intuitive reservation system, users can effortlessly book their ideal bike,<br></br> selecting from a curated selection tailored to their preferences. Beyond rentals, BikePulse provides comprehensive service options, ensuring bikes are always in peak condition. <br></br>Backed by a commitment to excellence, BikePulse redefines the cycling experience, empowering riders to explore with confidence and ease.</p>
+        {/* <p>Introducing BikePulse, the premier online platform revolutionizing bike rentals and services. <br>
+          </br>Seamlessly blending convenience with quality, BikePulse offers a diverse array of meticulously maintained bikes for every rider, from urban explorers to outdoor enthusiasts. With our intuitive reservation system, users can effortlessly book their ideal bike,<br>
+
+          </br> selecting from a curated selection tailored to their preferences. Beyond rentals, BikePulse provides comprehensive service options, ensuring bikes are always in peak condition. <br>
+            
+          </br>Backed by a commitment to excellence, BikePulse redefines the cycling experience, empowering riders to explore with confidence and ease.</p> */}
         <div className='homen-button'>
            
             <a href='#'>REGISTER SHOP 
@@ -160,12 +165,12 @@ const fetchData = async () => {
             </a>
           </p>
           <div className="details-content">
-            <p>{shop.openingHours}</p>
+            {/* <p>{shop.openingHours}</p>
             {shop.services.map((service, index) => (
               <p key={index}>
                 <img src={require('../assets/tickmark.png')} alt="Tick Mark" /> {service}
               </p>
-            ))}
+            ))} */}
           </div>
         </div>
       ))}
@@ -207,7 +212,7 @@ const fetchData = async () => {
         </div>
       </div>
     </div>
-    <div className='flipping-cards-container'>
+    {/* <div className='flipping-cards-container'>
     
         <div className="center">
           <div className="front-face">
@@ -251,7 +256,7 @@ const fetchData = async () => {
         </div>
     
    
-    </div>
+    </div> */}
     <p className='testimonial'>Testimonials</p>
     <p className='testimonial-client-text'>WHAT ARE CLIENTS SAY</p>
     <div className="wrapper-testamonial">

@@ -4,6 +4,8 @@ import google from "../assets/Google.png";
 import './Login.css';
 import { FaUser ,FaLock,FaEnvelope} from "react-icons/fa";
 import axios from "axios";
+import { useDispatch } from 'react-redux';
+import { addCustomerId } from '../Slices/CustomerSlice.js';
 
 import { useNavigate } from "react-router-dom";
 function Login(){
@@ -11,6 +13,7 @@ function Login(){
     const [customerId, setCustomerId] = useState('');
     const [customerEmail, setCustomerEmail] = useState("");
     const [customerPassword, setCustomerPassword] = useState("");
+    const dispatch = useDispatch();
     
 
     async function loginCustomer(event) {
@@ -23,10 +26,12 @@ function Login(){
           
             if (response.data.status === true) {
             //alert(response.data.customerId);
-            navigate('/Shops');
+            
             const loggedInCustomerId = response.data.customerId; // replace with actual login logic
-            setCustomerId(loggedInCustomerId);
-            Login(loggedInCustomerId);
+            dispatch(addCustomerId(loggedInCustomerId));
+            setCustomerId("");
+            //Login(loggedInCustomerId);
+            navigate('/Shops');
          
              }
              else if(response.data.status === false){

@@ -8,15 +8,48 @@ import star2 from "../assets/star2.png";
 import tickmark from "../assets/tickmark.png";
 import { useNavigate } from "react-router-dom";
 import Rightbar from "./RightBar";
-
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addShopId } from '../Slices/ShopSlice.js';
 
 
 function Shops() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
-    const handleViewButtonClick = () => {
-        navigate("/shopdashboard");
-    }
+    const dispatch = useDispatch();
+
+    const [shops, setShops] = useState([
+        { shopId: 1, shopName: 'Shop 1', shopAddress: 'Location 1',contactNumber:'+94 11 455 4665', openingHours: 'Opens daily 8.00 AM - 6.00 PM',services: ['Company Services only', 'Repair & Maintenance'],},
+        { shopId: 2, shopName: 'Shop 2', shopAddress: 'Location 2',contactNumber: '+94 11 455 6650', openingHours: 'Opens daily 8.00 AM - 6.00 PM', services: ['Full services', 'Repair & Maintenance'], },
+        { shopId: 3, shopName: 'Shop 3', shopAddress: 'Location 3',contactNumber: '+94 26 555 4623', openingHours: 'Opens daily 8.00 AM - 6.00 PM', services: ['Full services', 'Company Services', 'Repair & Maintenance'], },
+        { shopId: 4,shopName: 'Shop 4', shopAddress: 'Location 4',contactNumber: '+94 77 123 4567', openingHours: 'Opens daily 9.00 AM - 7.00 PM', services: ['Full services', 'Repair & Maintenance'],},
+        { shopId: 5, shopName: 'Shop 5', shopAddress: 'Location 5', contactNumber: '+94 71 987 6543', openingHours: 'Opens daily 9.00 AM - 7.00 PM', services: ['Company Services only'],}
+      ]);
+      
+      useEffect(() => {
+        fetchData();
+      }, []);
+      
+      
+      const fetchData = async () => {
+        try {
+          // Example using axios:
+          const response = await axios.get('http://localhost:8095/shop/getShop');
+          setShops(response.data);
+        } catch (error) {
+          console.error('Error fetching users:', error);
+        }
+      };
+
+      const handleReserveClick = (shopId) => {
+        dispatch(addShopId(shopId));
+        navigate(`/shop/${shopId}`);
+        //navigate('/reservation');
+        alert(shopId)
+      };
+    
+    
     useEffect(() => {
         // Your logic to check if user is logged in (e.g., checking session, local storage, etc.)
         const userIsLoggedIn = checkIfUserIsLoggedIn(); // Implement this function
@@ -35,11 +68,13 @@ function Shops() {
     return (
         <div className="shops-container">
        
+       
        {isLoggedIn && <Rightbar />}
             <div className="image-section">
                 <img src={shopImg} className="full-width-image" />
 
             </div>
+            
             <div className="main-cards-container">
                 <div className="main-cards">
                     <h2>Professional Services</h2>
@@ -56,547 +91,47 @@ function Shops() {
                 </div>
             </div>
             <div className="line"></div>
-            <span className="come-again-text">Come Again</span>
-            <div className="sub-cards">
-                <div className="sub-cards-container">
-                    <div className="rectangle-container">
-                        <div className="top-rectangle"> </div>
-                        <div className="bottom-rectangle">
-                            <div className="velocare-get-direction">
-
-                                <div class="column">
-
-                                    <p>No 24 Main Street,
-                                        Piyagama</p>
-                                    <p>+94 26 555 4623</p>
-                                    <p>
-                                        <img src={location} alt="Location Image" />
-                                        <a href="#" className="direction-link">Get Direction</a>
-                                    </p>
-
-                                </div>
-                            </div>
-                            <img src={velocare} />
-                            <span className="velocare-txt">Velocare</span>
-
-
-                            <div className="stars2">4.8
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                            </div>
-                            <div class="details-content">
-                                <p>Opens daily 8.00 AM - 6.00 PM</p>
-                                <p><img src={tickmark} alt="Tick Mark" />Full services</p>
-                                <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                            </div>
-                            <p className="view-text" onClick={handleViewButtonClick}>VIEW</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div className="sub-cards-container">
-                    <div className="rectangle-container">
-                        <div className="top-rectangle"></div>
-                        <div className="bottom-rectangle">
-                            <div className="velocare-get-direction">
-
-                                <div class="column">
-
-                                    <p>No 24 Main Street,
-                                        Piyagama</p>
-                                    <p>+94 26 555 4623</p>
-                                    <p>
-                                        <img src={location} alt="Location Image" />
-                                        <a href="#" className="direction-link">Get Direction</a>
-                                    </p>
-
-                                </div>
-                            </div>
-                            <img src={velocare} />
-                            <span className="velocare-txt">Velocare</span>
-
-
-                            <div className="stars2">4.8
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                            </div>
-                            <div class="details-content">
-                                <p>Opens daily 8.00 AM - 6.00 PM</p>
-                                <p><img src={tickmark} alt="Tick Mark" />Full services</p>
-                                <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                            </div>
-                            <p className="view-text" onClick={handleViewButtonClick}>VIEW</p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
+            
             <div className="see-all-container">
-                <p className="see-all-text">See all</p>
-                <div className="sub-cards">
-                    <div className="sub-cards-container">
-                        <div className="top-rectangle"> </div>
-                        <div className="bottom-rectangle">
-                            <div className="velocare-get-direction">
+                
+            <div className="cards-container-grid">
+             {shops.map((shop) => (
+                    <div key={shop.shopId} className="card">
+                    <div className="img-box">
 
-                                <div class="column">
-
-                                    <p>No 24 Main Street,
-                                        Piyagama</p>
-                                    <p>+94 26 555 4623</p>
-                                    <p>
-                                        <img src={location} alt="Location Image" />
-                                        <a href="#" className="direction-link">Get Direction</a>
-                                    </p>
-
-                                </div>
-                            </div>
-                            <img src={velocare} />
-                            <span className="velocare-txt">Velocare</span>
-
-
-                            <div className="stars2">4.8
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                            </div>
-                            <div class="details-content">
-                                <p>Opens daily 8.00 AM - 6.00 PM</p>
-                                <p><img src={tickmark} alt="Tick Mark" />Full services</p>
-                                <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                            </div>
-                            <p className="view-text" onClick={handleViewButtonClick}>VIEW</p>
-
+                        <img src={require('../assets/bike9.jpg')} alt="Card1" />
+                    </div>
+                    <h1 className="card-heading">{shop.shopName}</h1>
+                    <p>
+                        <i className="fa fa-location-arrow" aria-hidden="true" /> {shop.shopAddress}
+                    </p>
+                    <p>
+                        <i className="fa fa-phone" aria-hidden="true" /> {shop.contactNumber}
+                    </p>
+                    <p>
+                        <img src={require('../assets/location.png')} alt="Location Image" />
+                        <a href="#" className="direction-link">
+                        Get Direction
+                        </a>
+                    </p>
+                    <div className="details-content">
+                        {/* <p>{shop.openingHours}</p>
+                        {shop.services.map((service, index) => (
+                        <p key={index}>
+                            <img src={require('../assets/tickmark.png')} alt="Tick Mark" /> {service}
+                        </p>
+                        ))} */}
+                        <div className="details-button">
+                        
+                            <button className="button-view" onClick={() => handleReserveClick(shop.shopId)}
+                            >Reserve Now</button>
                         </div>
                     </div>
-                    <div className="sub-cards-container">
-                        <div className="top-rectangle"></div>
-                        <div className="bottom-rectangle">
-                            <div className="velocare-get-direction">
-
-                                <div class="column">
-
-                                    <p>No 24 Main Street,
-                                        Piyagama</p>
-                                    <p>+94 26 555 4623</p>
-                                    <p>
-                                        <img src={location} alt="Location Image" />
-                                        <a href="#" className="direction-link">Get Direction</a>
-                                    </p>
-
-                                </div>
-                            </div>
-                            <img src={velocare} />
-                            <span className="velocare-txt">Velocare</span>
-
-
-                            <div className="stars2">4.8
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                            </div>
-                            <div class="details-content">
-                                <p>Opens daily 8.00 AM - 6.00 PM</p>
-                                <p><img src={tickmark} alt="Tick Mark" />Full services</p>
-                                <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                            </div>
-                            <p className="view-text" onClick={handleViewButtonClick}>VIEW</p>
-
-                        </div>
                     </div>
-                    <div className="sub-cards-container">
-                        <div className="top-rectangle"></div>
-                        <div className="bottom-rectangle">
-                            <div className="velocare-get-direction">
-
-                                <div class="column">
-
-                                    <p>No 24 Main Street,
-                                        Piyagama</p>
-                                    <p>+94 26 555 4623</p>
-                                    <p>
-                                        <img src={location} alt="Location Image" />
-                                        <a href="#" className="direction-link">Get Direction</a>
-                                    </p>
-
-                                </div>
-                            </div>
-                            <img src={velocare} />
-                            <span className="velocare-txt">Velocare</span>
-
-
-                            <div className="stars2">4.8
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                                <img src={star2} alt="Star" className="star" />
-                            </div>
-                            <div class="details-content">
-                                <p>Opens daily 8.00 AM - 6.00 PM</p>
-                                <p><img src={tickmark} alt="Tick Mark" />Full services</p>
-                                <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                            </div>
-                            <span className="view-text">VIEW</span>
-
-                        </div>
-                    </div>
+                ))}
                 </div>
-                <div className="sub-cards-row2">
-                    <div className="sub-cards">
-                        <div className="sub-cards-container">
-                            <div className="top-rectangle"> </div>
-                            <div className="bottom-rectangle">
-                                <div className="velocare-get-direction">
-
-                                    <div class="column">
-
-                                        <p>No 24 Main Street,
-                                            Piyagama</p>
-                                        <p>+94 26 555 4623</p>
-                                        <p>
-                                            <img src={location} alt="Location Image" />
-                                            <a href="#" className="direction-link">Get Direction</a>
-                                        </p>
-
-                                    </div>
-                                </div>
-                                <img src={velocare} />
-                                <span className="velocare-txt">Velocare</span>
-
-
-                                <div className="stars2">4.8
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                </div>
-                                <div class="details-content">
-                                    <p>Opens daily 8.00 AM - 6.00 PM</p>
-                                    <p><img src={tickmark} alt="Tick Mark" />Full services</p>
-                                    <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                                </div>
-                                <span className="view-text">VIEW</span>
-
-                            </div>
-                        </div>
-                        <div className="sub-cards-container">
-                            <div className="top-rectangle"></div>
-                            <div className="bottom-rectangle">
-                                <div className="velocare-get-direction">
-
-                                    <div class="column">
-
-                                        <p>No 24 Main Street,
-                                            Piyagama</p>
-                                        <p>+94 26 555 4623</p>
-                                        <p>
-                                            <img src={location} alt="Location Image" />
-                                            <a href="#" className="direction-link">Get Direction</a>
-                                        </p>
-
-                                    </div>
-                                </div>
-                                <img src={velocare} />
-                                <span className="velocare-txt">Velocare</span>
-
-
-                                <div className="stars2">4.8
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                </div>
-                                <div class="details-content">
-                                    <p>Opens daily 8.00 AM - 6.00 PM</p>
-                                    <p><img src={tickmark} alt="Tick Mark" />Full services</p>
-                                    <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                                </div>
-                                <span className="view-text">VIEW</span>
-
-                            </div>
-                        </div>
-                        <div className="sub-cards-container">
-                            <div className="top-rectangle"></div>
-                            <div className="bottom-rectangle">
-                                <div className="velocare-get-direction">
-
-                                    <div class="column">
-
-                                        <p>No 24 Main Street,
-                                            Piyagama</p>
-                                        <p>+94 26 555 4623</p>
-                                        <p>
-                                            <img src={location} alt="Location Image" />
-                                            <a href="#" className="direction-link">Get Direction</a>
-                                        </p>
-
-                                    </div>
-                                </div>
-                                <img src={velocare} />
-                                <span className="velocare-txt">Velocare</span>
-
-
-                                <div className="stars2">4.8
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                </div>
-                                <div class="details-content">
-                                    <p>Opens daily 8.00 AM - 6.00 PM</p>
-                                    <p><img src={tickmark} alt="Tick Mark" />Full services</p>
-                                    <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                                </div>
-                                <span className="view-text">VIEW</span>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="sub-cards-row3">
-                    <div className="sub-cards">
-                        <div className="sub-cards-container">
-                            <div className="top-rectangle"> </div>
-                            <div className="bottom-rectangle">
-                                <div className="velocare-get-direction">
-
-                                    <div class="column">
-
-                                        <p>No 24 Main Street,
-                                            Piyagama</p>
-                                        <p>+94 26 555 4623</p>
-                                        <p>
-                                            <img src={location} alt="Location Image" />
-                                            <a href="#" className="direction-link">Get Direction</a>
-                                        </p>
-
-                                    </div>
-                                </div>
-                                <img src={velocare} />
-                                <span className="velocare-txt">Velocare</span>
-
-
-                                <div className="stars2">4.8
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                </div>
-                                <div class="details-content">
-                                    <p>Opens daily 8.00 AM - 6.00 PM</p>
-                                    <p><img src={tickmark} alt="Tick Mark" />Full services</p>
-                                    <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                                </div>
-                                <span className="view-text">VIEW</span>
-
-                            </div>
-                        </div>
-                        <div className="sub-cards-container">
-                            <div className="top-rectangle"></div>
-                            <div className="bottom-rectangle">
-                                <div className="velocare-get-direction">
-
-                                    <div class="column">
-
-                                        <p>No 24 Main Street,
-                                            Piyagama</p>
-                                        <p>+94 26 555 4623</p>
-                                        <p>
-                                            <img src={location} alt="Location Image" />
-                                            <a href="#" className="direction-link">Get Direction</a>
-                                        </p>
-
-                                    </div>
-                                </div>
-                                <img src={velocare} />
-                                <span className="velocare-txt">Velocare</span>
-
-
-                                <div className="stars2">4.8
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                </div>
-                                <div class="details-content">
-                                    <p>Opens daily 8.00 AM - 6.00 PM</p>
-                                    <p><img src={tickmark} alt="Tick Mark" />Full services</p>
-                                    <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                                </div>
-                                <span className="view-text">VIEW</span>
-
-                            </div>
-                        </div>
-                        <div className="sub-cards-container">
-                            <div className="top-rectangle"></div>
-                            <div className="bottom-rectangle">
-                                <div className="velocare-get-direction">
-
-                                    <div class="column">
-
-                                        <p>No 24 Main Street,
-                                            Piyagama</p>
-                                        <p>+94 26 555 4623</p>
-                                        <p>
-                                            <img src={location} alt="Location Image" />
-                                            <a href="#" className="direction-link">Get Direction</a>
-                                        </p>
-
-                                    </div>
-                                </div>
-                                <img src={velocare} />
-                                <span className="velocare-txt">Velocare</span>
-
-
-                                <div className="stars2">4.8
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                </div>
-                                <div class="details-content">
-                                    <p>Opens daily 8.00 AM - 6.00 PM</p>
-                                    <p><img src={tickmark} alt="Tick Mark" />Full services</p>
-                                    <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                                </div>
-                                <span className="view-text">VIEW</span>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="sub-cards-row4">
-                    <div className="sub-cards">
-                        <div className="sub-cards-container">
-                            <div className="top-rectangle"> </div>
-                            <div className="bottom-rectangle">
-                                <div className="velocare-get-direction">
-
-                                    <div class="column">
-
-                                        <p>No 24 Main Street,
-                                            Piyagama</p>
-                                        <p>+94 26 555 4623</p>
-                                        <p>
-                                            <img src={location} alt="Location Image" />
-                                            <a href="#" className="direction-link">Get Direction</a>
-                                        </p>
-
-                                    </div>
-                                </div>
-                                <img src={velocare} />
-                                <span className="velocare-txt">Velocare</span>
-
-
-                                <div className="stars2">4.8
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                </div>
-                                <div class="details-content">
-                                    <p>Opens daily 8.00 AM - 6.00 PM</p>
-                                    <p><img src={tickmark} alt="Tick Mark" />Full services</p>
-                                    <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                                </div>
-                                <span className="view-text">VIEW</span>
-
-                            </div>
-                        </div>
-                        <div className="sub-cards-container">
-                            <div className="top-rectangle"></div>
-                            <div className="bottom-rectangle">
-                                <div className="velocare-get-direction">
-
-                                    <div class="column">
-
-                                        <p>No 24 Main Street,
-                                            Piyagama</p>
-                                        <p>+94 26 555 4623</p>
-                                        <p>
-                                            <img src={location} alt="Location Image" />
-                                            <a href="#" className="direction-link">Get Direction</a>
-                                        </p>
-
-                                    </div>
-                                </div>
-                                <img src={velocare} />
-                                <span className="velocare-txt">Velocare</span>
-
-
-                                <div className="stars2">4.8
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                </div>
-                                <div class="details-content">
-                                    <p>Opens daily 8.00 AM - 6.00 PM</p>
-                                    <p><img src={tickmark} alt="Tick Mark" />Full services</p>
-                                    <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                                </div>
-                                <span className="view-text">VIEW</span>
-
-                            </div>
-                        </div>
-                        <div className="sub-cards-container">
-                            <div className="top-rectangle"></div>
-                            <div className="bottom-rectangle">
-                                <div className="velocare-get-direction">
-
-                                    <div class="column">
-
-                                        <p>No 24 Main Street,
-                                            Piyagama</p>
-                                        <p>+94 26 555 4623</p>
-                                        <p>
-                                            <img src={location} alt="Location Image" />
-                                            <a href="#" className="direction-link">Get Direction</a>
-                                        </p>
-
-                                    </div>
-                                </div>
-                                <img src={velocare} />
-                                <span className="velocare-txt">Velocare</span>
-
-
-                                <div className="stars2">4.8
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                    <img src={star2} alt="Star" className="star" />
-                                </div>
-                                <div class="details-content">
-                                    <p>Opens daily 8.00 AM - 6.00 PM</p>
-                                    <p><img src={tickmark} alt="Tick Mark" />Full services</p>
-                                    <p><img src={tickmark} alt="Tick Mark" />Repair & Maintenance</p>
-                                </div>
-                                <span className="view-text">VIEW</span>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <div className="show-more-button-container">
                     <button className="show-more-button">Show More</button>
                 </div>
