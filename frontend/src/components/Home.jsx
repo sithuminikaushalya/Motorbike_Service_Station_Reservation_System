@@ -39,11 +39,6 @@ import backgroundclip from '../assets/vid.mp4';
 
 
 
-
-
-
-
-
 function Home() {
 
   const navigate = useNavigate();
@@ -53,46 +48,46 @@ function Home() {
 };
 
 const handleReserveClick = () => {
-  navigate("/reservation");
+  navigate("/Reservation");
 };
 
 const handleRegisterClick = () => {
   navigate("/registershop");
 };
 
-  useEffect(() => {
-    const swiper = new Swiper('.slide-content', {
-        slidesPerView: 3,
-        spaceBetween: 25,
-        loop: true,
-        centerSlide: true,
-        fade: true,
-        grabCursor: true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-            dynamicBullets: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
-            },
-            520: {
-                slidesPerView: 2,
-            },
-            950: {
-                slidesPerView: 3,
-            },
-        },
-    });
-    return () => {
-      swiper.destroy(); 
-  };
-}, []);
+//   useEffect(() => {
+//     const swiper = new Swiper('.slide-content', {
+//         slidesPerView: 3,
+//         spaceBetween: 25,
+//         loop: true,
+//         centerSlide: true,
+//         fade: true,
+//         grabCursor: true,
+//         pagination: {
+//             el: ".swiper-pagination",
+//             clickable: true,
+//             dynamicBullets: true,
+//         },
+//         navigation: {
+//             nextEl: ".swiper-button-next",
+//             prevEl: ".swiper-button-prev",
+//         },
+//         breakpoints: {
+//             0: {
+//                 slidesPerView: 1,
+//             },
+//             520: {
+//                 slidesPerView: 2,
+//             },
+//             950: {
+//                 slidesPerView: 3,
+//             },
+//         },
+//     });
+//     return () => {
+//       swiper.destroy(); 
+//   };
+// }, []);
 
 
 
@@ -104,12 +99,23 @@ const [shops, setShops] = useState([
   { shopId: 5, shopName: 'Shop 5', shopAddress: 'Location 5', contactNumber: '+94 71 987 6543', openingHours: 'Opens daily 9.00 AM - 7.00 PM', services: ['Company Services only'],}
 ]);
 
+
 useEffect(() => {
-  fetchData();
+  fetchShopData();
+  fetchFeedbackData();
 }, []);
 
 
-const fetchData = async () => {
+const fetchShopData = async () => {
+  try {
+    // Example using axios:
+    const response = await axios.get('http://localhost:8095/shop/getShop');
+    setShops(response.data);
+  } catch (error) {
+    console.error('Error fetching users:', error);
+  }
+};
+const fetchFeedbackData = async () => {
   try {
     // Example using axios:
     const response = await axios.get('http://localhost:8095/shop/getShop');
@@ -126,7 +132,8 @@ const fetchData = async () => {
     <div className='homen-banner'>
     <div className='homen-container'>
     <div className='homen-text'>
-        <h1>Motor Bike Service Reservation Center</h1>
+    <h1>Motor Bike Service Reservation Center</h1>
+    <h1></h1> <h1></h1> <h1></h1> <h1></h1> <h1></h1> 
         {/* <p>Introducing BikePulse, the premier online platform revolutionizing bike rentals and services. <br>
           </br>Seamlessly blending convenience with quality, BikePulse offers a diverse array of meticulously maintained bikes for every rider, from urban explorers to outdoor enthusiasts. With our intuitive reservation system, users can effortlessly book their ideal bike,<br>
 
@@ -135,9 +142,9 @@ const fetchData = async () => {
           </br>Backed by a commitment to excellence, BikePulse redefines the cycling experience, empowering riders to explore with confidence and ease.</p> */}
         <div className='homen-button'>
            
-            <a href='#'>REGISTER SHOP 
+            <a href='http://localhost:3002/' > REGISTER SHOP 
             <img src={registershop} alt="Reserve Now Icon" className="reserve-now-icon" onClick={handleRegisterClick} /></a>
-            <a href='#'>RESERVE NOW
+            <a href='/Reservation'>RESERVE NOW
             <img src={reservenow}  alt="Reserve Now Icon" className="reserve-now-icon" onClick={handleReserveClick}/></a>
         </div>
     </div>
@@ -212,51 +219,7 @@ const fetchData = async () => {
         </div>
       </div>
     </div>
-    {/* <div className='flipping-cards-container'>
-    
-        <div className="center">
-          <div className="front-face">
-            <div className="contents front">
-              <p>David Smith</p>
-              <span>Kathmandu, Nepal</span>
-            </div>
-          </div>
-          <div className="back-face">
-            <div className="contents back">
-              <h2>CodingNepal</h2>
-              <span>Follow Me</span>
-              <div className="icons">
-                <FontAwesomeIcon icon={faFacebookF} />
-                <FontAwesomeIcon icon={faTwitter} />
-                <FontAwesomeIcon icon={faLinkedin} />
-                <FontAwesomeIcon icon={faGithub} />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="center">
-          <div className="front-face">
-            <div className="contents front">
-              <p>David Smith</p>
-              <span>Kathmandu, Nepal</span>
-            </div>
-          </div>
-          <div className="back-face">
-            <div className="contents back">
-              <h2>CodingNepal</h2>
-              <span>Follow Me</span>
-              <div className="icons">
-                <FontAwesomeIcon icon={faFacebookF} />
-                <FontAwesomeIcon icon={faTwitter} />
-                <FontAwesomeIcon icon={faLinkedin} />
-                <FontAwesomeIcon icon={faGithub} />
-              </div>
-            </div>
-          </div>
-        </div>
-    
-   
-    </div> */}
+    {/* 
     <p className='testimonial'>Testimonials</p>
     <p className='testimonial-client-text'>WHAT ARE CLIENTS SAY</p>
     <div className="wrapper-testamonial">
@@ -282,27 +245,27 @@ const fetchData = async () => {
           </div>
         </div>
       </div>
-      <div className="box-testamonial">
-      <FontAwesomeIcon icon={faQuoteLeft} className="quote" />
+        <div className="box-testamonial">
+        <FontAwesomeIcon icon={faQuoteLeft} className="quote" />
 
-        <p>"What I love most about BikePulse is their all-in-one approach. Not only can I easily rent a bike for my weekend adventures, but I can also schedule repairs through their online platform. It's incredibly convenient and saves me so much time. BikePulse has definitely become my go-to for all things cycling!"</p>
-        <div className="content-testamonial">
-          <div className="info-testamonial">
-            <div className="name-testamonial">John Doe</div>
-            <div className="job-testamonial">Job Title</div>
-            <div className="stars-testamonial">
-            <FontAwesomeIcon icon={faStar} />
+          <p>"What I love most about BikePulse is their all-in-one approach. Not only can I easily rent a bike for my weekend adventures, but I can also schedule repairs through their online platform. It's incredibly convenient and saves me so much time. BikePulse has definitely become my go-to for all things cycling!"</p>
+          <div className="content-testamonial">
+            <div className="info-testamonial">
+              <div className="name-testamonial">John Doe</div>
+              <div className="job-testamonial">Job Title</div>
+              <div className="stars-testamonial">
               <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={farStar} />
+                <FontAwesomeIcon icon={faStar} />
+                <FontAwesomeIcon icon={faStar} />
+                <FontAwesomeIcon icon={faStar} />
+                <FontAwesomeIcon icon={farStar} />
+              </div>
+            </div>
+            <div className="image-testamonial">
+              <img src={card1} alt="Profile" />
             </div>
           </div>
-          <div className="image-testamonial">
-            <img src={card1} alt="Profile" />
-          </div>
         </div>
-      </div>
       <div className="box-testamonial">
       <FontAwesomeIcon icon={faQuoteLeft} className="quote" />
 
@@ -325,7 +288,7 @@ const fetchData = async () => {
         </div>
       </div>
     </div>
-    <div className="slide-container swiper">
+    {/* <div className="slide-container swiper">
             <div className="slide-content">
                 <div className="card-wrapper swiper-wrapper">
                     <div className="card swiper-slide">
@@ -403,7 +366,7 @@ const fetchData = async () => {
             <div className="swiper-pagination"></div>  
         
           
-        </div>
+        </div> */}
         <div className='parallax-1'>
           <div className='parallax-inner'>
           <div className='service-cards-container'>

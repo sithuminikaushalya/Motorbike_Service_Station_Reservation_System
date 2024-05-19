@@ -44,9 +44,9 @@ function Shops() {
 
       const handleReserveClick = (shopId) => {
         dispatch(addShopId(shopId));
-        navigate(`/shop/${shopId}`);
-        //navigate('/reservation');
-        alert(shopId)
+        //navigate(`/shop/${shopId}`);
+        navigate('/reservation');
+        //alert(shopId)
       };
     
     

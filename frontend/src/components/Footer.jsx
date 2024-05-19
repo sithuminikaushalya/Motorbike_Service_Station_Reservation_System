@@ -21,6 +21,7 @@ function Footer() {
             <li><a href="#">Customers</a></li>
             <li><a href="#">Service</a></li>
             <li><a href="#">Collection</a></li>
+            <li><a href="http://localhost:3001/">Admin</a></li>
           </ul>
         </div>
         <div className="footer-col">
@@ -54,7 +55,7 @@ function Footer() {
           </p>
           <form action="#">
             <input type="text" placeholder="Your email" required/>
-            <button type="submit">SUBSCRIBE</button>
+            <button className="subscribe-button" type="submit">SUBSCRIBE</button>
           </form>
           <div className="icons">
           <FontAwesomeIcon icon={faFacebookF} />

@@ -125,7 +125,7 @@ p:nth-of-type(3) {
     position: relative;
     z-index: 1;
     color: #fff;
-    width: 600px;
+    width: 1000px;
 }
 
 .homen-banner .homen-container .homen-text h1{
@@ -163,7 +163,7 @@ p:nth-of-type(3) {
 .cards-container {
   display: flex;
   overflow-x: auto; /* Enable horizontal scrolling */
-   
+  
   -webkit-overflow-scrolling: touch; 
   justify-content: left;
     align-items: left;
