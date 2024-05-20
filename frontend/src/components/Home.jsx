@@ -142,7 +142,7 @@ const fetchFeedbackData = async () => {
           </br>Backed by a commitment to excellence, BikePulse redefines the cycling experience, empowering riders to explore with confidence and ease.</p> */}
         <div className='homen-button'>
            
-            <a href='http://localhost:3002/' > REGISTER SHOP 
+            <a href='http://localhost:3004/' > REGISTER SHOP 
             <img src={registershop} alt="Reserve Now Icon" className="reserve-now-icon" onClick={handleRegisterClick} /></a>
             <a href='/Reservation'>RESERVE NOW
             <img src={reservenow}  alt="Reserve Now Icon" className="reserve-now-icon" onClick={handleReserveClick}/></a>
@@ -219,7 +219,7 @@ const fetchFeedbackData = async () => {
         </div>
       </div>
     </div>
-    {/* 
+    
     <p className='testimonial'>Testimonials</p>
     <p className='testimonial-client-text'>WHAT ARE CLIENTS SAY</p>
     <div className="wrapper-testamonial">

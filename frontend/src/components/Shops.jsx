@@ -65,6 +65,19 @@ function Shops() {
         // Example:
         return localStorage.getItem("token") ? true : false;
       };
+
+      // search 
+        const [searchTerm, setSearchTerm] = useState('');
+        
+    
+        const handleSearch = async (e) => {
+            e.preventDefault();
+            const response = await axios.get('http://localhost:8095/shop/search', {
+                params: { q: searchTerm }
+            });
+            setShops(response.data);
+        };
+
     return (
         <div className="shops-container">
        
@@ -91,7 +104,17 @@ function Shops() {
                 </div>
             </div>
             <div className="line"></div>
-            
+            <div className="search-box">
+            <form onSubmit={handleSearch}>
+                <input 
+                    type="text" 
+                    value={searchTerm} 
+                    onChange={(e) => setSearchTerm(e.target.value)} 
+                    placeholder="Search by Shop Name, Address, or Email" 
+                />
+                <button type="submit">Search</button>
+            </form>
+            </div>
             
             <div className="see-all-container">
                 
