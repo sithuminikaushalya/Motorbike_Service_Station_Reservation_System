@@ -14,20 +14,22 @@ function Reservation() {
   const [service, setService] = useState('');
   const [reservationDate, setreservationDate] = useState('');
   const [reservationTime, setreservationTime] = useState('');
-  const [advancePayment, setAdvancePayment] = useState('');
+  const [reservationAddress, setReservationAddress] = useState('');
   const customerId = useSelector((state) => state.customers);
   const shopId = useSelector((state) => state.shops);
   const handleSubmit = (e) => {
     e.preventDefault();
     saveData();
 
-    console.log('Reservation submitted:', { motorbikeNumber, faultId, service, reservationDate, reservationTime, advancePayment});
+    console.log('Reservation submitted:', { motorbikeNumber, faultId, service, reservationDate, reservationTime, reservationAddress});
   };
 
 
 
+
+
   const [serviceDropdownOptions, setServiceDropdownOptions] = useState([]);
-  // const [companySelectedOption, setCompanySelectedOption] = useState('');
+  const [serviceSelectedOption, setServiceSelectedOption] = useState('');
 
    // Function to handle dropdown change
   
@@ -47,13 +49,13 @@ function Reservation() {
         body: JSON.stringify({
           
           faultId,
-          service,
+          serviceType:serviceSelectedOption,
           reservationDate,
           reservationTime,
           customerId,
           shopId,
           motorbikeNumber,
-          advancePayment
+          reservationAddress
         }),
       });
       const data = await response.json();
@@ -104,10 +106,11 @@ function Reservation() {
           {/* <input type="tel" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} /> */}
           <input type="text"  placeholder="Fault" value={faultId} onChange={(e) => setfaultId(e.target.value)} required />
           <select
-           value={service} required
-          onChange={serviceDropdownChange}
-          className="dropdown-select"
-        >
+              value={serviceSelectedOption} 
+              required
+              onChange={(e) => setServiceSelectedOption(e.target.value)}
+              className="dropdown-select"
+            >
           <option value="">Service Type</option>
           {serviceDropdownOptions.map((option, index) => (
             <option key={index} value={option}>
@@ -122,7 +125,7 @@ function Reservation() {
           </select> */}
           <input type="date" value={reservationDate} onChange={(e) => setreservationDate(e.target.value)} />
           <input type="time" step="1" value={reservationTime} onChange={(e) => setreservationTime(e.target.value)} />
-          <input type="text"  placeholder="Advanced Payment" value={advancePayment} onChange={(e) => setAdvancePayment(e.target.value)} required />
+          <input type="text"  placeholder="Reservation Address" value={reservationAddress} onChange={(e) => setReservationAddress(e.target.value)} required />
           <button type="submit">Submit Reservation</button>
         </form>
       </div>

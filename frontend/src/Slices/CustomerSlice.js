@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 // Load initial state from local storage
 const loadState = () => {
     try {
-        const serializedState = localStorage.getItem('customers');
+        const serializedState = localStorage.getItem('customerId');
         if (serializedState === null) {
             return "";
         }

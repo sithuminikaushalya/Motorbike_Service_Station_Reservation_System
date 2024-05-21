@@ -6,7 +6,7 @@ import shopReducer from '../Slices/ShopSlice.js'; // Import shopReducer from the
 const saveState = (state) => {
     try {
         const serializedCustomersState = JSON.stringify(state.customers);
-        localStorage.setItem('customers', serializedCustomersState);
+        localStorage.setItem('customerId', serializedCustomersState);
 
         const serializedShopsState = JSON.stringify(state.shops);
         localStorage.setItem('shops', serializedShopsState);
@@ -25,8 +25,9 @@ const localStorageMiddleware = store => next => action => {
 
 // Middleware to clear local storage
 const clearLocalStorageMiddleware = store => next => action => {
-    if (action.type === 'customerId/clearStorage' || action.type === 'shopId/clearStorage') { // Update the action type to clear both customers and shops
-        localStorage.removeItem('state'); // Change the storage key to 'state' to remove both customers and shops
+    if (action.type === 'customerId/clearStorage' || action.type === 'shopId/clearStorage') {
+        localStorage.removeItem('customerId'); // Clear the correct key
+        localStorage.removeItem('shops'); // Clear the shops as well
     }
     return next(action);
 };
@@ -35,10 +36,11 @@ const store = configureStore({
     devTools: true,
     reducer: {
         customers: customerReducer,
-        shops: shopReducer // Add shopReducer to the reducers object
+        shops: shopReducer
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(localStorageMiddleware, clearLocalStorageMiddleware)
 });
 
 export default store;
+
