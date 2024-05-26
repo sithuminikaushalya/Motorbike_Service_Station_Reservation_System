@@ -14,25 +14,31 @@ function Footer() {
     <div className="footer">
       <div className="footer-row">
         <div className="footer-col">
-          <h4>Info</h4>
+          <h4>Company</h4>
           <ul class="links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shops</a></li>
+            <li><a href="#">Promotions</a></li>
+            <li><a href="#">Contact Us</a></li>
             <li><a href="#">About Us</a></li>
+<<<<<<< HEAD
             <li><a href="#">Compressions</a></li>
             <li><a href="#">Customers</a></li>
             <li><a href="#">Service</a></li>
             <li><a href="#">Collection</a></li>
             <li><a href="http://localhost:3001/">Admin</a></li>
+=======
+>>>>>>> customer_flow_new
           </ul>
         </div>
         <div className="footer-col">
-          <h4>Explore</h4>
+          <h4>Resources</h4>
           <ul className="links">
-            <li><a href="#">Free Designs</a></li>
-            <li><a href="#">Latest Designs</a></li>
-            <li><a href="#">Themes</a></li>
-            <li><a href="#">Popular Designs</a></li>
-            <li><a href="#">Art Skills</a></li>
-            <li><a href="#">New Uploads</a></li>
+            <li><a href="#">Auto Repairs near me</a></li>
+            <li><a href="#">Top Cities</a></li>
+            <li><a href="#">All Cities</a></li>
+            <li><a href="#">Shop instructions</a></li>
+            
           </ul>
         </div>
         <div className="footer-col">

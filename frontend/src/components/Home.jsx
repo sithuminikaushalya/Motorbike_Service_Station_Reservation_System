@@ -9,8 +9,10 @@ import Waypoint from 'waypoints/lib/noframework.waypoints.min.js';
 import { faFacebookF, faTwitter, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
-import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
+
+
+import { faQuoteLeft, faStar as solidStar, faStarHalfAlt as halfStar, faStar as farStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
 import person1 from "../assets/person1.png";
 import ellie from "../assets/Ellie_Anderson.jpg"
 import john from "../assets/John_Morgan.jpg"
@@ -241,72 +243,65 @@ const fetchFeedbackData = async () => {
     
     <p className='testimonial'>Testimonials</p>
     <p className='testimonial-client-text'>WHAT ARE CLIENTS SAY</p>
-    <div className="wrapper-testamonial">
-
-      <div className="box-testamonial">
-      <FontAwesomeIcon icon={faQuoteLeft} className="quote" />
-
-        <p>"BikePulse isn't just for rentals; it's my go-to for bike repairs too! When my bike needed a tune-up, I booked a service appointment through their online reservation system. The process was quick and convenient, and my bike was back to its best in no time. Thanks, BikePulse, for keeping me rolling smoothly!</p>
-        <div className="content-testamonial">
-          <div className="info-testamonial">
-            <div className="name-testamonial">John Doe</div>
-            <div className="job-testamonial">Job Title</div>
-            <div className="stars-testamonial">
-            <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
+    <div className="wrapper-testimonial">
+      {testimonialData.map(testimonial => (
+        <div key={testimonial.testid} className="box-testimonial">
+          <FontAwesomeIcon icon={faQuoteLeft} className="quote" />
+          <p>"{testimonial.quote}"</p>
+          <div className="content-testimonial">
+            <div className="info-testimonial">
+              <div className="name-testimonial">{testimonial.testname}</div>
+              <div className="job-testimonial">{testimonial.jobTitle}</div>
+              <div className="stars-testimonial">{renderStars(testimonial.rating)}</div>
             </div>
           </div>
-          <div className="image-testamonial">
+          <div className="image-testimonial">
             <img src={card1} alt="Profile" />
           </div>
         </div>
-      </div>
-        <div className="box-testamonial">
+      ))}
+      <div className="box-testimonial">
         <FontAwesomeIcon icon={faQuoteLeft} className="quote" />
-
-          <p>"What I love most about BikePulse is their all-in-one approach. Not only can I easily rent a bike for my weekend adventures, but I can also schedule repairs through their online platform. It's incredibly convenient and saves me so much time. BikePulse has definitely become my go-to for all things cycling!"</p>
-          <div className="content-testamonial">
-            <div className="info-testamonial">
-              <div className="name-testamonial">John Doe</div>
-              <div className="job-testamonial">Job Title</div>
-              <div className="stars-testamonial">
+        <p>"What I love most about BikePulse is their all-in-one approach. Not only can I easily rent a bike for my weekend adventures, but I can also schedule repairs through their online platform. It's incredibly convenient and saves me so much time. BikePulse has definitely become my go-to for all things cycling!"</p>
+        <div className="content-testimonial">
+          <div className="info-testimonial">
+            <div className="name-testimonial">John Doe</div>
+            <div className="job-testimonial">Job Title</div>
+            <div className="stars-testimonial">
               <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={farStar} />
-              </div>
-            </div>
-            <div className="image-testamonial">
-              <img src={card1} alt="Profile" />
-            </div>
-          </div>
-        </div>
-      <div className="box-testamonial">
-      <FontAwesomeIcon icon={faQuoteLeft} className="quote" />
-
-        <p>"BikePulse has made managing my bike repairs a breeze. Their platform connects me with trusted service shops, and I can easily schedule appointments and track the progress of my repairs. It's a game-changer!"</p>
-        <div className="content-testamonial">
-          <div className="info-testamonial">
-            <div className="name-testamonial">John Doe</div>
-            <div className="job-testamonial">Job Title</div>
-            <div className="stars-testamonial">
-            <FontAwesomeIcon icon={faStar} />
               <FontAwesomeIcon icon={faStar} />
               <FontAwesomeIcon icon={faStar} />
               <FontAwesomeIcon icon={faStar} />
               <FontAwesomeIcon icon={farStar} />
             </div>
           </div>
-          <div className="image-testamonial">
+          <div className="image-testimonial">
+            <img src={card1} alt="Profile" />
+          </div>
+        </div>
+      </div>
+      <div className="box-testimonial">
+        <FontAwesomeIcon icon={faQuoteLeft} className="quote" />
+        <p>"BikePulse has made managing my bike repairs a breeze. Their platform connects me with trusted service shops, and I can easily schedule appointments and track the progress of my repairs. It's a game-changer!"</p>
+        <div className="content-testimonial">
+          <div className="info-testimonial">
+            <div className="name-testimonial">John Doe</div>
+            <div className="job-testimonial">Job Title</div>
+            <div className="stars-testimonial">
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={farStar} />
+            </div>
+          </div>
+          <div className="image-testimonial">
             <img src={card1} alt="Profile" />
           </div>
         </div>
       </div>
     </div>
+  );
     {/* <div className="slide-container swiper">
             <div className="slide-content">
                 <div className="card-wrapper swiper-wrapper">

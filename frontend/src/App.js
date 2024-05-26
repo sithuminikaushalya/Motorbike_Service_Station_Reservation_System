@@ -34,6 +34,7 @@ function App  () {
 export default App;*/
 
 import React from "react";
+import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Aboutus from "./components/Aboutus";
 import Shops from "./components/Shops";
@@ -42,7 +43,7 @@ import { Provider } from 'react-redux';
 
 
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 import ForgotPw from "./components/ForgotPw";
 import FaultSuggest from "./components/FaultSuggest";
@@ -100,5 +101,6 @@ function App() {
 
   );
 }
+
 
 export default App;
