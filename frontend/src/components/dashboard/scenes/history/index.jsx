@@ -5,19 +5,41 @@ import { tokens } from "../../../theme";
 import { mockDataContacts } from "../../data/mockData";
 import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
+import { useEffect, useState } from "react";
 
 const ReservationHistory = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const [mockDataContacts, setMockDataContacts] = useState([]);
+
+  // Function to fetch contacts data from the API
+  const fetchContacts = async () => {
+    try {
+      const response = await fetch('http://localhost:8095/shop/getShop');
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      const data = await response.json();
+      setMockDataContacts(data);
+    } catch (error) {
+      console.error('There has been a problem with your fetch operation:', error);
+    }
+  };
+
+  // Fetch contacts data when the component mounts
+  // useEffect(() => {
+  //   fetchContacts();
+  // }, []);
 
   const columns = [
-    { field: "id", headerName: "ID", flex: 0.5 },
-    { field: "registrarId", headerName: "Reservation ID" },
+    { field: "id", headerName: "ID", flex: 0.2 },
+    { field: "registrarId", headerName: "Reservation ID",flex: 1 },
     {
       field: "name",
       headerName: "Name",
       flex: 1,
       cellClassName: "name-column--cell",
+      
     },
     {
       field: "age",
@@ -25,6 +47,7 @@ const ReservationHistory = () => {
       type: "number",
       headerAlign: "left",
       align: "left",
+      flex: 1.5
     },
     {
       field: "phone",

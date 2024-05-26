@@ -7,11 +7,12 @@ import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import Header from "../../components/Header";
 
-const Team = () => {
+
+const ManageReservations = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const columns = [
-    { field: "id", headerName: "ID" },
+    { field: "id", headerName: "No", flex: 0.5 },
     {
       field: "name",
       headerName: "Name",
@@ -20,53 +21,83 @@ const Team = () => {
     },
     {
       field: "age",
-      headerName: "Age",
+      headerName: "Motorbike Number",
       type: "number",
       headerAlign: "left",
       align: "left",
     },
     {
       field: "phone",
-      headerName: "Phone Number",
+      headerName: "Service Type",
       flex: 1,
     },
     {
       field: "email",
-      headerName: "Email",
+      headerName: "Reservation Date",
       flex: 1,
     },
     {
-      field: "accessLevel",
-      headerName: "Access Level",
+      field: "reservationTime",
+      headerName: "Reservation Time",
       flex: 1,
-      renderCell: ({ row: { access } }) => {
-        return (
-          <Box
-            width="60%"
-            m="0 auto"
-            p="5px"
-            display="flex"
-            justifyContent="center"
-            backgroundColor={
-              access === "admin"
-                ? colors.greenAccent[600]
-                : access === "manager"
-                ? colors.greenAccent[700]
-                : colors.greenAccent[700]
-            }
-            borderRadius="4px"
-          >
-            {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
-            {access === "manager" && <SecurityOutlinedIcon />}
-            {access === "user" && <LockOpenOutlinedIcon />}
-            <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
-              {access}
-            </Typography>
-          </Box>
-        );
-      },
     },
+    {
+      field: "reservationAddress",
+      headerName: "Reservation Address",
+      flex: 1,
+    },
+    {
+      field: "actions",
+      headerName: "Actions",
+      renderCell: (params) => (
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => handleOpenChildWindow(params.row)}
+        >
+          View
+        </Button>
+      ),
+      flex: 1,
+    },
+  
+    // {
+    //   field: "accessLevel",
+    //   headerName: "Access Level",
+    //   flex: 1,
+    //   renderCell: ({ row: { access } }) => {
+    //     return (
+    //       <Box
+    //         width="60%"
+    //         m="0 auto"
+    //         p="5px"
+    //         display="flex"
+    //         justifyContent="center"
+    //         backgroundColor={
+    //           access === "admin"
+    //             ? colors.greenAccent[600]
+    //             : access === "manager"
+    //             ? colors.greenAccent[700]
+    //             : colors.greenAccent[700]
+    //         }
+    //         borderRadius="4px"
+    //       >
+    //         {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
+    //         {access === "manager" && <SecurityOutlinedIcon />}
+    //         {access === "user" && <LockOpenOutlinedIcon />}
+    //         <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
+    //           {access}
+    //         </Typography>
+    //       </Box>
+    //     );
+    //   },
+    // },
   ];
+
+  const handleOpenChildWindow = (rowData) => {
+    // Logic to open child window with rowData
+    window.open(`/child-window/${rowData.id}`, 'ChildWindow', 'width=800,height=600');
+  };
 
   return (
     <Box m="20px">
@@ -106,4 +137,4 @@ const Team = () => {
   );
 };
 
-export default Team;
+export default ManageReservations;
