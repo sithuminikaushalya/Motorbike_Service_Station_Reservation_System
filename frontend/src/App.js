@@ -108,6 +108,7 @@ function App() {
           <CssBaseline />
           <div className="app">
             <Sidebar isSidebar={isSidebar} />
+            <main className="app-content">
             <Topbar setIsSidebar={setIsSidebar} />
             <Routes>
               <Route path="/dash" element={<Dashboard />} />
@@ -122,6 +123,7 @@ function App() {
               <Route path="/calendar" element={<Calendar />} />
               <Route path="/geography" element={<Geography />} />
             </Routes>
+            </main>
           </div>
         </ThemeProvider>
       </ColorModeContext.Provider>
