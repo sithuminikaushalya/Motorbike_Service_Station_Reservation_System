@@ -68,15 +68,18 @@ import Geography from "./components/dashboard/scenes/geography";
 import Calendar from "./components/dashboard/scenes/calender/calender";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./components/theme";
-import "./App.css";
-import { Provider } from "react-redux";
-import store from "./Store/Store";
+import Chatbot from "./components/Chatbot";
+import './App.css';
+
+
 
 //import { Navbar } from "react-bootstrap";
+
 
 function App() {
   const [theme, colorMode] = useMode();
   const [isSidebar, setIsSidebar] = useState(true);
+ 
 
   return (
     <Provider store={store}>
@@ -125,6 +128,7 @@ function App() {
               <Route path="/faq" element={<FAQ />} />
               <Route path="/calendar" element={<Calendar />} />
               <Route path="/geography" element={<Geography />} />
+              <Route path="/chatbot" element={<Chatbot/>}/>
             </Routes>
             </main>
           </div>

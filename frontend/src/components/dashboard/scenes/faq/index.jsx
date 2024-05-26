@@ -8,21 +8,13 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { tokens } from "../../../theme";
-import axios from 'axios'; 
+import Chatbot from '../../../Chatbot';
+
 
 const FAQ = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [botResponse, setBotResponse] = useState('');
-
-  const askChatbot = async (question) => {
-    try {
-      const response = await axios.post('http://your-python-chatbot-api-url', { question });
-      setBotResponse(response.data); 
-    } catch (error) {
-      console.error('Error communicating with chatbot:', error);
-    }
-  };
+  
   return (
     <Box m="20px">
       <Header title="FAQ" subtitle="Frequently Asked Questions Page" />
@@ -34,11 +26,7 @@ const FAQ = () => {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-          <Typography onClick={() => askChatbot('What is the answer to the important question?')}>
-            {botResponse || 'Ask me anything...'} {/* Show bot response or default message */}
-          </Typography>
-          </Typography>
+        <Chatbot />
         </AccordionDetails>
       </Accordion>
       <Accordion defaultExpanded>
