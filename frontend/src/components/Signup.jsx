@@ -72,12 +72,13 @@ function Signup() {
                     <input type="tel" placeholder='Phone Number' required
                     
                     value={customerPhoneNumber}
-                    onChange={(e) =>{
-                        const inputValue = e.target.value;
-                        if(validatePhoneNumber(inputValue)){
-                            setCustomerPhoneNumber(inputValue)
-                        }
-                    }}
+                    onChange={(e) => setCustomerPhoneNumber(e.target.value)}
+                    // {(e) =>{
+                    //     const inputValue = e.target.value;
+                    //     if(validatePhoneNumber(inputValue)){
+                    //         setCustomerPhoneNumber(inputValue)
+                    //     }
+                    // }}
                     />
                     <FaPhone className="signup-icon"/>
                 </div>

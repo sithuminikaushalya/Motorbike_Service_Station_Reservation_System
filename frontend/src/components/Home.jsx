@@ -151,37 +151,56 @@ const fetchFeedbackData = async () => {
     
     </div>
     </div>
-    <div className="cards-container">
-    {shops.map((shop) => (
-        <div key={shop.shopId} className="card">
-          <div className="img-box">
-       
-            <img src={require('../assets/bike9.jpg')} alt="Card1" />
-          </div>
-          <h1 className="card-heading">{shop.shopName}</h1>
-          <p>
-            <i className="fa fa-location-arrow" aria-hidden="true" /> {shop.shopAddress}
-          </p>
-          <p>
-            <i className="fa fa-phone" aria-hidden="true" /> {shop.contactNumber}
-          </p>
-          <p>
-            <img src={require('../assets/location.png')} alt="Location Image" />
-            <a href="#" className="direction-link">
-              Get Direction
-            </a>
-          </p>
-          <div className="details-content">
-            {/* <p>{shop.openingHours}</p>
-            {shop.services.map((service, index) => (
-              <p key={index}>
-                <img src={require('../assets/tickmark.png')} alt="Tick Mark" /> {service}
-              </p>
-            ))} */}
-          </div>
+    <div className="cards-container-wrapper">
+  <div className="cards-container">
+    {shops.slice(0, Math.ceil(shops.length / 2)).map((shop) => (
+      <div key={shop.shopId} className="card">
+        <div className="img-box">
+          <img src={require('../assets/bike9.jpg')} alt="Card1" />
         </div>
-      ))}
-    </div>
+        <h1 className="card-heading">{shop.shopName}</h1>
+        <p>
+          <i className="fa fa-location-arrow" aria-hidden="true" /> {shop.shopAddress}
+        </p>
+        <p>
+          <i className="fa fa-phone" aria-hidden="true" /> {shop.contactNumber}
+        </p>
+        <p>
+          <img src={require('../assets/location.png')} alt="Location Image" />
+          <a href="#" className="direction-link">Get Direction</a>
+        </p>
+        <div className="details-content">
+          {/* Additional shop details here */}
+        </div>
+      </div>
+    ))}
+  </div>
+  
+  <div className="cards-container">
+    {shops.slice(Math.ceil(shops.length / 2)).map((shop) => (
+      <div key={shop.shopId} className="card">
+        <div className="img-box">
+          <img src={require('../assets/bike9.jpg')} alt="Card1" />
+        </div>
+        <h1 className="card-heading">{shop.shopName}</h1>
+        <p>
+          <i className="fa fa-location-arrow" aria-hidden="true" /> {shop.shopAddress}
+        </p>
+        <p>
+          <i className="fa fa-phone" aria-hidden="true" /> {shop.contactNumber}
+        </p>
+        <p>
+          <img src={require('../assets/location.png')} alt="Location Image" />
+          <a href="#" className="direction-link">Get Direction</a>
+        </p>
+        <div className="details-content">
+          {/* Additional shop details here */}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
     <div className='home-about-container'>
     <div className='parallax-1'>
     <div className='parallax-inner'>

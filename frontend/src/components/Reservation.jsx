@@ -90,12 +90,12 @@ function Reservation() {
 
       <div className="reservation-container">
         <h2 className="reservation-title">Online Reservation</h2>
-         {/* <div className="reservation-title">
+         <div className="reservation-title">
             <h2>Current Customer ID: {customerId || "None"}</h2>
         </div>
         <div className="reservation-title">
             <h2>Current Shop ID: {shopId || "None"}</h2>
-        </div> */}
+        </div>
         <form onSubmit={handleSubmit} className="reservation-form">
     
           {/* <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
