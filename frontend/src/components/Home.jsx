@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.css'; 
 import card1 from "../assets/service1.jpg";
 import reservenow from "../assets/reserve_now.png"
@@ -9,8 +9,10 @@ import Waypoint from 'waypoints/lib/noframework.waypoints.min.js';
 import { faFacebookF, faTwitter, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
-import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
+
+
+import { faQuoteLeft, faStar as solidStar, faStarHalfAlt as halfStar, faStar as farStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
 import person1 from "../assets/person1.png";
 import ellie from "../assets/Ellie_Anderson.jpg"
 import john from "../assets/John_Morgan.jpg"
@@ -35,6 +37,7 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
 import backgroundclip from '../assets/vid.mp4';
+import axios from 'axios'; 
 
 
 
@@ -93,7 +96,7 @@ const handleRegisterClick = () => {
   };
 }, []);
 
-const cardsData = [
+const [cardsData,setcardsData] =useState( [
   {
     id: 1,
     name: 'Asphalt Motors',
@@ -118,7 +121,73 @@ const cardsData = [
     openingHours: 'Opens daily 8.00 AM - 6.00 PM',
     services: ['Full services', 'Company Services', 'Repair & Maintenance'],
   },
+]);
+
+/*useEffect(() => {
+  fetchData();
+}, []);
+
+
+const fetchData = async () => {
+  try {
+    const response = await axios.get('http://localhost:8095/shop/getShop');
+    setcardsData(response.data);
+  } catch (error) {
+    console.error('Error fetching shops:', error);
+  }
+};*/
+
+const testimonialData = [
+  {
+    testid: 1,
+    quote: "BikePulse isn't just for rentals; it's my go-to for bike repairs too! When my bike needed a tune-up, I booked a service appointment through their online reservation system. The process was quick and convenient, and my bike was back to its best in no time. Thanks, BikePulse, for keeping me rolling smoothly!",
+    testname: 'John Doe',
+    jobTitle: 'Job Title',
+    rating: 5,
+    testimage: <></> 
+  },
+  {
+    testid: 2,
+    quote: "What I love most about BikePulse is their all-in-one approach. Not only can I easily rent a bike for my weekend adventures, but I can also schedule repairs through their online platform. It's incredibly convenient and saves me so much time. BikePulse has definitely become my go-to for all things cycling!",
+    testname: 'Jane Doe',
+    jobTitle: 'Job Title',
+    rating: 4.5,
+    testimage: '../assets/bike9.jpg', 
+  },
+  {
+    testid: 3,
+    quote: "BikePulse has made managing my bike repairs a breeze. Their platform connects me with trusted service shops, and I can easily schedule appointments and track the progress of my repairs. It's a game-changer!",
+    testname: 'Alex Smith',
+    jobTitle: 'Job Title',
+    rating: 4,
+    testimage: '../assets/bike9.jpg', 
+  },
 ];
+
+const renderStars = (rating) => {
+  const stars = [];
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 !== 0;
+  const emptyStars = hasHalfStar ? 4 - fullStars : 5 - fullStars;
+
+  for (let i = 0; i < fullStars; i++) {
+    stars.push(<FontAwesomeIcon key={i} icon={solidStar} />);
+  }
+
+  if (hasHalfStar) {
+    stars.push(<FontAwesomeIcon key={fullStars} icon={halfStar} />);
+  }
+
+  for (let i = 0; i < emptyStars; i++) {
+    stars.push(<FontAwesomeIcon key={fullStars + i + 1} icon={farStar} />);
+  }
+
+  return stars;
+};
+
+
+
+
 
 
   return (
@@ -128,7 +197,7 @@ const cardsData = [
     <div className='homen-container'>
     <div className='homen-text'>
         <h1>Motor Bike Service Reservation Center</h1>
-        <p>Introducing BikePulse, the premier online platform revolutionizing bike rentals and services. <br></br>Seamlessly blending convenience with quality, BikePulse offers a diverse array of meticulously maintained bikes for every rider, from urban explorers to outdoor enthusiasts. With our intuitive reservation system, users can effortlessly book their ideal bike,<br></br> selecting from a curated selection tailored to their preferences. Beyond rentals, BikePulse provides comprehensive service options, ensuring bikes are always in peak condition. <br></br>Backed by a commitment to excellence, BikePulse redefines the cycling experience, empowering riders to explore with confidence and ease.</p>
+        <p>Rev up your ride with our premier bike reservation and service center - where every mile is a smile!</p>
         <div className='homen-button'>
            
             <a href='#'>REGISTER SHOP 
@@ -208,199 +277,29 @@ const cardsData = [
         </div>
       </div>
     </div>
-    <div className='flipping-cards-container'>
-    
-        <div className="center">
-          <div className="front-face">
-            <div className="contents front">
-              <p>David Smith</p>
-              <span>Kathmandu, Nepal</span>
-            </div>
-          </div>
-          <div className="back-face">
-            <div className="contents back">
-              <h2>CodingNepal</h2>
-              <span>Follow Me</span>
-              <div className="icons">
-                <FontAwesomeIcon icon={faFacebookF} />
-                <FontAwesomeIcon icon={faTwitter} />
-                <FontAwesomeIcon icon={faLinkedin} />
-                <FontAwesomeIcon icon={faGithub} />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="center">
-          <div className="front-face">
-            <div className="contents front">
-              <p>David Smith</p>
-              <span>Kathmandu, Nepal</span>
-            </div>
-          </div>
-          <div className="back-face">
-            <div className="contents back">
-              <h2>CodingNepal</h2>
-              <span>Follow Me</span>
-              <div className="icons">
-                <FontAwesomeIcon icon={faFacebookF} />
-                <FontAwesomeIcon icon={faTwitter} />
-                <FontAwesomeIcon icon={faLinkedin} />
-                <FontAwesomeIcon icon={faGithub} />
-              </div>
-            </div>
-          </div>
-        </div>
-    
-   
-    </div>
+
     <p className='testimonial'>Testimonials</p>
     <p className='testimonial-client-text'>WHAT ARE CLIENTS SAY</p>
-    <div className="wrapper-testamonial">
-
-      <div className="box-testamonial">
-      <FontAwesomeIcon icon={faQuoteLeft} className="quote" />
-
-        <p>"BikePulse isn't just for rentals; it's my go-to for bike repairs too! When my bike needed a tune-up, I booked a service appointment through their online reservation system. The process was quick and convenient, and my bike was back to its best in no time. Thanks, BikePulse, for keeping me rolling smoothly!</p>
-        <div className="content-testamonial">
-          <div className="info-testamonial">
-            <div className="name-testamonial">John Doe</div>
-            <div className="job-testamonial">Job Title</div>
-            <div className="stars-testamonial">
-            <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
+    <div className="wrapper-testimonial">
+      {testimonialData.map(testimonial => (
+        <div key={testimonial.testid} className="box-testimonial">
+          <FontAwesomeIcon icon={faQuoteLeft} className="quote" />
+          <p>"{testimonial.quote}"</p>
+          <div className="content-testimonial">
+            <div className="info-testimonial">
+              <div className="name-testimonial">{testimonial.testname}</div>
+              <div className="job-testimonial">{testimonial.jobTitle}</div>
+              <div className="stars-testimonial">{renderStars(testimonial.rating)}</div>
+            </div>
+            <div className="image-testimonial">
+              
+           {/* <img src={require(`./${testimonial.testimage}`).default} alt="Profile" /> */}
             </div>
           </div>
-          <div className="image-testamonial">
-            <img src={card1} alt="Profile" />
-          </div>
         </div>
-      </div>
-      <div className="box-testamonial">
-      <FontAwesomeIcon icon={faQuoteLeft} className="quote" />
-
-        <p>"What I love most about BikePulse is their all-in-one approach. Not only can I easily rent a bike for my weekend adventures, but I can also schedule repairs through their online platform. It's incredibly convenient and saves me so much time. BikePulse has definitely become my go-to for all things cycling!"</p>
-        <div className="content-testamonial">
-          <div className="info-testamonial">
-            <div className="name-testamonial">John Doe</div>
-            <div className="job-testamonial">Job Title</div>
-            <div className="stars-testamonial">
-            <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={farStar} />
-            </div>
-          </div>
-          <div className="image-testamonial">
-            <img src={card1} alt="Profile" />
-          </div>
-        </div>
-      </div>
-      <div className="box-testamonial">
-      <FontAwesomeIcon icon={faQuoteLeft} className="quote" />
-
-        <p>"BikePulse has made managing my bike repairs a breeze. Their platform connects me with trusted service shops, and I can easily schedule appointments and track the progress of my repairs. It's a game-changer!"</p>
-        <div className="content-testamonial">
-          <div className="info-testamonial">
-            <div className="name-testamonial">John Doe</div>
-            <div className="job-testamonial">Job Title</div>
-            <div className="stars-testamonial">
-            <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={farStar} />
-            </div>
-          </div>
-          <div className="image-testamonial">
-            <img src={card1} alt="Profile" />
-          </div>
-        </div>
-      </div>
-      
+      ))}
     </div>
-    <div className="slide-container swiper">
-            <div className="slide-content">
-                <div className="card-wrapper swiper-wrapper">
-                    <div className="card swiper-slide">
-                        <div className="image-content">
-                            <span className="overlay"></span>
-                            <div className="card-image">
-                                <img src={person1} alt='Testimonial'/>
-                            </div>
-                        </div>
-                        <div className="card-content">
-                            <h2 className="name">David Dell</h2>
-                            <p className="description">"I'm blown away by the convenience of the BikePulse mobile app. Booking repair appointments is quick and easy, and I love being able to track the status of my repairs in real-time. It's like having a personal mechanic in my pocket!"</p>
-                            <button className="button-view">View More</button>
-                        </div>
-                    </div>
-                    <div className="card swiper-slide">
-                        <div className="image-content">
-                            <span className="overlay"></span>
-                            <div className="card-image">
-                                <img src={ellie} alt='Testimonial'/>
-                            </div>
-                        </div>
-                        <div className="card-content">
-                            <h2 className="name">David Dell</h2>
-                            <p className="description">"Thanks to BikePulse, finding reputable bike service shops has never been easier. Their platform makes it simple to discover and connect with top-notch repair centers, ensuring my bike is always in tip-top shape."</p>
-                            <button className="button-view">View More</button>
-                        </div>
-                    </div>
-                    <div className="card swiper-slide">
-                        <div className="image-content">
-                            <span className="overlay"></span>
-                            <div className="card-image">
-                                <img src={rigo} alt='Testimonial'/>
-                            </div>
-                        </div>
-                        <div className="card-content">
-                            <h2 className="name">David Dell</h2>
-                            <p className="description">"BikePulse's online payment system has made handling repair costs a breeze. I can pay securely through the app, saving me time and hassle. It's just one more way BikePulse has simplified my cycling experience."</p>
-                            <button className="button-view">View More</button>
-                        </div>
-                    </div>
-                    <div className="card swiper-slide">
-                        <div className="image-content">
-                            <span className="overlay"></span>
-                            <div className="card-image">
-                                <img src={nia} alt='Testimonial'/>
-                            </div>
-                        </div>
-                        <div className="card-content">
-                            <h2 className="name">David Dell</h2>
-                            <p className="description">"I'm impressed by the level of transparency BikePulse provides. Being able to track the progress of my repairs gives me peace of mind, knowing exactly what's happening every step of the way."</p>
-                            <button className="button-view">View More</button>
-                        </div>
-                    </div>
-                    <div className="card swiper-slide">
-                        <div className="image-content">
-                            <span className="overlay"></span>
-                            <div className="card-image">
-                                <img src={john} alt='Testimonial'/>
-                            </div>
-                        </div>
-                        <div className="card-content">
-                            <h2 className="name">David Dell</h2>
-                            <p className="description">"BikePulse has made it so easy for me to find and book repair appointments. Their user-friendly interface and intuitive design make the whole process seamless and stress-free."</p>
-                            <button className="button-view">View More</button>
-                        </div>
-                    </div>
-                    
-                    
-                </div>
-            </div>
-            
-            <div className="swiper-button-next swiper-navBtn"></div>
-            <div className="swiper-button-prev swiper-navBtn"></div>
-            <div className="swiper-pagination"></div>  
-        
-          
-        </div>
+   
         <div className='parallax-1'>
           <div className='parallax-inner'>
           <div className='service-cards-container'>
