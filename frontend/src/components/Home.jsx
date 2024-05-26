@@ -91,9 +91,9 @@ const handleRegisterClick = () => {
             },
         },
     });
-    return () => {
-      swiper.destroy(); 
-  };
+    //return () => {
+     // swiper.destroy(); 
+  //};
 }, []);
 
 const [cardsData,setcardsData] =useState( [
