@@ -7,6 +7,31 @@
     height: auto; 
   }
 
+  .cards-container-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.details-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.button-view{
+  border: none;
+  font-size: 16px;
+  color: #FFF;
+  padding: 8px 16px;
+  background-color: #4070F4;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
   .main-cards-container{
     display: flex;
   }
@@ -56,7 +81,7 @@
     background-color: #FFFFFF;
     border-radius: 10px;
     margin-left: 40px;
-    height: 250px;
+    height: 400px;
 }
 .top-rectangle,
 .bottom-rectangle {
@@ -79,7 +104,7 @@
   .sub-cards {
     display: flex;
     flex-direction: row;
-    justify-content: 20px; 
+    justify-content: center;
 }
 .rating-container{
   display: flex;
@@ -88,4 +113,77 @@
 
 .stars2{
   margin-left: 50px;
+  
 }
+
+.velocare-get-direction{
+  display: flex;
+}
+
+.view-text{
+  font-family: "Poppins", sans-serif;
+  color: #03045e;
+  font-weight: 600;
+  margin-left: 40%;
+  cursor: pointer;
+}
+.see-all-text{
+  font-family: "Poppins", sans-serif;
+    color: #000000;
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+.sub-cards-row2,
+.sub-cards-row3,
+.sub-cards-row4
+{
+  margin-top: 5%;
+ 
+}
+
+.show-more-button{
+  width: 10%;
+  padding: 1%;
+  border: none;
+  border-radius: 15px;
+ background-color: #000000;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #FFFFFF;
+  margin-left: 45%;
+  margin-top: 3%;
+
+}
+@media only screen and (max-width: 768px) {
+  .sub-cards {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .sub-cards-container {
+    margin-bottom: 20px; 
+  }
+
+  .rectangle-container {
+    height: auto;
+    margin: 10px 0; 
+  }
+
+  .show-more-button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: 40%;
+  }
+}
+
+.shop-bottom-text{
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  margin-top: 3%;
+}
+
